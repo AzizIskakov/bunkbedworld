@@ -78,28 +78,41 @@
         .tab-content { display: none; }
         .tab-content.active { display: block; }
 
-        .subcat-bar {
+        .subcat-section {
+            margin-bottom: 0.5rem;
+            border: 1px solid #e0ddd8;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .subcat-heading {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-        .subcat-bar label { font-weight: 600; font-size: 0.9rem; color: #555; }
-        .subcat-select {
-            padding: 0.6rem 1.2rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            background: #fff;
+            gap: 0.6rem;
+            font-size: 1rem;
             color: #1a1a2e;
-            cursor: pointer;
-            transition: border-color 0.2s;
-            min-width: 200px;
-            max-width: 100%;
+            transition: background 0.2s;
+            user-select: none;
         }
-        .subcat-select:focus { outline: none; border-color: #e8b86d; }
+        .subcat-heading:hover { background: #f8f7f4; }
+        .subcat-heading .count {
+            font-weight: 400;
+            color: #888;
+            font-size: 0.85rem;
+        }
+        .subcat-arrow {
+            font-size: 0.8rem;
+            color: #e8b86d;
+            transition: transform 0.2s;
+            width: 18px;
+            text-align: center;
+        }
+        .subcat-body {
+            border-top: 1px solid #e0ddd8;
+            padding: 1.5rem;
+        }
 
         .grid {
             display: grid;
@@ -410,93 +423,64 @@ function renderContent() {
     var tab = TABS.find(function(t) { return t.tab === currentTab; });
     if (!tab) { container.innerHTML = '<div class="loading">No products found.</div>'; return; }
 
-    var html = '<div class="subcat-bar">';
-    html += '<label for="subcat">Filter:</label>';
-    html += '<select id="subcat" class="subcat-select" onchange="filterSubcat(this.value)">';
-    html += '<option value="__all__">All ' + currentTab + '</option>';
+    var html = '';
     tab.categories.forEach(function(c) {
-        var catCount = PRODUCTS.filter(function(p) {
+        var catProducts = PRODUCTS.filter(function(p) {
             return p.category === c.name && !p.sold_out;
-        }).length;
-        html += '<option value="' + c.cat_id + '">' + c.name + ' (' + catCount + ')</option>';
-    });
-    html += '</select></div>';
-
-    var filtered = getFilteredProducts();
-    var chunk = loadedChunks[currentTab] || 1;
-    var displayCount = Math.min(chunk * ITEMS_PER_PAGE, filtered.length);
-    var displayed = filtered.slice(0, displayCount);
-
-    html += '<div class="grid" id="productGrid">';
-    displayed.forEach(function(p, i) {
-        html += '<a class="card" href="#product-' + p.id + '" onclick="event.preventDefault(); openDetail(\'' + p.id + '\'); window.location.hash=\'product-' + p.id + '\';">';
-        html += '<div class="card-img" data-src="' + p.image + '" style="background-color:#e8e3dc;"></div>';
-        html += '<div class="card-body">';
-        html += '<div class="cat-tag">' + escapeHtml(p.category) + '</div>';
-        html += '<h3>' + escapeHtml(p.name) + '</h3>';
-        if (p.size_prices) {
-            var sizeHtml = '';
-            for (var size in p.size_prices) {
-                if (sizeHtml) sizeHtml += ' | ';
-                sizeHtml += escapeHtml(size) + ': $' + p.size_prices[size].sell;
+        });
+        if (catProducts.length === 0) return;
+        var sectionId = 'section-' + c.cat_id;
+        html += '<div class="subcat-section">';
+        html += '<div class="subcat-heading" onclick="toggleSection(\'' + sectionId + '\')">';
+        html += '<span class="subcat-arrow">&#9654;</span> ';
+        html += '<strong>' + escapeHtml(c.name) + '</strong>';
+        html += ' <span class="count">(' + catProducts.length + ')</span>';
+        html += '</div>';
+        html += '<div id="' + sectionId + '" class="subcat-body" style="display:none;">';
+        html += '<div class="grid">';
+        catProducts.forEach(function(p) {
+            html += '<a class="card" href="#product-' + p.id + '" onclick="event.preventDefault(); openDetail(\'' + p.id + '\'); window.location.hash=\'product-' + p.id + '\';">';
+            html += '<div class="card-img" data-src="' + p.image + '" style="background-color:#e8e3dc;"></div>';
+            html += '<div class="card-body">';
+            html += '<div class="cat-tag">' + escapeHtml(p.category) + '</div>';
+            html += '<h3>' + escapeHtml(p.name) + '</h3>';
+            if (p.size_prices) {
+                var sizeHtml = '';
+                for (var size in p.size_prices) {
+                    if (sizeHtml) sizeHtml += ' | ';
+                    sizeHtml += escapeHtml(size) + ': $' + p.size_prices[size].sell;
+                }
+                html += '<div class="price size-price">' + sizeHtml + '</div>';
+            } else if (p.sell_price) {
+                html += '<div class="price">$' + p.sell_price + '</div>';
+            } else {
+                html += '<div class="price"><span class="no-price">Check Price</span></div>';
             }
-            html += '<div class="price size-price">' + sizeHtml + '</div>';
-        } else if (p.sell_price) {
-            html += '<div class="price">$' + p.sell_price + '</div>';
-        } else {
-            html += '<div class="price"><span class="no-price">Check Price</span></div>';
-        }
-        html += '</div></a>';
+            html += '</div></a>';
+        });
+        html += '</div></div></div>';
     });
-    html += '</div>';
-
-    // Only show load-more if there are more products
-    var total = filtered.length;
-    if (displayCount < total) {
-        html += '<div id="loadMoreWrap" style="text-align:center;padding:2rem 0 1rem;">';
-        var remaining = total - displayCount;
-        html += '<button id="loadMoreBtn" class="tab-btn" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 2rem;border:2px solid #1a1a2e;border-radius:8px;background:#fff;color:#1a1a2e;font-weight:600;cursor:pointer;font-size:0.95rem;" onclick="loadMore()">';
-        html += 'Load More (' + remaining + ' left)';
-        html += '</button></div>';
-    } else {
-        html += '<div style="text-align:center;padding:1.5rem;color:#aaa;font-size:0.9rem;">Showing all ' + total + ' products</div>';
-    }
-
-    html += '<div id="sentinel" style="height:1px;"></div>';
 
     container.innerHTML = html;
-
-    // Restore subcat filter
-    var sel = document.getElementById('subcat');
-    if (sel) sel.value = '__all__';
-
-    // Set up lazy loading with IntersectionObserver
     setupLazyImages();
-    // Set up infinite scroll sentinel
-    setupInfiniteScroll();
 }
 
-function loadMore() {
-    if (isLoading) return;
-    var chunk = loadedChunks[currentTab] || 1;
-    loadedChunks[currentTab] = chunk + 1;
-    renderContent();
+function toggleSection(sectionId) {
+    var el = document.getElementById(sectionId);
+    if (!el) return;
+    var isHidden = el.style.display === 'none';
+    el.style.display = isHidden ? 'block' : 'none';
+    var heading = el.previousElementSibling;
+    if (heading) {
+        var arrow = heading.querySelector('.subcat-arrow');
+        if (arrow) arrow.innerHTML = isHidden ? '&#9660;' : '&#9654;';
+    }
+    // Load images when section is expanded
+    if (isHidden) setupLazyImages();
 }
 
-function setupInfiniteScroll() {
-    var sentinel = document.getElementById('sentinel');
-    if (!sentinel) return;
-    var filtered = getFilteredProducts();
-    var chunk = loadedChunks[currentTab] || 1;
-    if (chunk * ITEMS_PER_PAGE >= filtered.length) return;
-
-    if (window._scrollObserver) window._scrollObserver.disconnect();
-    window._scrollObserver = new IntersectionObserver(function(entries) {
-        if (entries[0].isIntersecting && !isLoading) {
-            loadMore();
-        }
-    }, { rootMargin: '400px' });
-    window._scrollObserver.observe(sentinel);
+function filterSubcat(catId) {
+    // No longer needed - replaced by sections
 }
 
 function setupLazyImages() {
