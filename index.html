@@ -346,11 +346,15 @@ var isLoading = false;
 // Init on load
 window.addEventListener('DOMContentLoaded', init);
 
-function getFilteredProducts() {
+function getFilteredProducts(includeSoldOut) {
     var tab = TABS.find(function(t) { return t.tab === currentTab; });
     if (!tab) return [];
     var catNames = tab.categories.map(function(c) { return c.name; });
-    return PRODUCTS.filter(function(p) { return catNames.indexOf(p.category) >= 0; });
+    var result = PRODUCTS.filter(function(p) { return catNames.indexOf(p.category) >= 0; });
+    if (!includeSoldOut) {
+        result = result.filter(function(p) { return !p.sold_out; });
+    }
+    return result;
 }
 
 function init() {
@@ -374,12 +378,17 @@ function renderTabs() {
     var nav = document.getElementById('tabNav');
     nav.innerHTML = '';
     TABS.forEach(function(tab) {
-        var total = 0;
-        tab.categories.forEach(function(c) { total += c.count; });
+        var available = 0;
+        tab.categories.forEach(function(c) {
+            var count = PRODUCTS.filter(function(p) {
+                return p.category === c.name && !p.sold_out;
+            }).length;
+            available += count;
+        });
         var btn = document.createElement('button');
         btn.className = 'tab-btn';
         btn.setAttribute('onclick', 'switchTab(\'' + tab.tab + '\')');
-        btn.innerHTML = tab.tab + ' <span class="count">' + total + '</span>';
+        btn.innerHTML = tab.tab + ' <span class="count">' + available + '</span>';
         nav.appendChild(btn);
     });
 }
@@ -406,7 +415,10 @@ function renderContent() {
     html += '<select id="subcat" class="subcat-select" onchange="filterSubcat(this.value)">';
     html += '<option value="__all__">All ' + currentTab + '</option>';
     tab.categories.forEach(function(c) {
-        html += '<option value="' + c.cat_id + '">' + c.name + ' (' + c.count + ')</option>';
+        var catCount = PRODUCTS.filter(function(p) {
+            return p.category === c.name && !p.sold_out;
+        }).length;
+        html += '<option value="' + c.cat_id + '">' + c.name + ' (' + catCount + ')</option>';
     });
     html += '</select></div>';
 

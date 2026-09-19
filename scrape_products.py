@@ -51,11 +51,16 @@ def extract_product_info(html_text):
         'color': '',
         'material': '',
         'dimensions': '',
-        'description': ''
+        'description': '',
+        'sold_out': False
     }
 
     if not html_text:
         return info
+
+    # Check if product is sold out
+    if re.search(r'Sold\s*out', html_text, re.I):
+        info['sold_out'] = True
 
     # Find the product details area - start from "Item Name" or "Item Number"
     detail_start = None
@@ -229,12 +234,19 @@ def process_products():
         if pid in results:
             info = results[pid]
             had_data = any([info['color'], info['material'], info['dimensions'], info['description']])
-            if had_data:
-                updated_count += 1
-                product['color'] = info['color']
-                product['material'] = info['material']
-                product['dimensions'] = info['dimensions']
-                product['description'] = info['description']
+            if had_data or info['sold_out']:
+                if info['sold_out']:
+                    product['sold_out'] = True
+                    updated_count += 1
+                    print(f"  Sold out: {product.get('name', product['id'])} ({product.get('page', '')})")
+                if info['color']:
+                    product['color'] = info['color']
+                if info['material']:
+                    product['material'] = info['material']
+                if info['dimensions']:
+                    product['dimensions'] = info['dimensions']
+                if info['description']:
+                    product['description'] = info['description']
 
     elapsed = time.time() - start_time
     print(f"\n=== COMPLETE ===")
