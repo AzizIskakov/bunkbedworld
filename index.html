@@ -424,7 +424,7 @@ function renderTabs() {
 
         var btn = document.createElement('button');
         btn.className = 'tab-btn';
-        btn.innerHTML = tab.tab + ' <span class="count">' + available + '</span>';
+        btn.textContent = tab.tab;
         btn.addEventListener('click', function(e) {
             e.stopPropagation();
             var allItems = nav.querySelectorAll('.tab-item');
