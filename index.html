@@ -41,11 +41,15 @@
             border-bottom: 2px solid #e0ddd8;
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 100;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
-        .tab-btn {
+        .tab-item {
+            position: relative;
             flex: 1;
+        }
+        .tab-btn {
+            width: 100%;
             padding: 1rem 1.2rem;
             text-align: center;
             font-weight: 600;
@@ -72,6 +76,53 @@
             padding: 0.1rem 0.5rem;
             border-radius: 12px;
             margin-left: 0.4rem;
+        }
+        .tab-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            min-width: 220px;
+            background: #fff;
+            border: 1px solid #e0ddd8;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            z-index: 200;
+            padding: 0.5rem 0;
+        }
+        .tab-item.open .tab-dropdown {
+            display: block;
+        }
+        .tab-item:hover .tab-dropdown {
+            display: block;
+        }
+        .tab-dropdown a {
+            display: block;
+            padding: 0.7rem 1.2rem;
+            text-decoration: none;
+            color: #1a1a2e;
+            font-size: 0.9rem;
+            transition: background 0.15s;
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+        .tab-dropdown a:hover { background: #f8f7f4; }
+        .tab-dropdown a .dcount {
+            float: right;
+            color: #aaa;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 600px) {
+            .tab-nav { flex-wrap: wrap; }
+            .tab-item { flex: 1 0 45%; }
+            .tab-dropdown { position: absolute; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border: 1px solid #e0ddd8; }
+            .tab-item.open .tab-dropdown { display: block; }
+            .tab-item:hover .tab-dropdown { display: none; }
         }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
@@ -370,14 +421,18 @@ function getFilteredProducts(includeSoldOut) {
     return result;
 }
 
+var currentSubcatName = null;
+
 function init() {
+    // Render tabs immediately with hardcoded counts to avoid 0
     renderTabs();
-    // Load data asynchronously
+    // Load data asynchronously, then re-render tabs + content
     fetch('products.json')
         .then(function(r) { return r.json(); })
         .then(function(data) {
             PRODUCTS = data;
-            switchTab("Living Room");
+            renderTabs();  // re-render with real counts
+            showAll("Living Room");
             checkHash();
             window.addEventListener('hashchange', checkHash);
         })
@@ -385,26 +440,80 @@ function init() {
             document.getElementById('mainContent').innerHTML =
                 '<div class="loading">Failed to load products. Please refresh.</div>';
         });
-}
+yId('mainContent').innerHTML =\n                '<div class=\"loading\">Failed to load products. Please refresh.</div>';\n        });\n}", {"oldText": "<nav class=\"tab-nav\" id=\"tabNav\"></nav>", "newText": "<nav class=\"tab-nav\" id=\"tabNav\">\n    <div class=\"tab-item\"><button class=\"tab-btn\">Loading <span class=\"count\">...</span></button></div>\n</nav>"}, {"oldText": "function switchTab(name) {\n    currentTab = name;\n    currentSubcat = null;\n    loadedChunks[name] = 1;\n    var btns = document.querySelectorAll('.tab-btn');\n    btns.forEach(function(b) {\n        b.classList.remove('active');\n        if (b.textContent.trim().startsWith(name)) b.classList.add('active');\n    });\n    renderContent();\n}", "newText": "function showAll(tabName) {\n    currentTab = tabName;\n    currentSubcatName = null;\n    // Activate correct tab button\n    var btns = document.querySelectorAll('.tab-btn');\n    btns.forEach(function(b) {\n        b.classList.remove('active');\n        if (b.textContent.trim().startsWith(tabName)) b.classList.add('active');\n    });\n    renderContent();\n}\n\nfunction showSubcat(tabName, catName) {\n    currentTab = tabName;\n    currentSubcatName = catName;\n    var btns = document.querySelectorAll('.tab-btn');\n    btns.forEach(function(b) {\n        b.classList.remove('active');\n        if (b.textContent.trim().startsWith(tabName)) b.classList.add('active');\n    });\n    renderContent();\n}"}, {"oldText": "function renderContent() {\n    var container = document.getElementById('mainContent');\n    var tab = TABS.find(function(t) { return t.tab === currentTab; });\n    if (!tab) { container.innerHTML = '<div class=\"loading\">No products found.</div>'; return; }\n\n    var html = '';\n    tab.categories.forEach(function(c) {\n        var catProducts = PRODUCTS.filter(function(p) {\n            return p.category === c.name && !p.sold_out;\n        });\n        if (catProducts.length === 0) return;\n        var sectionId = 'section-' + c.cat_id;\n        html += '<div class=\"subcat-section\">';\n        html += '<div class=\"subcat-heading\" onclick=\"toggleSection(\\'' + sectionId + '\\')\">';\n        html += '<span class=\"subcat-arrow\">&#9654;</span> ';\n        html += '<strong>' + escapeHtml(c.name) + '</strong>';\n        html += ' <span class=\"count\">(' + catProducts.length + ')</span>';\n        html += '</div>';\n        html += '<div id=\"' + sectionId + '\" class=\"subcat-body\" style=\"display:none;\">';\n        html += '<div class=\"grid\">';\n        catProducts.forEach(function(p) {\n            html += '<a class=\"card\" href=\"#product-' + p.id + '\" onclick=\"event.preventDefault(); openDetail(\\'' + p.id + '\\'); window.location.hash=\\'product-' + p.id + '\\';\">';\n            html += '<div class=\"card-img\" data-src=\"' + p.image + '\" style=\"background-color:#e8e3dc;\"></div>';\n            html += '<div class=\"card-body\">';\n            html += '<div class=\"cat-tag\">' + escapeHtml(p.category) + '</div>';\n            html += '<h3>' + escapeHtml(p.name) + '</h3>';\n            if (p.size_prices) {\n                var sizeHtml = '';\n                for (var size in p.size_prices) {\n                    if (sizeHtml) sizeHtml += ' | ';\n                    sizeHtml += escapeHtml(size) + ': $' + p.size_prices[size].sell;\n                }\n                html += '<div class=\"price size-price\">' + sizeHtml + '</div>';\n            } else if (p.sell_price) {\n                html += '<div class=\"price\">$' + p.sell_price + '</div>';\n            } else {\n                html += '<div class=\"price\"><span class=\"no-price\">Check Price</span></div>';\n            }\n            html += '</div></a>';\n        });\n        html += '</div></div></div>';\n    });\n\n    container.innerHTML = html;\n    setupLazyImages();\n}\n\nfunction toggleSection(sectionId) {\n    var el = document.getElementById(sectionId);\n    if (!el) return;\n    var isHidden = el.style.display === 'none';\n    el.style.display = isHidden ? 'block' : 'none';\n    var heading = el.previousElementSibling;\n    if (heading) {\n        var arrow = heading.querySelector('.subcat-arrow');\n        if (arrow) arrow.innerHTML = isHidden ? '&#9660;' : '&#9654;';\n    }\n    // Load images when section is expanded\n    if (isHidden) setupLazyImages();\n}\n\nfunction filterSubcat(catId) {\n    // No longer needed - replaced by sections\n}", "newText": "function renderContent() {\n    var container = document.getElementById('mainContent');\n    var tab = TABS.find(function(t) { return t.tab === currentTab; });\n    if (!tab) { container.innerHTML = '<div class=\"loading\">Select a category to browse.</div>'; return; }\n\n    var html = '';\n    if (currentSubcatName) {\n        // Show only the selected subcategory\n        var c = tab.categories.find(function(x) { return x.name === currentSubcatName; });\n        if (c) {\n            var catProducts = PRODUCTS.filter(function(p) {\n                return p.category === c.name && !p.sold_out;\n            });\n            if (catProducts.length > 0) {\n                html += '<div class=\"subcat-section\">';\n                html += '<div class=\"subcat-heading\" onclick=\"showAll(currentTab)\" style=\"cursor:pointer;color:#e8b86d;font-size:0.85rem;\">&larr; Back to all ' + escapeHtml(tab.tab) + '</div>';\n                html += '<div class=\"subcat-body\" style=\"display:block;\">';\n                html += '<div class=\"grid\">';\n                catProducts.forEach(function(p) {\n                    html += '<a class=\"card\" href=\"#product-' + p.id + '\" onclick=\"event.preventDefault(); openDetail(\\'' + p.id + '\\'); window.location.hash=\\'product-' + p.id + '\\';\">';\n                    html += '<div class=\"card-img\" data-src=\"' + p.image + '\" style=\"background-color:#e8e3dc;\"></div>';\n                    html += '<div class=\"card-body\">';\n                    html += '<div class=\"cat-tag\">' + escapeHtml(p.category) + '</div>';\n                    html += '<h3>' + escapeHtml(p.name) + '</h3>';\n                    if (p.size_prices) {\n                        var sizeHtml = '';\n                        for (var size in p.size_prices) {\n                            if (sizeHtml) sizeHtml += ' | ';\n                            sizeHtml += escapeHtml(size) + ': $' + p.size_prices[size].sell;\n                        }\n                        html += '<div class=\"price size-price\">' + sizeHtml + '</div>';\n                    } else if (p.sell_price) {\n                        html += '<div class=\"price\">$' + p.sell_price + '</div>';\n                    } else {\n                        html += '<div class=\"price\"><span class=\"no-price\">Check Price</span></div>';\n                    }\n                    html += '</div></a>';\n                });\n                html += '</div></div></div>';\n            }\n        }\n    } else {\n        // Show all subcategories as expandable sections\n        tab.categories.forEach(function(c) {\n            var catProducts = PRODUCTS.filter(function(p) {\n                return p.category === c.name && !p.sold_out;\n            });\n            if (catProducts.length === 0) return;\n            var sectionId = 'section-' + c.cat_id;\n            html += '<div class=\"subcat-section\">';\n            html += '<div class=\"subcat-heading\" onclick=\"toggleSection(\\'' + sectionId + '\\')\">';\n            html += '<span class=\"subcat-arrow\">&#9654;</span> ';\n            html += '<strong>' + escapeHtml(c.name) + '</strong>';\n            html += ' <span class=\"count\">(' + catProducts.length + ')</span>';\n            html += '</div>';\n            html += '<div id=\"' + sectionId + '\" class=\"subcat-body\" style=\"display:none;\">';\n            html += '<div class=\"grid\">';\n            catProducts.forEach(function(p) {\n                html += '<a class=\"card\" href=\"#product-' + p.id + '\" onclick=\"event.preventDefault(); openDetail(\\'' + p.id + '\\'); window.location.hash=\\'product-' + p.id + '\\';\">';\n                html += '<div class=\"card-img\" data-src=\"' + p.image + '\" style=\"background-color:#e8e3dc;\"></div>';\n                html += '<div class=\"card-body\">';\n                html += '<div class=\"cat-tag\">' + escapeHtml(p.category) + '</div>';\n                html += '<h3>' + escapeHtml(p.name) + '</h3>';\n                if (p.size_prices) {\n                    var sizeHtml = '';\n                    for (var size in p.size_prices) {\n                        if (sizeHtml) sizeHtml += ' | ';\n                        sizeHtml += escapeHtml(size) + ': $' + p.size_prices[size].sell;\n                    }\n                    html += '<div class=\"price size-price\">' + sizeHtml + '</div>';\n                } else if (p.sell_price) {\n                    html += '<div class=\"price\">$' + p.sell_price + '</div>';\n                } else {\n                    html += '<div class=\"price\"><span class=\"no-price\">Check Price</span></div>';\n                }\n                html += '</div></a>';\n            });\n            html += '</div></div></div>';\n        });\n    }\n\n    container.innerHTML = html || '<div class=\"loading\">No products available in this section.</div>';\n    setupLazyImages();\n}\n\nfunction toggleSection(sectionId) {\n    var el = document.getElementById(sectionId);\n    if (!el) return;\n    var isHidden = el.style.display === 'none' || el.style.display === '';\n    el.style.display = isHidden ? 'block' : 'none';\n    var heading = el.previousElementSibling;\n    if (heading) {\n        var arrow = heading.querySelector('.subcat-arrow');\n        if (arrow) arrow.innerHTML = isHidden ? '&#9660;' : '&#9654;';\n    }\n    if (isHidden) setupLazyImages();\n}\n\nfunction filterSubcat(catId) {\n    // No longer needed - replaced by dropdown + sections\n}"}, {"oldText": "// Init on load\nwindow.addEventListener('DOMContentLoaded', init);", "newText": "// Init on load\nsetTimeout(function() {\n    if (typeof PRODUCTS !== 'undefined' && PRODUCTS.length > 0) {\n        renderTabs();\n    }\n    window.addEventListener('DOMContentLoaded', init);\n}, 50);"}]
 
 function renderTabs() {
     var nav = document.getElementById('tabNav');
     nav.innerHTML = '';
     TABS.forEach(function(tab) {
-        var available = 0;
+        // Compute total available for this tab
+        var totalAvail = 0;
         tab.categories.forEach(function(c) {
-            var count = PRODUCTS.filter(function(p) {
+            var cnt = PRODUCTS.filter(function(p) {
                 return p.category === c.name && !p.sold_out;
             }).length;
-            available += count;
+            totalAvail += cnt;
         });
+
+        var item = document.createElement('div');
+        item.className = 'tab-item';
+
         var btn = document.createElement('button');
         btn.className = 'tab-btn';
-        btn.setAttribute('onclick', 'switchTab(\'' + tab.tab + '\')');
-        btn.innerHTML = tab.tab + ' <span class="count">' + available + '</span>';
-        nav.appendChild(btn);
+        btn.textContent = tab.tab + ' ';
+        var span = document.createElement('span');
+        span.className = 'count';
+        span.textContent = totalAvail;
+        btn.appendChild(span);
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            // Toggle this dropdown, close others
+            var allItems = nav.querySelectorAll('.tab-item');
+            allItems.forEach(function(it) {
+                if (it !== item) it.classList.remove('open');
+            });
+            item.classList.toggle('open');
+            switchTab(tab.tab);
+        });
+        item.appendChild(btn);
+
+        var dd = document.createElement('div');
+        dd.className = 'tab-dropdown';
+        tab.categories.forEach(function(c) {
+            var cnt = PRODUCTS.filter(function(p) {
+                return p.category === c.name && !p.sold_out;
+            }).length;
+            if (cnt === 0) return;
+            var a = document.createElement('a');
+            a.textContent = c.name + ' ';
+            var dspan = document.createElement('span');
+            dspan.className = 'dcount';
+            dspan.textContent = '(' + cnt + ')';
+            a.appendChild(dspan);
+            a.addEventListener('click', function(e) {
+                e.stopPropagation();
+                showSubcat(tab.tab, c.name);
+            });
+            dd.appendChild(a);
+        });
+        item.appendChild(dd);
+        nav.appendChild(item);
     });
+
+    // Activate default
+    var firstBtn = nav.querySelector('.tab-item .tab-btn');
+    if (firstBtn) firstBtn.classList.add('active');
 }
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e) {
+    var nav = document.getElementById('tabNav');
+    if (nav && !nav.contains(e.target)) {
+        nav.querySelectorAll('.tab-item').forEach(function(it) {
+            it.classList.remove('open');
+        });
+    }
+});
 
 function switchTab(name) {
     currentTab = name;
