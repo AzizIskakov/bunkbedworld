@@ -146,8 +146,34 @@
             color: #e8b86d;
             font-weight: 600;
             text-transform: uppercase;
+            margin-bottom: 0.1rem;
+        }
+        .card-body .vendor-tag {
+            font-size: 0.7rem;
+            color: #888;
             margin-bottom: 0.2rem;
         }
+        .vendor-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .vendor-bar label { font-weight: 600; font-size: 0.9rem; color: #555; }
+        .vendor-btn {
+            padding: 0.4rem 1rem;
+            border: 2px solid #e0ddd8;
+            border-radius: 20px;
+            background: #fff;
+            color: #555;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .vendor-btn:hover { border-color: #e8b86d; color: #1a1a2e; }
+        .vendor-btn.active { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
         .card-body .desc {
             font-size: 0.82rem;
             color: #888;
@@ -373,6 +399,7 @@ var TABS = [{"tab": "Living Room", "categories": [{"name": "Stationary Sofa & Lo
 // Current state
 var currentTab = "Living Room";
 var currentSubcat = null;
+var currentVendor = null;
 var PRODUCTS = [];               // Will be loaded from products.json
 var loadedChunks = {};          // tab name -> how many chunks loaded so far
 var ITEMS_PER_PAGE = 48;        // Products per load
@@ -388,6 +415,9 @@ function getFilteredProducts(includeSoldOut) {
     var result = PRODUCTS.filter(function(p) { return catNames.indexOf(p.category) >= 0; });
     if (!includeSoldOut) {
         result = result.filter(function(p) { return !p.sold_out; });
+    }
+    if (currentVendor) {
+        result = result.filter(function(p) { return p.vendor === currentVendor; });
     }
     return result;
 }
@@ -494,8 +524,25 @@ function renderContent() {
     var tab = TABS.find(function(t) { return t.tab === currentTab; });
     if (!tab) { container.innerHTML = '<div class="loading">No products found.</div>'; return; }
 
-    var html = '<div class="subcat-bar">';
-    html += '<label for="subcat">Filter:</label>';
+    // Vendor filter bar
+    var vendors = ['All'];
+    var seen = {};
+    PRODUCTS.forEach(function(p) {
+        if (p.vendor && !seen[p.vendor]) { seen[p.vendor] = true; vendors.push(p.vendor); }
+    });
+    var html = '<div class="vendor-bar">';
+    html += '<label>Vendor:</label>';
+    vendors.forEach(function(v) {
+        var cls = 'vendor-btn';
+        if (v === 'All' && !currentVendor) cls += ' active';
+        else if (v !== 'All' && currentVendor === v) cls += ' active';
+        var val = v === 'All' ? '' : v;
+        html += '<button class="' + cls + '" onclick="filterVendor(\'' + val + '\')">' + escapeHtml(v) + '</button>';
+    });
+    html += '</div>';
+
+    html += '<div class="subcat-bar">';
+    html += '<label for="subcat">Category:</label>';
     html += '<select id="subcat" class="subcat-select" onchange="filterSubcat(this.value)">';
     html += '<option value="__all__">All ' + currentTab + '</option>';
     tab.categories.forEach(function(c) {
@@ -516,6 +563,7 @@ function renderContent() {
         html += '<a class="card" href="#product-' + p.id + '" onclick="event.preventDefault(); openDetail(\'' + p.id + '\'); window.location.hash=\'product-' + p.id + '\';">';
         html += '<div class="card-img" data-src="' + p.image + '" style="background-color:#e8e3dc;"></div>';
         html += '<div class="card-body">';
+        if (p.vendor) html += '<div class="vendor-tag">' + escapeHtml(p.vendor) + '</div>';
         html += '<div class="cat-tag">' + escapeHtml(p.category) + '</div>';
         html += '<h3>' + escapeHtml(p.name) + '</h3>';
         if (p.size_prices) {
@@ -553,6 +601,13 @@ function renderContent() {
     // Restore subcat filter
     var sel = document.getElementById('subcat');
     if (sel) sel.value = '__all__';
+    // Reset chunks when vendor changes
+    if (currentVendor !== null && currentVendor !== undefined) {
+        var active = document.querySelector('.vendor-btn.active');
+        if (active && active.textContent.trim() !== (currentVendor === '' ? 'All' : currentVendor)) {
+            loadedChunks[currentTab] = 1;
+        }
+    }
 
     // Set up lazy loading with IntersectionObserver
     setupLazyImages();
@@ -604,6 +659,12 @@ function setupLazyImages() {
     });
 }
 
+function filterVendor(vendorName) {
+    currentVendor = vendorName || null;
+    loadedChunks[currentTab] = 1;
+    renderContent();
+}
+
 function filterSubcat(catId) {
     currentSubcat = catId;
     var container = document.getElementById('mainContent');
@@ -635,6 +696,7 @@ function openDetail(pid) {
     var dc = document.getElementById('detailContent');
     dc.innerHTML = '';
     dc.innerHTML += '<img src="' + product.image + '" alt="' + escapeHtml(product.name) + '" loading="lazy" onerror="this.style.display=\'none\'">';
+    if (product.vendor) dc.innerHTML += '<div class="vendor-tag" style="margin-bottom:0.25rem;font-size:0.85rem;color:#888;">Sold by: ' + escapeHtml(product.vendor) + '</div>';
     dc.innerHTML += '<div class="cat-tag">' + escapeHtml(product.category) + '</div>';
     dc.innerHTML += '<h2>' + escapeHtml(product.name) + '</h2>';
 
