@@ -540,56 +540,71 @@ function renderContent() {
         if (catProducts.length === 0) return;
         var sectionId = 'section-' + c.cat_id;
         html += '<div class="subcat-section">';
-        html += '<div class="subcat-heading" onclick="toggleSection(\'' + sectionId + '\')">';
+        html += '<div class="subcat-heading" onclick="toggleSection(\'' + sectionId + '\',\'' + c.cat_id + '\')">';
         html += '<span class="subcat-arrow">&#9654;</span> ';
         html += '<strong>' + escapeHtml(c.name) + '</strong>';
         html += ' <span class="count">(' + catProducts.length + ')</span>';
         html += '</div>';
         html += '<div id="' + sectionId + '" class="subcat-body" style="display:none;">';
-        html += '<div class="grid">';
-        catProducts.forEach(function(p) {
-            html += '<a class="card" href="#product-' + p.id + '" onclick="event.preventDefault(); openDetail(\'' + p.id + '\'); window.location.hash=\'product-' + p.id + '\';">';
-            html += '<div class="card-img" data-src="' + p.image + '" style="background-color:#e8e3dc;"></div>';
-            html += '<div class="card-body">';
-            html += '<div class="cat-tag">' + escapeHtml(p.category) + '</div>';
-            html += '<h3>' + escapeHtml(p.name) + '</h3>';
-            if (p.size_prices) {
-                var sizeHtml = '';
-                for (var size in p.size_prices) {
-                    if (sizeHtml) sizeHtml += ' | ';
-                    sizeHtml += escapeHtml(size) + ': $' + p.size_prices[size].sell;
-                }
-                html += '<div class="price size-price">' + sizeHtml + '</div>';
-            } else if (p.sell_price) {
-                html += '<div class="price">$' + p.sell_price + '</div>';
-            } else {
-                html += '<div class="price"><span class="no-price">Check Price</span></div>';
-            }
-            html += '</div></a>';
-        });
-        html += '</div></div></div>';
+        html += '<div class="lazy-loader" style="text-align:center;padding:1.5rem;color:#aaa;">Click to load products&hellip;</div>';
+        html += '</div></div>';
     });
 
     container.innerHTML = html;
-    setupLazyImages();
 }
 
-function toggleSection(sectionId) {
+function toggleSection(sectionId, catId) {
     var el = document.getElementById(sectionId);
     if (!el) return;
-    var isHidden = el.style.display === 'none';
+    var isHidden = el.style.display === 'none' || el.style.display === '';
+    
+    // First time expanding? Build the product HTML
+    if (isHidden && el.querySelector('.lazy-loader')) {
+        buildCategoryGrid(sectionId, catId);
+    }
+    
     el.style.display = isHidden ? 'block' : 'none';
     var heading = el.previousElementSibling;
     if (heading) {
         var arrow = heading.querySelector('.subcat-arrow');
         if (arrow) arrow.innerHTML = isHidden ? '&#9660;' : '&#9654;';
     }
-    // Load images when section is expanded
     if (isHidden) setupLazyImages();
 }
 
-function filterSubcat(catId) {
-    // No longer needed - replaced by sections
+function buildCategoryGrid(sectionId, catId) {
+    var el = document.getElementById(sectionId);
+    if (!el) return;
+    var tab = TABS.find(function(t) { return t.tab === currentTab; });
+    if (!tab) return;
+    var c = tab.categories.find(function(x) { return x.cat_id === catId; });
+    if (!c) return;
+    var catProducts = PRODUCTS.filter(function(p) {
+        return p.category === c.name && !p.sold_out;
+    });
+    var gridHtml = '<div class="grid">';
+    catProducts.forEach(function(p) {
+        gridHtml += '<a class="card" href="#product-' + p.id + '" onclick="event.preventDefault(); openDetail(\'' + p.id + '\'); window.location.hash=\'product-' + p.id + '\';">';
+        gridHtml += '<div class="card-img" data-src="' + p.image + '" style="background-color:#e8e3dc;"></div>';
+        gridHtml += '<div class="card-body">';
+        gridHtml += '<div class="cat-tag">' + escapeHtml(p.category) + '</div>';
+        gridHtml += '<h3>' + escapeHtml(p.name) + '</h3>';
+        if (p.size_prices) {
+            var sizeHtml = '';
+            for (var size in p.size_prices) {
+                if (sizeHtml) sizeHtml += ' | ';
+                sizeHtml += escapeHtml(size) + ': $' + p.size_prices[size].sell;
+            }
+            gridHtml += '<div class="price size-price">' + sizeHtml + '</div>';
+        } else if (p.sell_price) {
+            gridHtml += '<div class="price">$' + p.sell_price + '</div>';
+        } else {
+            gridHtml += '<div class="price"><span class="no-price">Check Price</span></div>';
+        }
+        gridHtml += '</div></a>';
+    });
+    gridHtml += '</div>';
+    el.innerHTML = gridHtml;
 }
 
 function setupLazyImages() {
@@ -610,25 +625,6 @@ function setupLazyImages() {
 
     document.querySelectorAll('.card-img[data-src]').forEach(function(img) {
         window._imgObserver.observe(img);
-    });
-}
-
-function filterSubcat(catId) {
-    currentSubcat = catId;
-    var container = document.getElementById('mainContent');
-    var grid = container.querySelector('.grid');
-    if (!grid) return;
-    var cards = grid.querySelectorAll('.card');
-    cards.forEach(function(c) {
-        if (catId === '__all__') { c.style.display = ''; return; }
-        var catTag = c.querySelector('.cat-tag');
-        if (!catTag) { c.style.display = ''; return; }
-        var catName = catTag.textContent.trim();
-        var tab = TABS.find(function(t) { return t.tab === currentTab; });
-        if (!tab) { c.style.display = ''; return; }
-        var catEntry = tab.categories.find(function(ce) { return ce.cat_id === catId; });
-        if (!catEntry) { c.style.display = ''; return; }
-        c.style.display = (catName === catEntry.name) ? '' : 'none';
     });
 }
 
