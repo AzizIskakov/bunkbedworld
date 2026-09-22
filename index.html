@@ -780,7 +780,18 @@ function checkHash() {
                 var tab = TABS[ti];
                 for (var ci = 0; ci < tab.categories.length; ci++) {
                     if (tab.categories[ci].name === product.category) {
-                        switchTab(tab.tab);
+                        var savedSubcat = currentSubcat;
+                        var savedTab = currentTab;
+                        // Only switch tab if different to avoid losing subcat filter
+                        if (currentTab !== tab.tab) {
+                            switchTab(tab.tab);
+                        }
+                        // Restore subcat filter for same tab
+                        if (savedSubcat && currentTab === savedTab) {
+                            currentSubcat = savedSubcat;
+                        } else {
+                            currentSubcat = null;
+                        }
                         openDetail(pid);
                         return;
                     }
