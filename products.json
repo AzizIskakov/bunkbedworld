@@ -6613,7 +6613,7 @@
   {
     "id": "b0001",
     "name": "6 Inch Elsa Innerspring Medium Feel, CertiPUR-US Certified Queen",
-    "image": "",
+    "image": "/images/bunkbedworld-elsa-queen.jpg",
     "page": "",
     "category": "Mattresses",
     "size_prices": {
@@ -6698,19 +6698,23 @@
     "category": "Mattresses",
     "size_prices": {
       "Twin": {
-        "cost": 55,
-        "sell": 94
+        "cost": 0,
+        "sell": 70
       },
       "Full": {
-        "cost": 60,
-        "sell": 102
+        "cost": 0,
+        "sell": 80
       },
       "Queen": {
-        "cost": 65,
-        "sell": 110
+        "cost": 0,
+        "sell": 90
+      },
+      "King": {
+        "cost": 0,
+        "sell": 150
       }
     },
-    "vendor": "Happy Homes"
+    "vendor": "BunkBedWorld"
   },
   {
     "id": "p2837",
@@ -6976,9 +6980,27 @@
     "image": "https://www.happyhomesindustries.com/uploads/4/0/5/2/40528873/s388224282203948371_p548_i3_w3872.jpeg?width=640",
     "page": "https://www.happyhomesindustries.com/store/p548/9%22_Foundation__%28Twin%2C_Full%2C_Queen%2C_King%29.html",
     "category": "Mattresses",
-    "vendor": "Happy Homes",
+    "vendor": "BunkBedWorld",
     "color": "Gray",
-    "description": "Available in Twin, Full, Queen, King (2-TXL)\nTwin 7557\nFull 7607\nQueen 7657\nKing 71107"
+    "description": "Available in Twin, Full, Queen, King (2-TXL)\nTwin 7557\nFull 7607\nQueen 7657\nKing 71107",
+    "size_prices": {
+      "Twin": {
+        "cost": 0,
+        "sell": 70
+      },
+      "Full": {
+        "cost": 0,
+        "sell": 80
+      },
+      "Queen": {
+        "cost": 0,
+        "sell": 90
+      },
+      "King": {
+        "cost": 0,
+        "sell": 150
+      }
+    }
   },
   {
     "id": "p3372",
