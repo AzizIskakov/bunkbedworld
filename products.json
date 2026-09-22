@@ -24,9 +24,17 @@
     "material": "Small Cord Fabric",
     "dimensions": "Sofa 83\"L x 35.5\"D x 38.5\"H\nLove 63\"L x 35.5\"D x 38.5\"H\nChair 41\"L x 35.5D x 38.5\"H",
     "description": "Available in 2PC or 3PC Sets",
-    "cost_price": 2,
-    "sell_price": 3,
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "size_prices": {
+      "2PC Set (Sofa + Loveseat)": {
+        "cost": 0,
+        "sell": 499
+      },
+      "3PC Set (Sofa + Loveseat + Chair)": {
+        "cost": 0,
+        "sell": 649
+      }
+    }
   },
   {
     "id": "p3502",
