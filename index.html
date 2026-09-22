@@ -317,34 +317,55 @@
             color: #888;
         }
 
-        .tab-dropdown {
+        /* Mega Menu */
+        .mega-menu {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
-            min-width: 220px;
+            right: 0;
             background: #fff;
-            border: 1px solid #e0ddd8;
-            border-top: none;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            border-bottom: 2px solid #e0ddd8;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
             z-index: 200;
-            padding: 0.5rem 0;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .tab-item.open .tab-dropdown {
-            display: block;
+        .mega-menu.active { display: block; }
+        .mega-menu-wrap {
+            position: relative;
         }
-        .tab-dropdown a {
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.5rem;
+        }
+        @media (max-width: 700px) {
+            .mega-menu-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .mega-link {
             display: block;
-            padding: 0.7rem 1.2rem;
+            padding: 0.7rem 1rem;
             text-decoration: none;
             color: #1a1a2e;
             font-size: 0.9rem;
-            cursor: pointer;
+            font-weight: 500;
+            border-radius: 8px;
             transition: background 0.15s;
+            cursor: pointer;
         }
-        .tab-dropdown a:hover { background: #f8f7f4; }
-        .tab-dropdown a .dcount { float: right; color: #aaa; font-size: 0.8rem; }
+        .mega-link:hover { background: #f8f7f4; }
+        .mega-link .mcount {
+            display: inline-block;
+            background: #e8b86d20;
+            color: #1a1a2e;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.1rem 0.5rem;
+            border-radius: 12px;
+            margin-left: 0.4rem;
+        }
         @media (max-width: 600px) {
             .header { flex-direction: column; text-align: center; }
             .hero h1 { font-size: 1.8rem; }
@@ -370,6 +391,7 @@
 </section>
 
 <nav class="tab-nav" id="tabNav"></nav>
+<div class="mega-menu-wrap"><div class="mega-menu" id="megaMenu"></div></div>
 
 <div class="container" id="mainContent">
     <div class="loading">Loading products...</div>
@@ -419,6 +441,15 @@ function getFilteredProducts(includeSoldOut) {
     if (currentVendor) {
         result = result.filter(function(p) { return p.vendor === currentVendor; });
     }
+    if (currentSubcat && currentSubcat !== '__all__') {
+        var tab = TABS.find(function(t) { return t.tab === currentTab; });
+        if (tab) {
+            var catEntry = tab.categories.find(function(ce) { return ce.cat_id === currentSubcat; });
+            if (catEntry) {
+                result = result.filter(function(p) { return p.category === catEntry.name; });
+            }
+        }
+    }
     return result;
 }
 
@@ -439,18 +470,13 @@ function init() {
         });
 }
 
+var _megaOpen = false;
+var _megaTab = null;
+
 function renderTabs() {
     var nav = document.getElementById('tabNav');
     nav.innerHTML = '';
     TABS.forEach(function(tab) {
-        var available = 0;
-        tab.categories.forEach(function(c) {
-            var count = PRODUCTS.filter(function(p) {
-                return p.category === c.name && !p.sold_out;
-            }).length;
-            available += count;
-        });
-
         var item = document.createElement('div');
         item.className = 'tab-item';
 
@@ -459,36 +485,9 @@ function renderTabs() {
         btn.textContent = tab.tab;
         btn.addEventListener('click', function(e) {
             e.stopPropagation();
-            var allItems = nav.querySelectorAll('.tab-item');
-            allItems.forEach(function(it) {
-                if (it !== item) it.classList.remove('open');
-            });
-            item.classList.toggle('open');
-            switchTab(tab.tab);
+            toggleMegaMenu(tab.tab);
         });
         item.appendChild(btn);
-
-        var dd = document.createElement('div');
-        dd.className = 'tab-dropdown';
-        tab.categories.forEach(function(c) {
-            var cnt = PRODUCTS.filter(function(p) {
-                return p.category === c.name && !p.sold_out;
-            }).length;
-            if (cnt === 0) return;
-            var a = document.createElement('a');
-            a.textContent = c.name + ' ';
-            var dspan = document.createElement('span');
-            dspan.className = 'dcount';
-            dspan.textContent = '(' + cnt + ')';
-            a.appendChild(dspan);
-            a.addEventListener('click', function(e) {
-                e.stopPropagation();
-                filterSubcat(c.cat_id);
-                item.classList.remove('open');
-            });
-            dd.appendChild(a);
-        });
-        item.appendChild(dd);
         nav.appendChild(item);
     });
 
@@ -497,15 +496,64 @@ function renderTabs() {
     if (firstBtn) firstBtn.classList.add('active');
 }
 
-// Close dropdowns when clicking outside
+// Close mega-menu when clicking outside
 document.addEventListener('click', function(e) {
-    var nav = document.getElementById('tabNav');
-    if (nav && !nav.contains(e.target)) {
-        nav.querySelectorAll('.tab-item').forEach(function(it) {
-            it.classList.remove('open');
-        });
+    var mm = document.getElementById('megaMenu');
+    if (mm && mm.classList.contains('active')) {
+        var nav = document.getElementById('tabNav');
+        if (nav && !nav.contains(e.target)) {
+            // Check if click is inside mega-menu
+            if (!mm.contains(e.target)) {
+                closeMegaMenu();
+            }
+        }
     }
 });
+
+function closeMegaMenu() {
+    var mm = document.getElementById('megaMenu');
+    mm.classList.remove('active');
+    mm.innerHTML = '';
+    _megaOpen = false;
+    _megaTab = null;
+}
+
+function toggleMegaMenu(tabName) {
+    if (_megaOpen && _megaTab === tabName) {
+        closeMegaMenu();
+        return;
+    }
+    openMegaMenu(tabName);
+}
+
+function openMegaMenu(tabName) {
+    var mm = document.getElementById('megaMenu');
+    var tab = TABS.find(function(t) { return t.tab === tabName; });
+    if (!tab) return;
+
+    var html = '<div style="display:flex;align-items:center;margin-bottom:1rem;">';
+    html += '<strong style="font-size:1.1rem;color:#1a1a2e;">' + escapeHtml(tabName) + '</strong>';
+    html += '<button onclick="closeMegaMenu();switchTab(\'' + tab.tab.replace(/'/g,"\\'") + '\')" style="margin-left:auto;background:none;border:1px solid #e0ddd8;border-radius:6px;padding:0.3rem 0.8rem;cursor:pointer;font-size:0.85rem;color:#555;">View All &rarr;</button>';
+    html += '</div>';
+    html += '<div class="mega-menu-grid">';
+
+    tab.categories.forEach(function(c) {
+        var cnt = PRODUCTS.filter(function(p) {
+            return p.category === c.name && (typeof p.sold_out === 'undefined' || !p.sold_out);
+        }).length;
+
+        html += '<div class="mega-link" onclick="closeMegaMenu();switchTab(\'' + tab.tab.replace(/'/g,"\\'") + '\');filterSubcat(\'' + c.cat_id + '\');">';
+        html += escapeHtml(c.name);
+        html += ' <span class="mcount">' + cnt + '</span>';
+        html += '</div>';
+    });
+
+    html += '</div>';
+    mm.innerHTML = html;
+    mm.classList.add('active');
+    _megaOpen = true;
+    _megaTab = tabName;
+}
 
 function switchTab(name) {
     currentTab = name;
@@ -600,11 +648,11 @@ function renderContent() {
 
     // Restore subcat filter
     var sel = document.getElementById('subcat');
-    if (sel) sel.value = '__all__';
-    // Reset chunks when vendor changes
-    if (currentVendor !== null && currentVendor !== undefined) {
-        var active = document.querySelector('.vendor-btn.active');
-        if (active && active.textContent.trim() !== (currentVendor === '' ? 'All' : currentVendor)) {
+    if (sel) sel.value = currentSubcat || '__all__';
+    var activeVendorBtn = document.querySelector('.vendor-btn.active');
+    if (activeVendorBtn) {
+        var showingVendor = currentVendor || '';
+        if (activeVendorBtn.textContent.trim() !== (showingVendor === '' ? 'All' : showingVendor)) {
             loadedChunks[currentTab] = 1;
         }
     }
@@ -666,22 +714,9 @@ function filterVendor(vendorName) {
 }
 
 function filterSubcat(catId) {
-    currentSubcat = catId;
-    var container = document.getElementById('mainContent');
-    var grid = container.querySelector('.grid');
-    if (!grid) return;
-    var cards = grid.querySelectorAll('.card');
-    cards.forEach(function(c) {
-        if (catId === '__all__') { c.style.display = ''; return; }
-        var catTag = c.querySelector('.cat-tag');
-        if (!catTag) { c.style.display = ''; return; }
-        var catName = catTag.textContent.trim();
-        var tab = TABS.find(function(t) { return t.tab === currentTab; });
-        if (!tab) { c.style.display = ''; return; }
-        var catEntry = tab.categories.find(function(ce) { return ce.cat_id === catId; });
-        if (!catEntry) { c.style.display = ''; return; }
-        c.style.display = (catName === catEntry.name) ? '' : 'none';
-    });
+    currentSubcat = catId === '__all__' ? null : catId;
+    loadedChunks[currentTab] = 1;
+    renderContent();
 }
 
 function escapeHtml(str) {

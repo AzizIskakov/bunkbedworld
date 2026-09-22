@@ -1,0 +1,15 @@
+{
+  "index": 790,
+  "stats": {
+    "total": 790,
+    "skipped": 754,
+    "fetched": 0,
+    "errors": 25,
+    "updated": 11,
+    "fields_filled": {
+      "description": 8,
+      "material": 2,
+      "color": 1
+    }
+  }
+}

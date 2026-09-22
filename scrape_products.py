@@ -1,266 +1,295 @@
 #!/usr/bin/env python3
 """
-Scrape all Happy Homes product pages to extract color, material, dimensions, and features.
-Uses concurrent.futures with 15 workers for parallel requests.
+Scrape Happy Homes product pages to fill in missing fields.
+Uses urllib for direct HTML fetch, regex for extraction.
 """
-
-import json
-import re
-import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
+import json, re, sys, time, os
 from urllib.request import urlopen, Request
 from urllib.error import HTTPError, URLError
+from html import unescape
 
-INPUT_FILE = "/Users/claw/.openclaw/workspace/bunkbedworld/products.json"
-OUTPUT_FILE = "/Users/claw/.openclaw/workspace/bunkbedworld/products.json"
+PRODUCTS_FILE = os.path.join(os.path.dirname(__file__), 'products.json')
+BATCH_SIZE = 50
+DELAY = 0.5
 
-# Load existing products
-with open(INPUT_FILE, 'r', encoding='utf-8') as f:
-    products = json.load(f)
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 
-print(f"Loaded {len(products)} products")
+# Dimension pattern: lines containing measurements
+DIM_PATTERN = re.compile(
+    r'(?:'
+    # Standard: 72"L x 34" x 37H
+    r'\d+(?:\.\d+)?["\'\u201d\u2033]?\s*(?:(?:L|W|D|H|Width|Depth|Height|Deep|Length)\s*\.?\s*)?(?:[xX\u00d7]\s*\d+(?:\.\d+)?["\'\u201d\u2033]?\s*(?:(?:W|D|H|L|Width|Depth|Height)\s*\.?\s*)?){1,2}'
+    r'|'
+    # Compact: 63Lx30W or 63x57x36H
+    r'\d+(?:["\'\u201d\u2033])?\s*(?:L|W|D|H)?\s*[xX\u00d7]\s*\d+(?:["\'\u201d\u2033])?\s*(?:W|D|H|L)?(?:\s*[xX\u00d7]\s*\d+(?:["\'\u201d\u2033])?\s*(?:W|D|H|L)?)?'
+    r'|'
+    # Width x Depth x Height word format
+    r'(?:Width|Depth|Height|Length|Deep)\s*:?\s*\d+(?:\.\d+)?["\'\u201d\u2033]?'
+    r')'
+)
 
-def fetch_product_page(url):
-    """Fetch a product page and return its HTML text."""
-    try:
-        req = Request(url, headers={
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
-                          'AppleWebKit/537.36 (KHTML, like Gecko) '
-                          'Chrome/120.0.0.0 Safari/537.36'
-        })
-        resp = urlopen(req, timeout=30)
-        html = resp.read().decode('utf-8', errors='replace')
-        return (url, html, None)
-    except Exception as e:
-        return (url, None, str(e))
 
-def strip_html(html):
-    """Remove HTML tags and normalize whitespace."""
-    text = re.sub(r'<[^>]+>', ' ', html)
-    text = re.sub(r'&nbsp;', ' ', text)
-    text = re.sub(r'&amp;', '&', text)
-    text = re.sub(r'&lt;', '<', text)
-    text = re.sub(r'&gt;', '>', text)
-    text = re.sub(r'&quot;', '"', text)
-    text = re.sub(r'\s+', ' ', text).strip()
-    return text
+def is_dimension_line(line):
+    """Check if a line looks like a dimension/measurement."""
+    return bool(DIM_PATTERN.search(line))
 
-def extract_product_info(html_text):
-    """Extract product info from the cleaned page text."""
-    info = {
-        'color': '',
-        'material': '',
-        'dimensions': '',
-        'description': '',
-        'sold_out': False
-    }
 
-    if not html_text:
-        return info
+def fetch_html(url):
+    """Fetch raw HTML from a product page URL."""
+    req = Request(url, headers={'User-Agent': USER_AGENT})
+    resp = urlopen(req, timeout=30)
+    html = resp.read().decode('utf-8', errors='replace')
+    resp.close()
+    return html
 
-    # Check if product is sold out
-    if re.search(r'Sold\s*out', html_text, re.I):
-        info['sold_out'] = True
 
-    # Find the product details area - start from "Item Name" or "Item Number"
-    detail_start = None
-    for keyword in ['Item Name', 'Item Number']:
-        idx = html_text.find(keyword)
-        if idx >= 0:
-            detail_start = idx
+def extract_product_details(html):
+    """Extract structured fields from Happy Homes product page HTML."""
+    result = {}
+
+    # Extract page title
+    m = re.search(r'<title>(.*?)</title>', html, re.DOTALL | re.IGNORECASE)
+    if m:
+        result['page_title'] = unescape(m.group(1).strip())
+
+    # Find the product description section
+    desc_match = re.search(
+        r'<div[^>]*id="wsite-com-product-short-description"[^>]*>.*?<div class="paragraph">(.*?)</div>',
+        html, re.DOTALL | re.IGNORECASE
+    )
+
+    if not desc_match:
+        return result
+
+    content_html = desc_match.group(1)
+
+    # Extract clean text lines from the paragraph
+    # Each <p> becomes a line, each <li> becomes a line
+    clean_text = re.sub(r'<br\s*/?>', '\n', content_html)
+    clean_text = re.sub(r'</p>', '\n', clean_text)
+    clean_text = re.sub(r'</li>', '\n', clean_text)
+    clean_text = re.sub(r'<[^>]+>', '', clean_text)
+    clean_text = unescape(clean_text)
+
+    lines = [l.strip() for l in clean_text.split('\n') if l.strip()]
+    if not lines:
+        return result
+
+    result['lines'] = lines  # for debugging
+
+    # Remove zero-width spaces
+    lines = [l.replace('\u200b', '') for l in lines]
+
+    # Extract labeled fields
+    for label, key in [('Item Name', 'item_name'), ('Color', 'color'), ('Material', 'material')]:
+        for line in lines:
+            m = re.search(r'^{}:\s*(.*)$'.format(label), line, re.IGNORECASE)
+            if m:
+                val = m.group(1).strip()
+                if val:
+                    result[key] = val
+                break
+
+    # Find Dimensions block
+    dim_start_idx = None
+    dim_value_line = False
+    for i, line in enumerate(lines):
+        m = re.search(r'^(?:Dimensions?):\s*(.*)$', line, re.IGNORECASE)
+        if m:
+            dim_start_idx = i
+            dim_value = m.group(1).strip()
+            if dim_value:
+                # Value is on the same line
+                result['dimensions'] = dim_value
+                dim_value_line = True
             break
 
-    if detail_start is None:
-        return info
-
-    # Get text from detail start to "Facebook" or "Quantity" (end of product info area)
-    detail_end = None
-    for end_key in ['Facebook', 'Quantity', 'Buy Now', 'socialize']:
-        idx = html_text.find(end_key, detail_start)
-        if idx >= 0:
-            detail_end = idx + 100  # include a bit
-            break
-    if detail_end is None:
-        detail_end = 2000  # just take enough
-
-    detail_text = html_text[detail_start:detail_end].strip()
-    detail_text = re.sub(r'\s+', ' ', detail_text)
-
-    # Extract Color
-    color_match = re.search(r'Color:\s*([^\d\n][^R]*?)(?=\s*(?:Material|Dimensions|Features|\*{1,3}|Retail Code|Facebook|SKU))', detail_text)
-    if color_match:
-        color = color_match.group(1).strip()
-        # If color is too long, it's probably not right
-        if len(color) < 40:
-            info['color'] = color
-
-    # Extract Material
-    material_match = re.search(r'Material:\s*([^:\n]*?)(?=\s*(?:Color|Dimensions|Features|\*|Retail Code|\-\s))', detail_text)
-    if not material_match:
-        material_match = re.search(r'Material:\s*([^:\n]+)', detail_text)
-    if material_match:
-        mat = material_match.group(1).strip()
-        if len(mat) < 50:
-            info['material'] = mat
-
-    # Extract dimensions - multiple patterns
-    dims_parts = []
-    for dim_keyword in ['Dimensions:', 'Dimension:', 'Dimensions']:
-        # Pattern 1: "Dimensions: value" followed by more dimension lines
-        dim_matches = re.finditer(
-            r'''(?:Dimensions?:?|(?:Sofa|Loveseat|Chair|Ottoman|Bed|Twin|Full|Queen|King|RAF|LAF|Storage|Trundle|Left|Right))'''
-            r'''[:\s]*(\d+\.?\d*["'']?\s*[xX×]\s*\d+\.?\d*["'']?\s*[xX××⁠]\s*\d+\.?\d*["'']?(?:\s*[xX]\s*\d+\.?\d*["'']?)?)|'''
-            r'''(\d+["'']?\s*[xX×]\s*\d+["'']?(?:\s*[xX]\s*\d+["'']?)?)''',
-            detail_text
-        )
-        for m in dim_matches:
-            val = m.group(0).strip()
-            if len(val) > 5 and val not in dims_parts:
-                dims_parts.append(val)
-
-    # Also check for dimension lines preceding them
-    # Pattern like "63Lx30W" or "87.5\" x 39\" x 41.25\""
-    dim_pattern = r'(\d+["\']?\s*[xX×]\s*\d+["\']?(?:\s*[xX×]\s*\d+["\']?)?(?:\s*[xX×]\s*\d+["\']?)?)'
-    for m in re.finditer(dim_pattern, detail_text):
-        val = m.group(1).strip()
-        if len(val) > 5 and val not in dims_parts:
-            dims_parts.append(val)
-
-    if dims_parts:
-        info['dimensions'] = '; '.join(dims_parts)
-
-    # Extract description/features
-    # Collect descriptive lines
-    desc_lines = []
-    
-    # Lines wrapped in ***...*** or *...* that aren't dimensions
-    for m in re.finditer(r'\*{1,3}([^*]+)\*{1,3}', detail_text):
-        line = m.group(1).strip()
-        # Skip if it's just a dimension label
-        if re.match(r'^[\d"]+.*[xX×]', line):
-            continue
-        if line and len(line) > 3 and line not in desc_lines:
-            desc_lines.append(line)
-    
-    # Lines starting with "- " (bullet points)
-    for m in re.finditer(r'-\s+([^-].*?)(?=\s*-\s+|\s*(?:Retail Code|Facebook|Quantity|$))', detail_text + ' '):
-        line = m.group(1).strip()
-        if line and len(line) > 3 and line not in desc_lines:
-            # Skip lines that are clearly SKU/Retail/Codes
-            if not re.match(r'^(?:Retail Code|SKU|Item Number|Item Name|Color|Material|Dimensions)$', line, re.I):
+    # Find description content (everything between last known label and Retail Code)
+    # This handles pages without explicit 'Dimensions:' label
+    def collect_content_after(start_idx):
+        """Collect content lines from start_idx until Retail Code."""
+        dim_lines = []
+        desc_lines = []
+        in_desc = False
+        for line in lines[start_idx + 1:]:
+            if re.search(r'^Retail Code', line, re.IGNORECASE):
+                break
+            if not line:
+                continue
+            if not in_desc:
+                if is_dimension_line(line):
+                    dim_lines.append(line)
+                    continue
+                if re.match(r'^\d+[xX]\d+', line):
+                    dim_lines.append(line)
+                    continue
+                in_desc = True
                 desc_lines.append(line)
-
-    # "Features includes" text
-    features_match = re.search(r'Features\s+(?:includes|include)?\s*[:\-]?\s*(.+?)(?=\s*(?:Retail Code|Facebook|Quantity|$))', detail_text)
-    if features_match:
-        feat_text = features_match.group(1).strip()
-        if feat_text and len(feat_text) > 5:
-            desc_lines.append(feat_text)
-
-    # "Description:" text
-    desc_match = re.search(r'Description:\s*(.+?)(?=\s*(?:Dimensions?|Features|Retail Code|Facebook|Quantity|$))', detail_text)
-    if desc_match:
-        desc_text = desc_match.group(1).strip()
-        if desc_text and len(desc_text) > 5:
-            desc_lines.append(desc_text)
-
-    # Lines that look like feature descriptions (not labels we already extracted)
-    # e.g. "*** Oversized Set***" from the raw text
-    # Check for bold/emphasized text between *** markers already covered above
-    
-    if desc_lines:
-        # Deduplicate
-        seen = set()
-        unique_lines = []
-        for line in desc_lines:
-            if line.lower() not in seen:
-                seen.add(line.lower())
-                unique_lines.append(line)
-        info['description'] = '\n'.join(unique_lines)
-
-    return info
-
-
-def process_products():
-    """Main processing function."""
-    results = {}
-    urls = []
-    id_to_product = {}
-    
-    for product in products:
-        pid = product['id']
-        url = product['page']
-        urls.append((pid, url))
-        id_to_product[pid] = product
-
-    total = len(urls)
-    completed = 0
-    failed = 0
-    start_time = time.time()
-
-    print(f"\nStarting to scrape {total} product pages with 15 concurrent workers...\n")
-
-    with ThreadPoolExecutor(max_workers=15) as executor:
-        future_map = {}
-        for pid, url in urls:
-            future = executor.submit(fetch_product_page, url)
-            future_map[future] = (pid, url)
-
-        for future in as_completed(future_map):
-            pid, url = future_map[future]
-            url_result, html, error = future.result()
-
-            completed += 1
-            if error:
-                print(f"[FAIL] {pid} ({completed}/{total}): {error[:60]}")
-                failed += 1
             else:
-                text = strip_html(html)
-                info = extract_product_info(text)
-                results[pid] = info
+                desc_lines.append(line)
+        return dim_lines, desc_lines
 
-                # Nice progress display
-                if completed % 50 == 0:
-                    elapsed = time.time() - start_time
-                    rate = completed / elapsed if elapsed > 0 else 0
-                    remaining = total - completed
-                    eta = remaining / rate if rate > 0 else 0
-                    print(f"[OK] {completed}/{total} in {elapsed:.0f}s ({rate:.1f}/s, ETA {eta:.0f}s)")
+    # Collect dimension lines and description lines
+    if dim_start_idx is not None and not dim_value_line:
+        dim_lines, desc_lines = collect_content_after(dim_start_idx)
+        if dim_lines:
+            result['dimensions'] = '\n'.join(dim_lines)
+        if desc_lines:
+            result['description'] = '\n'.join(desc_lines)
 
-    # Update products with extracted data
-    updated_count = 0
-    for product in products:
-        pid = product['id']
-        if pid in results:
-            info = results[pid]
-            had_data = any([info['color'], info['material'], info['dimensions'], info['description']])
-            if had_data or info['sold_out']:
-                if info['sold_out']:
-                    product['sold_out'] = True
-                    updated_count += 1
-                    print(f"  Sold out: {product.get('name', product['id'])} ({product.get('page', '')})")
-                if info['color']:
-                    product['color'] = info['color']
-                if info['material']:
-                    product['material'] = info['material']
-                if info['dimensions']:
-                    product['dimensions'] = info['dimensions']
-                if info['description']:
-                    product['description'] = info['description']
+    # If no Dimensions label found but we have Color/Material, collect description after last known label
+    if 'dimensions' not in result and 'description' not in result:
+        # Find the last label index (Item Name, Color, or Material)
+        last_label_idx = -1
+        for i, line in enumerate(lines):
+            if re.search(r'^(?:Item Name|Color|Material):', line, re.IGNORECASE):
+                last_label_idx = i
+        if last_label_idx >= 0:
+            dim_lines, desc_lines = collect_content_after(last_label_idx)
+            if dim_lines:
+                result['dimensions'] = '\n'.join(dim_lines)
+            if desc_lines:
+                result['description'] = '\n'.join(desc_lines)
 
-    elapsed = time.time() - start_time
-    print(f"\n=== COMPLETE ===")
-    print(f"Total: {total} | Updated: {updated_count} | Failed: {failed} | Time: {elapsed:.0f}s")
-    if total > 0:
-        print(f"Rate: {total/elapsed:.1f} pages/sec")
+    # Also try to extract name from <h1> or product name section
+    for pat in [
+        r'<h1[^>]*class="wsite-com-title"[^>]*>(.*?)</h1>',
+        r'<div[^>]*id="wsite-com-product-title"[^>]*>(.*?)</div>',
+    ]:
+        m = re.search(pat, html, re.DOTALL | re.IGNORECASE)
+        if m:
+            val = unescape(re.sub(r'<[^>]+>', '', m.group(1)).strip())
+            if val:
+                result['product_name'] = val
+                break
 
-    # Write updated products
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        json.dump(products, f, indent=2, ensure_ascii=False)
+    return result
 
-    print(f"Written to {OUTPUT_FILE}")
-    return products
+
+def update_product(p, details):
+    """Update a single product with extracted data. Returns True if changed."""
+    changed = False
+    for field, key in [('color', 'color'), ('material', 'material'),
+                       ('dimensions', 'dimensions'), ('description', 'description')]:
+        if key in details and details[key]:
+            existing = p.get(field, '')
+            if not existing or not str(existing).strip():
+                p[field] = details[key]
+                changed = True
+    return changed
+
+
+def save_products(data):
+    """Save products to JSON file."""
+    with open(PRODUCTS_FILE, 'w') as f:
+        json.dump(data, f, indent=2)
+
+
+def count_incomplete(products):
+    """Count products missing any required fields."""
+    count = 0
+    for p in products:
+        for field in ['description', 'dimensions', 'color', 'material']:
+            val = p.get(field)
+            if not val or str(val).strip() == '':
+                count += 1
+                break
+    return count
+
+
+def main():
+    with open(PRODUCTS_FILE) as f:
+        data = json.load(f)
+    products = data if isinstance(data, list) else data['products']
+
+    # Build incomplete index list
+    incomplete = []
+    for i, p in enumerate(products):
+        for field in ['description', 'dimensions', 'color', 'material']:
+            val = p.get(field)
+            if not val or str(val).strip() == '':
+                incomplete.append(i)
+                break
+
+    total = len(incomplete)
+    print(f'Total products: {len(products)}')
+    print(f'Products needing scrape: {total}')
+    print(f'Complete products: {len(products) - total}')
+
+    if not incomplete:
+        print('All products complete!')
+        return
+
+    batch_count = (total + BATCH_SIZE - 1) // BATCH_SIZE
+    all_updated = 0
+    fetch_count = 0
+
+    for batch_num in range(batch_count):
+        batch_start = batch_num * BATCH_SIZE
+        batch_end = min(batch_start + BATCH_SIZE, total)
+        batch_indices = incomplete[batch_start:batch_end]
+
+        print(f'\n--- Batch {batch_num + 1}/{batch_count} (indices {batch_start + 1}-{batch_end}) ---')
+
+        batch_results = []
+        for idx in batch_indices:
+            p = products[idx]
+            url = p.get('page', '')
+            if not url:
+                print(f'  [{idx}] No URL -> skip')
+                continue
+
+            name = p.get('name', '?')
+            print(f'  [{idx}] {name[:50]}', end=' ')
+            sys.stdout.flush()
+
+            try:
+                html = fetch_html(url)
+                fetch_count += 1
+                details = extract_product_details(html)
+
+                if not details:
+                    print('-> (no data)')
+                    batch_results.append((idx, {}))
+                    continue
+
+                # Check what we extracted
+                got = []
+                for key in ['color', 'material', 'dimensions', 'description']:
+                    if key in details:
+                        got.append(key)
+                print(f'-> {", ".join(got) if got else "nothing"}')
+                batch_results.append((idx, details))
+
+            except HTTPError as e:
+                print(f'-> HTTP {e.code}')
+                batch_results.append((idx, {}))
+            except Exception as e:
+                print(f'-> Error: {e}')
+                batch_results.append((idx, {}))
+                import traceback
+                traceback.print_exc()
+
+            time.sleep(DELAY)
+
+        # Update products
+        batch_updated = 0
+        for idx, details in batch_results:
+            if update_product(products[idx], details):
+                batch_updated += 1
+
+        all_updated += batch_updated
+        print(f'  Updated: {batch_updated} in this batch')
+        save_products(data)
+        remaining = count_incomplete(products)
+        print(f'  Remaining incomplete: {remaining}/{total}')
+        print(f'  Total fetches so far: {fetch_count}')
+
+    print(f'\n========== COMPLETE ==========')
+    print(f'Total products updated: {all_updated}')
+    print(f'Remaining incomplete: {count_incomplete(products)}')
+    print(f'Total HTTP fetches: {fetch_count}')
 
 
 if __name__ == '__main__':
-    process_products()
+    main()
