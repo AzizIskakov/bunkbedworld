@@ -6661,23 +6661,23 @@
     "description": "Dark Gray 1.5IN THICK",
     "size_prices": {
       "Twin": {
-        "cost": 40,
-        "sell": 68
+        "cost": 0,
+        "sell": 50
       },
       "Full": {
-        "cost": 45,
-        "sell": 76
+        "cost": 0,
+        "sell": 60
       },
       "Queen": {
-        "cost": 50,
-        "sell": 85
+        "cost": 0,
+        "sell": 70
       },
       "King": {
-        "cost": 80,
-        "sell": 136
+        "cost": 0,
+        "sell": 120
       }
     },
-    "vendor": "Happy Homes"
+    "vendor": "BunkBedWorld"
   },
   {
     "id": "p866",
