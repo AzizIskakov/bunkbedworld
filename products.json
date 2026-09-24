@@ -4830,6 +4830,27 @@
     "description": "Made with hardwood solids, birch veneer and MDF substrate\nSide rails feature laminated solid hardwood slat support rails (or LVL) with glued and screwed blocking for added strength\nMulti-step brown finish using stains and glaze with hand-rubbed details\nLarge metal oval knobs with antiqued brass-tone finish\nSmooth-gliding drawers with fully finished interiors, dovetail construction and heavy-duty ball-bearing side glides\nTop drawers felt lined\n110V power supply with USB-A and USB-C charging ports (Nightstand)\nPower cord included; UL Listed (Nightstand)"
   },
   {
+    "id": "b0003",
+    "name": "Dos Hermanos - Bunk Bed",
+    "image": "/images/bunkbedworld-dos-hermanos-1.jpg",
+    "images": [
+      "/images/bunkbedworld-dos-hermanos-1.jpg",
+      "/images/bunkbedworld-dos-hermanos-2.jpg",
+      "/images/bunkbedworld-dos-hermanos-3.jpg",
+      "/images/bunkbedworld-dos-hermanos-4.jpg",
+      "/images/bunkbedworld-dos-hermanos-5.jpg"
+    ],
+    "page": "https://generationtrade.com/product/dos-hermanos-bunk-bed/",
+    "category": "Bunk Beds",
+    "color": "",
+    "material": "",
+    "dimensions": "",
+    "description": "Dos Hermanos Bunk Bed.",
+    "sell_price": 199,
+    "vendor": "BunkBedWorld",
+    "sale": true
+  },
+  {
     "id": "b0002",
     "name": "Caribou - Twin/Twin Bunkbed - Dark Oak",
     "image": "/images/bunkbedworld-caribou-tt-1.jpg",
