@@ -223,6 +223,52 @@
             border-radius: 12px;
             margin-bottom: 1.5rem;
         }
+        .carousel { position: relative; width: 100%; margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden; }
+        .car-track { position: relative; }
+        .car-slide { display: none; }
+        .car-slide.active { display: block; }
+        .car-slide img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 0;
+        }
+        .car-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(26,26,46,0.55);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 38px; height: 38px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            z-index: 2;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s;
+        }
+        .car-btn:hover { background: rgba(26,26,46,0.85); }
+        .car-prev { left: 10px; }
+        .car-next { right: 10px; }
+        .car-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 0; right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            z-index: 2;
+        }
+        .car-dot {
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.6);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .car-dot.active { background: #e8b86d; }
         .detail-card h2 { font-size: 1.5rem; color: #1a1a2e; margin-bottom: 0.5rem; }
         .detail-card .cat-tag {
             font-size: 0.82rem; color: #e8b86d; font-weight: 600;
@@ -730,7 +776,26 @@ function openDetail(pid) {
     if (!product) return;
     var dc = document.getElementById('detailContent');
     dc.innerHTML = '';
-    dc.innerHTML += '<img src="' + product.image + '" alt="' + escapeHtml(product.name) + '" loading="lazy" onerror="this.style.display=\'none\'">';
+    // Image carousel (if multiple images) or single image
+    var imgs = (product.images && product.images.length) ? product.images : (product.image ? [product.image] : []);
+    if (imgs.length > 1) {
+        var carHtml = '<div class="carousel" id="carousel">';
+        carHtml += '<button class="car-btn car-prev" onclick="carouselMove(-1)" aria-label="Previous">&#10094;</button>';
+        carHtml += '<div class="car-track">';
+        imgs.forEach(function(src, i) {
+            carHtml += '<div class="car-slide' + (i === 0 ? ' active' : '') + '"><img src="' + src + '" alt="' + escapeHtml(product.name) + ' (' + (i + 1) + ')" loading="lazy" onerror="this.style.display=\'none\'"></div>';
+        });
+        carHtml += '</div>';
+        carHtml += '<button class="car-btn car-next" onclick="carouselMove(1)" aria-label="Next">&#10095;</button>';
+        carHtml += '<div class="car-dots">';
+        imgs.forEach(function(src, i) {
+            carHtml += '<span class="car-dot' + (i === 0 ? ' active' : '') + '" onclick="carouselGo(' + i + ')"></span>';
+        });
+        carHtml += '</div></div>';
+        dc.innerHTML += carHtml;
+    } else if (imgs.length === 1) {
+        dc.innerHTML += '<img src="' + imgs[0] + '" alt="' + escapeHtml(product.name) + '" loading="lazy" onerror="this.style.display=\'none\'">';
+    }
     if (product.vendor) dc.innerHTML += '<div class="vendor-tag" style="margin-bottom:0.25rem;font-size:0.85rem;color:#888;">Sold by: ' + escapeHtml(product.vendor) + '</div>';
     dc.innerHTML += '<div class="cat-tag">' + escapeHtml(product.category) + '</div>';
     dc.innerHTML += '<h2>' + escapeHtml(product.name) + '</h2>';
@@ -760,6 +825,36 @@ function openDetail(pid) {
     // Price shown above
     document.getElementById('detailOverlay').classList.add('active');
     document.body.style.overflow = 'hidden';
+}
+
+function carouselGo(idx) {
+    var car = document.getElementById('carousel');
+    if (!car) return;
+    var slides = car.querySelectorAll('.car-slide');
+    var dots = car.querySelectorAll('.car-dot');
+    if (!slides.length) return;
+    var current = 0;
+    for (var i = 0; i < slides.length; i++) {
+        if (slides[i].classList.contains('active')) current = i;
+    }
+    var next = ((idx % slides.length) + slides.length) % slides.length;
+    slides[current].classList.remove('active');
+    slides[next].classList.add('active');
+    if (dots.length) {
+        dots[current].classList.remove('active');
+        dots[next].classList.add('active');
+    }
+}
+
+function carouselMove(dir) {
+    var car = document.getElementById('carousel');
+    if (!car) return;
+    var slides = car.querySelectorAll('.car-slide');
+    var current = 0;
+    for (var i = 0; i < slides.length; i++) {
+        if (slides[i].classList.contains('active')) current = i;
+    }
+    carouselGo(current + dir);
 }
 
 function closeDetail(e) {
