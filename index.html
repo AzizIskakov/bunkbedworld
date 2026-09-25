@@ -324,7 +324,19 @@
             border-radius: 8px;
             margin: 0.5rem 0 1rem;
         }
-        .card-body .price {
+        .card-body .price-tag .sale-tag, .price .sale-tag {
+    display: inline-block;
+    background: #d92d20;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+.price {
             font-weight: 700;
             color: #1a1a2e;
             font-size: 0.9rem;
@@ -462,7 +474,7 @@
 <script>
 // ==== ALL PRODUCT DATA ==== (loaded from products.json)
 // ==== TAB STRUCTURE ====
-var TABS = [{"tab": "Living Room", "categories": [{"name": "Stationary Sofa & Loveseats", "count": 72, "cat_id": "c23"}, {"name": "Stationary Sectionals", "count": 72, "cat_id": "c21"}, {"name": "Reclining Sofa & Loveseats", "count": 72, "cat_id": "c19"}, {"name": "Reclining Sectionals", "count": 32, "cat_id": "c32"}, {"name": "Recliners & Lift Chairs", "count": 45, "cat_id": "c10"}, {"name": "Occasional Tables", "count": 63, "cat_id": "c14"}, {"name": "TV Stands", "count": 26, "cat_id": "c11"}, {"name": "Sleepers & Futons", "count": 50, "cat_id": "c24"}, {"name": "Accessories", "count": 60, "cat_id": "c22"}, {"name": "Office & Bookcase", "count": 14, "cat_id": "c25"}]}, {"tab": "Bed Room", "categories": [{"name": "Beds", "count": 72, "cat_id": "c30"}, {"name": "Bedrooms", "count": 60, "cat_id": "c7"}, {"name": "Daybeds", "count": 5, "cat_id": "c31"}, {"name": "Mattresses", "count": 31, "cat_id": "c17"}, {"name": "Vanities & Mirrors", "count": 9, "cat_id": "c29"}]}, {"tab": "Dining Room", "categories": [{"name": "Dining Rooms", "count": 72, "cat_id": "c8"}, {"name": "Barstools", "count": 19, "cat_id": "c28"}]}, {"tab": "Bunk Beds", "categories": [{"name": "Bunk Beds", "count": 16, "cat_id": "c9"}]}];
+var TABS = [{"tab": "Living Room", "categories": [{"name": "Stationary Sofa & Loveseats", "count": 72, "cat_id": "c23"}, {"name": "Stationary Sectionals", "count": 72, "cat_id": "c21"}, {"name": "Reclining Sofa & Loveseats", "count": 72, "cat_id": "c19"}, {"name": "Reclining Sectionals", "count": 32, "cat_id": "c32"}, {"name": "Recliners & Lift Chairs", "count": 45, "cat_id": "c10"}, {"name": "Occasional Tables", "count": 63, "cat_id": "c14"}, {"name": "TV Stands", "count": 26, "cat_id": "c11"}, {"name": "Sleepers & Futons", "count": 50, "cat_id": "c24"}, {"name": "Accessories", "count": 60, "cat_id": "c22"}, {"name": "Office & Bookcase", "count": 14, "cat_id": "c25"}]}, {"tab": "Bed Room", "categories": [{"name": "Beds", "count": 72, "cat_id": "c30"}, {"name": "Bedrooms", "count": 60, "cat_id": "c7"}, {"name": "Daybeds", "count": 5, "cat_id": "c31"}, {"name": "Mattresses", "count": 31, "cat_id": "c17"}, {"name": "Vanities & Mirrors", "count": 9, "cat_id": "c29"}]}, {"tab": "Dining Room", "categories": [{"name": "Dining Rooms", "count": 72, "cat_id": "c8"}, {"name": "Barstools", "count": 19, "cat_id": "c28"}]}, {"tab": "Bunk Beds", "categories": [{"name": "Bunk Beds", "count": 16, "cat_id": "c9"}, {"name": "Loft Beds", "count": 0, "cat_id": "c33"}]}];
 
 // Current state
 var currentTab = "Living Room";
@@ -668,7 +680,9 @@ function renderContent() {
             }
             html += '<div class="price size-price">' + sizeHtml + '</div>';
         } else if (p.sell_price) {
-            html += '<div class="price">$' + p.sell_price + '</div>';
+            html += '<div class="price">';
+                    if (p.sale) html += '<span class="sale-tag">SALE</span> ';
+                    html += '$' + p.sell_price + '</div>';
         } else {
             html += '<div class="price"><span class="no-price">Check Price</span></div>';
         }
@@ -809,7 +823,9 @@ function openDetail(pid) {
         }
         dc.innerHTML += '<div class="price-tag size-prices">' + sizePriceHtml + '</div>';
     } else if (product.sell_price) {
-        dc.innerHTML += '<div class="price-tag">$' + product.sell_price + '</div>';
+        dc.innerHTML += '<div class="price-tag">';
+                    if (product.sale) dc.innerHTML += '<span class="sale-tag">SALE</span> ';
+                    dc.innerHTML += '$' + product.sell_price + '</div>';
     }
 
     // Show product details from scraping

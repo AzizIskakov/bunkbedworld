@@ -13273,6 +13273,24 @@
     "vendor": "Happy Homes"
   },
   {
+    "id": "b0004",
+    "name": "Sofa and Loveseat On SALE",
+    "image": "/images/bunkbedworld-sofa-sale-1.jpg",
+    "images": [
+      "/images/bunkbedworld-sofa-sale-1.jpg",
+      "/images/bunkbedworld-sofa-sale-2.jpg",
+      "/images/bunkbedworld-sofa-sale-3.jpg"
+    ],
+    "category": "Stationary Sofa & Loveseats",
+    "color": "Light Grey",
+    "material": "Fabric",
+    "dimensions": "",
+    "description": "Sofa and loveseat set with coffee table.",
+    "sell_price": 599,
+    "vendor": "BunkBedWorld",
+    "sale": true
+  },
+  {
     "id": "p3477",
     "name": "110 LATTE - Sofa & Loveseat Set",
     "image": "https://www.happyhomesindustries.com/uploads/4/0/5/2/40528873/s388224282203948371_p3477_i4_w1616.jpeg?width=640",
