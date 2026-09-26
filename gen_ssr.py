@@ -103,7 +103,9 @@ for tname, cnames in tab_groups:
 js = '''
 var P=[];
 var ct=null,cn=null,ci={};
-var LR_LOADED=true;
+var LR_LOADED=false;
+
+fetch('/products.json').then(function(r){return r.json()}).then(function(d){P=d;LR_LOADED=true;}).catch(function(){});
 
 function esc(s){if(!s)return'';var d=document.createElement('div');d.appendChild(document.createTextNode(s));return d.innerHTML.replace(/\\n/g,'<br>')}
 function jq(s){return JSON.stringify(s)}
