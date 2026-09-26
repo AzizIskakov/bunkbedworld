@@ -10930,16 +10930,16 @@ function rc(){
 
   fp.forEach(function(p){
     var imgs=p.images||[];
-    h+='<a class="card" onclick="event.preventDefault();od(''+p.id+'')">';
+    h+='<a class="card" onclick="event.preventDefault();od(\''+p.id+'\')">';
     if(imgs.length==0){h+='<div class="ni">No Image</div>'}
     else if(imgs.length==1){h+='<div class="cc"><div class="cs a" style="background-image:url('+jq(imgs[0])+')"></div></div>'}
     else{
       h+='<div class="cc" id="c'+p.id+'">';
       imgs.forEach(function(img,i){h+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+jq(img)+')"></div>'});
-      h+='<button class="cb" onclick="event.stopPropagation();cm(''+p.id+'',-1)">‹</button>';
-      h+='<button class="cb n" onclick="event.stopPropagation();cm(''+p.id+'',1)">›</button>';
+      h+='<button class="cb" onclick="event.stopPropagation();cm(\''+p.id+'\',-1)">‹</button>';
+      h+='<button class="cb n" onclick="event.stopPropagation();cm(\''+p.id+'\',1)">›</button>';
       h+='<div class="cd">';
-      imgs.forEach(function(img,i){h+='<span'+(i==0?' class="a"':'')+' onclick="event.stopPropagation();cg(''+p.id+'','+i+')"></span>'});
+      imgs.forEach(function(img,i){h+='<span'+(i==0?' class="a"':'')+' onclick="event.stopPropagation();cg(\''+p.id+'\','+i+')"></span>'});
       h+='</div></div>';
     }
     h+='<div class="card-body"><div class="ct">'+p.cat+'</div><h3>'+esc(p.name)+'</h3><div class="pt">$'+p.price+'</div></div></a>';
@@ -10992,10 +10992,10 @@ function od(id){
     d.innerHTML+='<div class="dc-car" id="dc-'+id+'">';
     imgs.forEach(function(img,i){d.innerHTML+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+jq(img)+')"></div>'});
     if(imgs.length>1){
-      d.innerHTML+='<button class="cb" onclick="event.stopPropagation();dm(''+id+'',-1)">‹</button>';
-      d.innerHTML+='<button class="cb n" onclick="event.stopPropagation();dm(''+id+'',1)">›</button>';
+      d.innerHTML+='<button class="cb" onclick="event.stopPropagation();dm(\''+id+'\',-1)">‹</button>';
+      d.innerHTML+='<button class="cb n" onclick="event.stopPropagation();dm(\''+id+'\',1)">›</button>';
       d.innerHTML+='<div class="cd">';
-      imgs.forEach(function(img,i){d.innerHTML+='<span'+(i==0?' class="a"':'')+' onclick="event.stopPropagation();dg(''+id+'','+i+')"></span>'});
+      imgs.forEach(function(img,i){d.innerHTML+='<span'+(i==0?' class="a"':'')+' onclick="event.stopPropagation();dg(\''+id+'\','+i+')"></span>'});
       d.innerHTML+='</div>';
     }
     d.innerHTML+='</div>';
