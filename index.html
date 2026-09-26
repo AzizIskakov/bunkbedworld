@@ -397,7 +397,7 @@ function openDetail(pid) {
     if (!product) return;
     var dc = document.getElementById('detailContent');
     dc.innerHTML = '';
-    dc.innerHTML += '<img src="' + product.image + '" alt="' + product.name + '" onerror="this.style.display='none'">';
+    dc.innerHTML += '<img src="' + product.image + '" alt="' + product.name + '" onerror="this.style.display=\'none\'">';
     dc.innerHTML += '<div class="cat-tag">' + product.category + '</div>';
     dc.innerHTML += '<h2>' + product.name + '</h2>';
     dc.innerHTML += '<div class="price-badge">Call for Price</div><br>';
