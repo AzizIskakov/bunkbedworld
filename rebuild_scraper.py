@@ -425,8 +425,7 @@ body{{font-family:system-ui,'Inter',sans-serif;background:#f8f7f4;color:#2c2c2c}
 .dc .ct{{font-size:.8rem;color:#e8b86d;font-weight:600;text-transform:uppercase;margin-bottom:.8rem}}
 .dc .pb{{display:inline-block;background:#e8b86d20;color:#1a1a2e;font-weight:700;font-size:1.3rem;padding:8px 24px;border-radius:8px;margin:.5rem 0}}
 .dc .ds{{margin-top:.8rem;white-space:pre-wrap;font-size:.9rem;color:#555;line-height:1.5}}
-.dc .bh{{display:inline-block;background:#1a1a2e;color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600;margin-top:10px}}
-.dc .bh:hover{{background:#2c2c4e}}
+
 
 .footer{{background:#1a1a2e;color:#888;text-align:center;padding:2rem;margin-top:2rem}}
 .footer strong{{color:#e8b86d}}
@@ -452,9 +451,10 @@ body{{font-family:system-ui,'Inter',sans-serif;background:#f8f7f4;color:#2c2c2c}
 <div class="footer"><p><strong>BunkBedWorld</strong> — founded in Chicago, built for your home.</p></div>
 
 <script>
-var P={pjson};
-var T={tjson};
+var P=[],T={tjson};
 var ct=null,cn=null,ci={{}};
+
+fetch('/products.json').then(function(r){{return r.json()}}).then(function(d){{P=d;init();}}).catch(function(){{document.getElementById('main').innerHTML='<div class="loading">Failed to load products.</div>'}});
 
 function esc(s){{if(!s)return'';var d=document.createElement('div');d.appendChild(document.createTextNode(s));return d.innerHTML.replace(/\\n/g,'<br>')}}
 function jq(s){{return JSON.stringify(s)}}
@@ -571,7 +571,7 @@ function od(id){{
   d.innerHTML+='<div class="ct">'+p.cat+'</div><h2>'+esc(p.name)+'</h2>';
   if(p.price>0)d.innerHTML+='<div class="pb">$'+p.price+'</div><br>';
   if(p.desc)d.innerHTML+='<div class="ds">'+esc(p.desc)+'</div>';
-  d.innerHTML+='<div><a class="bh" href="'+p.page+'" target="_blank">View on Happy Homes →</a></div>';
+
   document.getElementById('ov').classList.add('a');document.body.style.overflow='hidden';
   if(imgs.length>1){{if(window.dt)clearInterval(window.dt);window.dt=setInterval(function(){{dm(id,1)}},4000)}}
 }}
