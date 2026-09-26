@@ -277,17 +277,31 @@ def extract_data(product_url, cat_name):
 
     # Parse Retail Code for 7XXXX7 pattern
     cost_prices = []
-    for m in re.finditer(r'(?:Queen|King|Full|Twin|CK|Cal\s*King|Twin\s*XL)[^:\n]*:\s*-?\s*(7\d{3}7)', retail_raw, re.IGNORECASE):
+    # Strategy 1: look for bed-size-prefixed codes (e.g. Queen: 75297)
+    for m in re.finditer(r'(?:Queen|King|Full|Twin|CK|Cal\s*King|Twin\s*XL)[^:\n]*:\s*-?\s*(7\d{3,4}7)', clean_text, re.IGNORECASE):
         code = m.group(1).strip()
-        if len(code) == 5 and code[0] == '7' and code[-1] == '7':
-            cost_prices.append(int(code[1:-1]))
+        if len(code) >= 5 and code[0] == '7' and code[-1] == '7':
+            vc = int(code[1:-1])
+            if 0 < vc < 9999:
+                cost_prices.append(vc)
 
+    # Strategy 2: find code right after 'Retail Code:' marker
     if not cost_prices:
-        for m in re.finditer(r'(7\d{3}7)', retail_raw):
-            code = m.group(1)
-            if len(code) == 5:
+        m = re.search(r'Retail\s*Code[:\s]+(7\d+?7)\b', clean_text, re.IGNORECASE)
+        if m:
+            code = m.group(1).strip()
+            if len(code) >= 5 and code[0] == '7' and code[-1] == '7':
                 vc = int(code[1:-1])
                 if 0 < vc < 9999:
+                    cost_prices.append(vc)
+
+    # Strategy 3: fallback - any 7XXXX7 pattern in the page (lenient)
+    if not cost_prices:
+        for m in re.finditer(r'(7\d{3,4}7)', clean_text):
+            code = m.group(1)
+            if len(code) >= 5 and code[0] == '7' and code[-1] == '7':
+                vc = int(code[1:-1])
+                if 100 < vc < 9999:
                     cost_prices.append(vc)
 
     cost_price = min(cost_prices) if cost_prices else 0
@@ -356,6 +370,50 @@ def generate_html(products):
         if tc:
             tabs.append({"t": tname, "g": tc})
 
+
+def _render_grid_html(products, cat_names, tab_name):
+    """Render the product grid HTML for a set of categories (server-side)."""
+    fp = [p for p in products if p.get("cat") in cat_names]
+    fp.sort(key=lambda p: p.get("price", 999999))
+    
+    def esc(s):
+        if not s: return ''
+        return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;').replace("'", '&#39;').replace('\n', '<br>')
+    
+    def jq(s):
+        return json.dumps(s)
+    
+    h = '<div class="subcat-bar"><label>Filter:</label>'
+    h += '<select class="subcat-select" onchange="fs(this.value)">'
+    h += '<option value="__all__">All ' + tab_name + '</option>'
+    for i, cn in enumerate(cat_names):
+        h += '<option value="c' + str(i+1) + '">' + cn + ' (' + str(sum(1 for p in fp if p.get("cat") == cn)) + ')</option>'
+    h += '</select></div><div class="grid">'
+    
+    for p in fp:
+        imgs = p.get("images") or []
+        pid = p["id"]
+        h += '<a class="card" onclick="event.preventDefault();od(' + "'" + pid + "'" + ')">'
+        if len(imgs) == 0:
+            h += '<div class="ni">No Image</div>'
+        elif len(imgs) == 1:
+            h += '<div class="cc"><div class="cs a" style="background-image:url(' + imgs[0].replace("'", "%27") + ')"></div></div>'
+        else:
+            h += '<div class="cc" id="c' + pid + '">'
+            for i, img in enumerate(imgs):
+                h += '<div class="cs' + (' a' if i == 0 else '') + '" style="background-image:url(' + img.replace("'", "%27") + ')"></div>'
+            h += '<button class="cb" onclick="event.stopPropagation();cm(' + "'" + pid + "'" + ',-1)">\u2039</button>'
+            h += '<button class="cb n" onclick="event.stopPropagation();cm(' + "'" + pid + "'" + ',1)">\u203A</button>'
+            h += '<div class="cd">'
+            for i in range(len(imgs)):
+                h += '<span' + (' class="a"' if i == 0 else '') + ' onclick="event.stopPropagation();cg(' + "'" + pid + "'," + str(i) + ')"></span>'
+            h += '</div></div>'
+        h += '<div class="card-body"><div class="ct">' + esc(p.get("cat", "")) + '</div><h3>' + esc(p.get("name", "")) + '</h3><div class="pt">$' + str(p.get("price", 0)) + '</div></div></a>'
+    h += '</div>'
+    return h
+
+
+
     all_products = []
     for p in products:
         if "cat" in p and "price" in p:
@@ -369,10 +427,27 @@ def generate_html(products):
 
     pjson = json.dumps(all_products, indent=2)
     tjson = json.dumps(tabs, indent=2)
+    pjson = json.dumps(all_products, indent=2)
 
     # Save simplified products.json for async fetch
     with open("products.json", "w") as f:
         json.dump(all_products, f, indent=2)
+
+    # Generate SSR content: tab buttons HTML + Living Room product grid
+    tabs_html = ""
+    for tg in tab_groups:
+        tot = sum(len(cats.get(cn, [])) for cn in tg[1] if cn in cats)
+        if tot > 0:
+            tabs_html += '<button class="tab-btn' + (' active' if tg[0] == "Living Room" else '') + '">' + tg[0] + '<span class="bc">' + str(tot) + '</span></button>\n'
+
+    lr_cat_names = [cn for cn in tab_groups[0][1] if cn in cats]
+    lr_grid = _render_grid_html(all_products, lr_cat_names, "Living Room")
+
+    # Embed SSR content into the template
+    body_html = '''
+<nav class="tab-nav" id="tabNav">TABS_HTML</nav>
+<div class="container" id="main">LR_GRID</div>'''
+    body_html = body_html.replace("TABS_HTML", tabs_html).replace("LR_GRID", lr_grid)
 
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -453,8 +528,7 @@ body{{font-family:system-ui,'Inter',sans-serif;background:#f8f7f4;color:#2c2c2c}
 
 <div class="header"><div class="logo">BunkBed<span>World</span></div><div class="tagline">Furniture for every room</div></div>
 <div class="hero"><h1>Your Home, <span>Done Right</span></h1><p>From cozy living rooms to bunk beds — find furniture that fits your space and budget.</p></div>
-<nav class="tab-nav" id="tabNav"></nav>
-<div class="container" id="main"><div class="loading">Loading products...</div></div>
+{body_html}
 <div class="ov" id="ov" onclick="ca(event)"><div class="dc" onclick="event.stopPropagation()"><button class="dx" onclick="ca()">✕</button><div id="dco"></div></div></div>
 <div class="footer"><p><strong>BunkBedWorld</strong> — founded in Chicago, built for your home.</p></div>
 
