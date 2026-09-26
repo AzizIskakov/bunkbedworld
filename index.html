@@ -258,10 +258,10 @@ function rc(){
     var imgs=p.images||[];
     h+='<a class="card" onclick="event.preventDefault();od(\''+p.id+'\')">';
     if(imgs.length==0){h+='<div class="ni">No Image</div>'}
-    else if(imgs.length==1){h+='<div class="cc"><div class="cs a" style="background-image:url('+jq(imgs[0])+')"></div></div>'}
+    else if(imgs.length==1){h+='<div class="cc"><div class="cs a" style="background-image:url('+imgs[0]+')"></div></div>'}
     else{
       h+='<div class="cc" id="c'+p.id+'">';
-      imgs.forEach(function(img,i){h+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+jq(img)+')"></div>'});
+      imgs.forEach(function(img,i){h+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+img+')"></div>'});
       h+='<button class="cb" onclick="event.stopPropagation();cm(\''+p.id+'\',-1)">‹</button>';
       h+='<button class="cb n" onclick="event.stopPropagation();cm(\''+p.id+'\',1)">›</button>';
       h+='<div class="cd">';
@@ -316,7 +316,7 @@ function od(id){
   var imgs=p.images||[];
   if(imgs.length){
     d.innerHTML+='<div class="dc-car" id="dc-'+id+'">';
-    imgs.forEach(function(img,i){d.innerHTML+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+jq(img)+')"></div>'});
+    imgs.forEach(function(img,i){d.innerHTML+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+img+')"></div>'});
     if(imgs.length>1){
       d.innerHTML+='<button class="cb" onclick="event.stopPropagation();dm(\''+id+'\',-1)">‹</button>';
       d.innerHTML+='<button class="cb n" onclick="event.stopPropagation();dm(\''+id+'\',1)">›</button>';

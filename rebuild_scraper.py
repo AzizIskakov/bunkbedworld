@@ -326,11 +326,12 @@ def generate_html(products):
     # Group by category, sort by price
     cats = {}
     for p in products:
-        cat = p["category"]
+        cat = p.get("cat") or p.get("category")
+        if not cat: continue
         if cat not in cats: cats[cat] = []
         cats[cat].append(p)
     for cat in cats:
-        cats[cat].sort(key=lambda p: p["sell_price"] if p["sell_price"] > 0 else 999999)
+        cats[cat].sort(key=lambda p: p.get("price") or p.get("sell_price", 0))
 
     # Tab structure
     tab_groups = [
@@ -357,11 +358,14 @@ def generate_html(products):
 
     all_products = []
     for p in products:
-        all_products.append({
-            "id": p["id"], "name": p["name"], "images": p.get("images", []),
-            "page": p["full_url"], "cat": p["category"],
-            "desc": p.get("description", ""), "price": p.get("sell_price", 0),
-        })
+        if "cat" in p and "price" in p:
+            all_products.append(p)
+        else:
+            all_products.append({
+                "id": p["id"], "name": p["name"], "images": p.get("images", []),
+                "page": p.get("full_url", ""), "cat": p["category"],
+                "desc": p.get("description", ""), "price": p.get("sell_price", 0),
+            })
 
     pjson = json.dumps(all_products, indent=2)
     tjson = json.dumps(tabs, indent=2)
@@ -504,10 +508,10 @@ function rc(){{
     var imgs=p.images||[];
     h+='<a class="card" onclick="event.preventDefault();od(\\\''+p.id+'\\')">';
     if(imgs.length==0){{h+='<div class="ni">No Image</div>'}}
-    else if(imgs.length==1){{h+='<div class="cc"><div class="cs a" style="background-image:url('+jq(imgs[0])+')"></div></div>'}}
+    else if(imgs.length==1){{h+='<div class="cc"><div class="cs a" style="background-image:url('+imgs[0]+')"></div></div>'}}
     else{{
       h+='<div class="cc" id="c'+p.id+'">';
-      imgs.forEach(function(img,i){{h+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+jq(img)+')"></div>'}});
+      imgs.forEach(function(img,i){{h+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+img+')"></div>'}});
       h+='<button class="cb" onclick="event.stopPropagation();cm(\\''+p.id+'\\',-1)">‹</button>';
       h+='<button class="cb n" onclick="event.stopPropagation();cm(\\''+p.id+'\\',1)">›</button>';
       h+='<div class="cd">';
@@ -562,7 +566,7 @@ function od(id){{
   var imgs=p.images||[];
   if(imgs.length){{
     d.innerHTML+='<div class="dc-car" id="dc-'+id+'">';
-    imgs.forEach(function(img,i){{d.innerHTML+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+jq(img)+')"></div>'}});
+    imgs.forEach(function(img,i){{d.innerHTML+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+img+')"></div>'}});
     if(imgs.length>1){{
       d.innerHTML+='<button class="cb" onclick="event.stopPropagation();dm(\\''+id+'\\',-1)">‹</button>';
       d.innerHTML+='<button class="cb n" onclick="event.stopPropagation();dm(\\''+id+'\\',1)">›</button>';
