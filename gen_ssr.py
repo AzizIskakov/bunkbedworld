@@ -101,8 +101,9 @@ for tname, cnames in tab_groups:
 # -- JavaScript: setup nav, carousels, detail overlay, tab switching --
 # Keep product data fetched on-demand for other tabs
 js = '''
-var P=[],T=PARSED_TABS;
+var P=[];
 var ct=null,cn=null,ci={};
+var LR_LOADED=true;
 
 function esc(s){if(!s)return'';var d=document.createElement('div');d.appendChild(document.createTextNode(s));return d.innerHTML.replace(/\\n/g,'<br>')}
 function jq(s){return JSON.stringify(s)}
@@ -124,7 +125,7 @@ function sw(name){
 
 function rc(){
   var c=document.getElementById('main');
-  if(P.length==0){
+  if(ct!='Living Room'&&P.length<100){
     c.innerHTML='<div class="loading">Loading...</div>';
     fetch('/products.json').then(function(r){return r.json()}).then(function(d){P=d;rc();}).catch(function(){c.innerHTML='<div class="loading">Failed to load.</div>'});
     return;
@@ -190,6 +191,10 @@ function fs(val){
 }
 
 function od(id){
+  if(!LR_LOADED&&P.length==0){document.getElementById('dco').innerHTML='<div class="loading" style="padding:2rem;text-align:center">Loading details...</div>';document.getElementById('ov').classList.add('a');document.body.style.overflow='hidden';var iv=setInterval(function(){if(LR_LOADED||P.length>0){clearInterval(iv);od2(id)}},200);return}
+  od2(id);
+}
+function od2(id){
   var p=P.find(function(x){return x.id===id});if(!p)return;
   var d=document.getElementById('dco');d.innerHTML='';
   var imgs=p.images||[];

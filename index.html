@@ -65,8 +65,9 @@ body{font-family:system-ui,'Inter',sans-serif;background:#f8f7f4;color:#2c2c2c}
 <div class="ov" id="ov" onclick="ca(event)"><div class="dc" onclick="event.stopPropagation()"><button class="dx" onclick="ca()">&#10005;</button><div id="dco"></div></div></div>
 <div class="footer"><p><strong>BunkBedWorld</strong> — founded in Chicago, built for your home.</p></div>
 <script>
-var P=[],T=[{"t": "Living Room", "g": [{"n": "Stationary Sofa & Loveseats", "c": 55, "i": "c1"}, {"n": "Stationary Sectionals", "c": 100, "i": "c2"}, {"n": "Reclining Sofa & Loveseats", "c": 71, "i": "c3"}, {"n": "Reclining Sectionals", "c": 28, "i": "c4"}, {"n": "Recliners & Lift Chairs", "c": 39, "i": "c5"}, {"n": "Occasional Tables", "c": 77, "i": "c6"}, {"n": "TV Stands", "c": 24, "i": "c7"}, {"n": "Sleepers & Futons", "c": 21, "i": "c8"}, {"n": "Accessories", "c": 100, "i": "c9"}, {"n": "Office & Bookcase", "c": 10, "i": "c10"}, {"n": "Sofa & Loveseat sets", "c": 39, "i": "c11"}, {"n": "Sofas", "c": 25, "i": "c12"}]}, {"t": "Bed Room", "g": [{"n": "Beds", "c": 73, "i": "c13"}, {"n": "Bedrooms", "c": 39, "i": "c14"}, {"n": "Daybeds", "c": 2, "i": "c15"}, {"n": "Mattresses", "c": 28, "i": "c16"}, {"n": "Vanities & Mirrors", "c": 17, "i": "c17"}]}, {"t": "Dining Room", "g": [{"n": "Dining Rooms", "c": 76, "i": "c18"}, {"n": "Barstools", "c": 15, "i": "c19"}, {"n": "Barstools & Chairs", "c": 36, "i": "c20"}]}, {"t": "Bunk Beds", "g": [{"n": "Bunk Beds", "c": 4, "i": "c21"}]}];
+var P=[];
 var ct=null,cn=null,ci={};
+var LR_LOADED=true;
 
 function esc(s){if(!s)return'';var d=document.createElement('div');d.appendChild(document.createTextNode(s));return d.innerHTML.replace(/\n/g,'<br>')}
 function jq(s){return JSON.stringify(s)}
@@ -88,7 +89,7 @@ function sw(name){
 
 function rc(){
   var c=document.getElementById('main');
-  if(P.length==0){
+  if(ct!='Living Room'&&P.length<100){
     c.innerHTML='<div class="loading">Loading...</div>';
     fetch('/products.json').then(function(r){return r.json()}).then(function(d){P=d;rc();}).catch(function(){c.innerHTML='<div class="loading">Failed to load.</div>'});
     return;
@@ -154,6 +155,10 @@ function fs(val){
 }
 
 function od(id){
+  if(!LR_LOADED&&P.length==0){document.getElementById('dco').innerHTML='<div class="loading" style="padding:2rem;text-align:center">Loading details...</div>';document.getElementById('ov').classList.add('a');document.body.style.overflow='hidden';var iv=setInterval(function(){if(LR_LOADED||P.length>0){clearInterval(iv);od2(id)}},200);return}
+  od2(id);
+}
+function od2(id){
   var p=P.find(function(x){return x.id===id});if(!p)return;
   var d=document.getElementById('dco');d.innerHTML='';
   var imgs=p.images||[];
