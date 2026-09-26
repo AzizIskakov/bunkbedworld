@@ -366,6 +366,10 @@ def generate_html(products):
     pjson = json.dumps(all_products, indent=2)
     tjson = json.dumps(tabs, indent=2)
 
+    # Save simplified products.json for async fetch
+    with open("products.json", "w") as f:
+        json.dump(all_products, f, indent=2)
+
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -599,7 +603,7 @@ function ca(e){{if(e&&e.target!==e.currentTarget)return;
   if(window.dt)clearInterval(window.dt);
 }}
 
-window.addEventListener('DOMContentLoaded',init);
+
 </script>
 </body>
 </html>'''
