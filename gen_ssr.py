@@ -127,8 +127,8 @@ function sw(name){
 
 function rc(){
   var c=document.getElementById('main');
-  if(P.length==0)return;
-  if(P.length<100){
+  if(ct=='Living Room'&&P.length==0)return;
+  if(P.length==0||P.length<100){
     c.innerHTML='<div class="loading">Loading...</div>';
     fetch('/products.json').then(function(r){return r.json()}).then(function(d){P=d;rc();}).catch(function(){c.innerHTML='<div class="loading">Failed to load.</div>'});
     return;
@@ -216,7 +216,7 @@ function od2(id){
   d.innerHTML+='<div class="ct">'+p.cat+'</div><h2>'+esc(p.name)+'</h2>';
   if(p.price>0)d.innerHTML+='<div class="pb">$'+p.price+'</div><br>';
   if(p.desc)d.innerHTML+='<div class="ds">'+esc(p.desc)+'</div>';
-  if(p.page&&!p.desc)d.innerHTML+='<div class="ds" style="margin-top:1rem"><a href="'+p.page+'" target="_blank" rel="noopener" class="pl">View product details →</a></div>';
+  if(p.page&&!p.desc)d.innerHTML+='<div class="ds" style="margin-top:1rem"><a href="'+esc(p.page)+'" target="_blank" rel="noopener" class="pl">View product details →</a></div>';
   document.getElementById('ov').classList.add('a');document.body.style.overflow='hidden';
   if(imgs.length>1){if(window.dt)clearInterval(window.dt);window.dt=setInterval(function(){dm(id,1)},4000)}
 }
