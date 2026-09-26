@@ -125,7 +125,8 @@ function sw(name){
 
 function rc(){
   var c=document.getElementById('main');
-  if(ct!='Living Room'&&P.length<100){
+  if(P.length==0)return;
+  if(P.length<100){
     c.innerHTML='<div class="loading">Loading...</div>';
     fetch('/products.json').then(function(r){return r.json()}).then(function(d){P=d;rc();}).catch(function(){c.innerHTML='<div class="loading">Failed to load.</div>'});
     return;
