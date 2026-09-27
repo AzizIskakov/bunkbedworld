@@ -57,7 +57,7 @@
 <script>
 
 var T=[{"t": "Living Room", "total": 385, "g": [{"n": "Stationary Sofa & Loveseats", "c": 51}, {"n": "Stationary Sectionals", "c": 57}, {"n": "Reclining Sofa & Loveseats", "c": 67}, {"n": "Reclining Sectionals", "c": 26}, {"n": "Recliners & Lift Chairs", "c": 37}, {"n": "Occasional Tables", "c": 49}, {"n": "TV Stands", "c": 22}, {"n": "Sleepers & Futons", "c": 21}, {"n": "Accessories", "c": 46}, {"n": "Office & Bookcase", "c": 9}]}, {"t": "Bedroom", "total": 84, "g": [{"n": "Beds", "c": 28}, {"n": "Bedrooms", "c": 27}, {"n": "Daybeds", "c": 3}, {"n": "Mattresses", "c": 19}, {"n": "Vanities & Mirrors", "c": 7}]}, {"t": "Dining Room", "total": 74, "g": [{"n": "Dining Rooms", "c": 62}, {"n": "Barstools", "c": 12}]}];
-var ct='Living Room',P=[];
+var ct='Living Room',sc='',P=[];
 function init(){
   var tabs=document.querySelectorAll('.tb');
   for(var i=0;i<tabs.length;i++)(function(b){
@@ -67,12 +67,12 @@ function init(){
         if(tabs[j]!==b){var od=tabs[j].querySelector('.drop');if(od)od.classList.remove('a');}
         tabs[j].classList.toggle('active',tabs[j].dataset.tab===n);
       }
-      var dd=b.querySelector('.drop');if(dd)dd.classList.toggle('a');ct=n;if(P.length)rc();
+      var dd=b.querySelector('.drop');if(dd)dd.classList.toggle('a');ct=n;sc='';if(P.length)rc();
     };
     var dis=b.querySelectorAll('.di');
     for(var k=0;k<dis.length;k++)(function(d){
       d.onclick=function(e){
-        e.stopPropagation();var cat=d.dataset.cat;ct=b.dataset.tab;
+        e.stopPropagation();sc=d.dataset.cat;ct=b.dataset.tab;
         var dd=b.querySelector('.drop');if(dd)dd.classList.remove('a');
         for(var m=0;m<dis.length;m++)dis[m].classList.remove('active');d.classList.add('active');
         if(P.length)rc();
@@ -82,9 +82,9 @@ function init(){
 }
 function rc(){
   var tab=T.find(function(t){return t.t===ct});if(!tab){document.getElementById('m').innerHTML='<div class="ld">No products.</div>';return;}
-  var fp=P.filter(function(p){
-    return tab.g.some(function(g){return g.n===p.cat});
-  });
+  var fp;
+  if(sc){fp=P.filter(function(p){return p.cat===sc;});}
+  else{fp=P.filter(function(p){return tab.g.some(function(g){return g.n===p.cat;});});}
   var h='';
   for(var i=0;i<fp.length;i++){var p=fp[i];
     h+='<div class="card"><div class="ci" style="background-image:url('+p.img+')"></div>';
