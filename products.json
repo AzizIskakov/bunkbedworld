@@ -13,7 +13,8 @@
     "images": [
       "/images/happy-p2655-1.jpg",
       "/images/happy-p2655-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2693",
@@ -29,7 +30,8 @@
     "images": [
       "/images/happy-p2693-1.jpg",
       "/images/happy-p2693-2.jpg"
-    ]
+    ],
+    "price": 1449
   },
   {
     "id": "p665",
@@ -45,7 +47,8 @@
     "images": [
       "/images/happy-p665-1.jpg",
       "/images/happy-p665-2.jpg"
-    ]
+    ],
+    "price": 549
   },
   {
     "id": "p3234",
@@ -57,7 +60,8 @@
     "material": "Cords",
     "dimensions": "Overall 84\" x 107\" x 35\" H",
     "description": "Item Name: Logan2 Onyx\n\nColor: Black\n\nMaterial: Cords\n\nDimensions:\nOverall 84\" x 107\" x 35\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 819
   },
   {
     "id": "p3880",
@@ -75,7 +79,8 @@
       "/images/happy-p3880-2.jpg",
       "/images/happy-p3880-3.jpg",
       "/images/happy-p3880-4.jpg"
-    ]
+    ],
+    "price": 119
   },
   {
     "id": "p4052",
@@ -93,7 +98,8 @@
       "/images/happy-p4052-2.jpg",
       "/images/happy-p4052-3.jpg",
       "/images/happy-p4052-4.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p2960",
@@ -105,7 +111,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: B8010",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 1699
   },
   {
     "id": "p3143",
@@ -122,7 +129,8 @@
       "/images/happy-p3143-1.jpg",
       "/images/happy-p3143-2.jpg",
       "/images/happy-p3143-3.jpg"
-    ]
+    ],
+    "price": 559
   },
   {
     "id": "p3971",
@@ -140,7 +148,8 @@
       "/images/happy-p3971-2.png",
       "/images/happy-p3971-3.jpg",
       "/images/happy-p3971-4.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p2737",
@@ -156,7 +165,8 @@
     "images": [
       "/images/happy-p2737-1.jpg",
       "/images/happy-p2737-2.jpg"
-    ]
+    ],
+    "price": 1069
   },
   {
     "id": "p3697",
@@ -175,7 +185,8 @@
       "/images/happy-p3697-3.jpg",
       "/images/happy-p3697-4.jpg",
       "/images/happy-p3697-5.jpg"
-    ]
+    ],
+    "price": 1359
   },
   {
     "id": "p3632",
@@ -191,7 +202,8 @@
     "images": [
       "/images/happy-p3632-1.jpg",
       "/images/happy-p3632-2.jpg"
-    ]
+    ],
+    "price": 169
   },
   {
     "id": "p3834",
@@ -207,7 +219,8 @@
     "images": [
       "/images/happy-p3834-1.jpg",
       "/images/happy-p3834-2.jpg"
-    ]
+    ],
+    "price": 529
   },
   {
     "id": "p2270",
@@ -219,7 +232,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: D2020\n\nColor: Gray",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 509
   },
   {
     "id": "p3792",
@@ -231,7 +245,8 @@
     "material": "",
     "dimensions": "End Table 22.25\" W x 22.25\" D x 22.63\" H",
     "description": "Item Name: T652-6\n\nColor: White/Brown\n\nDimensions:\nEnd Table 22.25\" W x 22.25\" D x 22.63\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 159
   },
   {
     "id": "p4035",
@@ -243,7 +258,8 @@
     "material": "",
     "dimensions": "37\"L x 34\"D x 44\"H",
     "description": "Color: Maple\n\nDimensions:\n37\"L x 34\"D x 44\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 459
   },
   {
     "id": "p3795",
@@ -261,7 +277,8 @@
       "/images/happy-p3795-2.jpg",
       "/images/happy-p3795-3.jpg",
       "/images/happy-p3795-4.jpg"
-    ]
+    ],
+    "price": 1359
   },
   {
     "id": "p3481",
@@ -277,7 +294,8 @@
     "images": [
       "/images/happy-p3481-1.jpg",
       "/images/happy-p3481-2.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p2086",
@@ -294,7 +312,8 @@
       "/images/happy-p2086-1.jpg",
       "/images/happy-p2086-2.jpg",
       "/images/happy-p2086-3.jpg"
-    ]
+    ],
+    "price": 959
   },
   {
     "id": "p3453",
@@ -310,7 +329,8 @@
     "images": [
       "/images/happy-p3453-1.jpg",
       "/images/happy-p3453-2.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p3897",
@@ -326,7 +346,8 @@
     "images": [
       "/images/happy-p3897-1.jpg",
       "/images/happy-p3897-2.jpg"
-    ]
+    ],
+    "price": 509
   },
   {
     "id": "p3562",
@@ -345,7 +366,8 @@
       "/images/happy-p3562-3.jpg",
       "/images/happy-p3562-4.jpg",
       "/images/happy-p3562-5.jpg"
-    ]
+    ],
+    "price": 2379
   },
   {
     "id": "p743",
@@ -362,7 +384,8 @@
       "/images/happy-p743-1.png",
       "/images/happy-p743-2.png",
       "/images/happy-p743-3.png"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p3890",
@@ -374,7 +397,8 @@
     "material": "",
     "dimensions": "20.6\" x 17.7D x 45.67\"H\nWeight Capacity 330lbs",
     "description": "Item Name: 2347\n\nColor: Black/Brown\n\nDimensions:\n20.6\" x 17.7D x 45.67\"H\nWeight Capacity 330lbs",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 259
   },
   {
     "id": "p3413",
@@ -386,7 +410,8 @@
     "material": "",
     "dimensions": "19.5\" W x 19.5\" D x 37\" H",
     "description": "Item Name: D546-524\n\nColor: White\n\nDimensions:\n19.5\" W x 19.5\" D x 37\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 239
   },
   {
     "id": "p3444",
@@ -404,7 +429,8 @@
       "/images/happy-p3444-2.jpg",
       "/images/happy-p3444-3.jpg",
       "/images/happy-p3444-4.jpg"
-    ]
+    ],
+    "price": 1699
   },
   {
     "id": "p2519",
@@ -421,7 +447,8 @@
       "/images/happy-p2519-1.jpg",
       "/images/happy-p2519-2.jpg",
       "/images/happy-p2519-3.jpg"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p3769",
@@ -438,7 +465,8 @@
       "/images/happy-p3769-1.jpg",
       "/images/happy-p3769-2.jpg",
       "/images/happy-p3769-3.jpg"
-    ]
+    ],
+    "price": 729
   },
   {
     "id": "p3946",
@@ -456,7 +484,8 @@
       "/images/happy-p3946-2.jpg",
       "/images/happy-p3946-3.jpg",
       "/images/happy-p3946-4.jpg"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p3823",
@@ -472,7 +501,8 @@
     "images": [
       "/images/happy-p3823-1.jpg",
       "/images/happy-p3823-2.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p4033",
@@ -488,7 +518,8 @@
     "images": [
       "/images/happy-p4033-1.jpg",
       "/images/happy-p4033-2.png"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p4032",
@@ -500,7 +531,8 @@
     "material": "",
     "dimensions": "39\"L x 40\"D x 43\"H",
     "description": "Color: Indigo\n\nDimensions:\n39\"L x 40\"D x 43\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 429
   },
   {
     "id": "p926",
@@ -519,7 +551,8 @@
       "/images/happy-p926-3.jpg",
       "/images/happy-p926-4.jpg",
       "/images/happy-p926-5.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p3492",
@@ -538,7 +571,8 @@
       "/images/happy-p3492-3.jpg",
       "/images/happy-p3492-4.jpg",
       "/images/happy-p3492-5.jpg"
-    ]
+    ],
+    "price": 1409
   },
   {
     "id": "p2982",
@@ -554,7 +588,8 @@
     "images": [
       "/images/happy-p2982-1.jpg",
       "/images/happy-p2982-2.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p2432",
@@ -566,7 +601,8 @@
     "material": "",
     "dimensions": "31.5x47",
     "description": "Item Name: A710\n\nColor: Mirror\n\nDimensions:\n31.5x47",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 259
   },
   {
     "id": "p3589",
@@ -585,7 +621,8 @@
       "/images/happy-p3589-3.jpg",
       "/images/happy-p3589-4.jpg",
       "/images/happy-p3589-5.jpg"
-    ]
+    ],
+    "price": 3059
   },
   {
     "id": "p2430",
@@ -602,7 +639,8 @@
       "/images/happy-p2430-1.jpg",
       "/images/happy-p2430-2.jpg",
       "/images/happy-p2430-3.jpg"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p3382",
@@ -614,7 +652,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: BM21",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 0
   },
   {
     "id": "p3811",
@@ -631,7 +670,8 @@
       "/images/happy-p3811-1.jpg",
       "/images/happy-p3811-2.jpg",
       "/images/happy-p3811-3.jpg"
-    ]
+    ],
+    "price": 279
   },
   {
     "id": "p3989",
@@ -648,7 +688,8 @@
       "/images/happy-p3989-1.jpg",
       "/images/happy-p3989-2.png",
       "/images/happy-p3989-3.jpg"
-    ]
+    ],
+    "price": 479
   },
   {
     "id": "p2751",
@@ -666,7 +707,8 @@
       "/images/happy-p2751-2.jpg",
       "/images/happy-p2751-3.jpg",
       "/images/happy-p2751-4.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3316",
@@ -685,7 +727,8 @@
       "/images/happy-p3316-3.jpg",
       "/images/happy-p3316-4.png",
       "/images/happy-p3316-5.jpg"
-    ]
+    ],
+    "price": 549
   },
   {
     "id": "p3133",
@@ -704,7 +747,8 @@
       "/images/happy-p3133-3.jpg",
       "/images/happy-p3133-4.jpg",
       "/images/happy-p3133-5.png"
-    ]
+    ],
+    "price": 799
   },
   {
     "id": "p3448",
@@ -722,7 +766,8 @@
       "/images/happy-p3448-2.jpg",
       "/images/happy-p3448-3.jpg",
       "/images/happy-p3448-4.jpg"
-    ]
+    ],
+    "price": 1359
   },
   {
     "id": "p3285",
@@ -738,7 +783,8 @@
     "images": [
       "/images/happy-p3285-1.jpg",
       "/images/happy-p3285-2.jpg"
-    ]
+    ],
+    "price": 599
   },
   {
     "id": "p3616",
@@ -754,7 +800,8 @@
     "images": [
       "/images/happy-p3616-1.jpg",
       "/images/happy-p3616-2.jpg"
-    ]
+    ],
+    "price": 309
   },
   {
     "id": "p3720",
@@ -772,7 +819,8 @@
       "/images/happy-p3720-2.jpg",
       "/images/happy-p3720-3.jpg",
       "/images/happy-p3720-4.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3756",
@@ -784,7 +832,8 @@
     "material": "Polyester",
     "dimensions": "Sofa - 86\" x 39.5\" x 42\"H\nLoveseat - 75.5\" x 39.5\" x 42\"H\nRecliner - 40\" x 39.5\" x 42\"H",
     "description": "Item Name: Sofia10\n\nColor: Gray\n\nMaterial: Polyester\n\nDimensions:\nSofa - 86\" x 39.5\" x 42\"H\nLoveseat - 75.5\" x 39.5\" x 42\"H\nRecliner - 40\" x 39.5\" x 42\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 1699
   },
   {
     "id": "p4036",
@@ -796,7 +845,8 @@
     "material": "",
     "dimensions": "37\"L x 34\"D x 44\"H",
     "description": "Color: Pewter\n\nDimensions:\n37\"L x 34\"D x 44\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 459
   },
   {
     "id": "p2740",
@@ -813,7 +863,8 @@
       "/images/happy-p2740-1.jpg",
       "/images/happy-p2740-2.png",
       "/images/happy-p2740-3.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3683",
@@ -831,7 +882,8 @@
       "/images/happy-p3683-2.jpg",
       "/images/happy-p3683-3.jpg",
       "/images/happy-p3683-4.jpg"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p4034",
@@ -843,7 +895,8 @@
     "material": "",
     "dimensions": "39\"L x 40\"D x 43\"H",
     "description": "Color: Steel\n\nDimensions:\n39\"L x 40\"D x 43\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 429
   },
   {
     "id": "p3885",
@@ -859,7 +912,8 @@
     "images": [
       "/images/happy-p3885-1.jpg",
       "/images/happy-p3885-2.png"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p2912",
@@ -877,7 +931,8 @@
       "/images/happy-p2912-2.jpg",
       "/images/happy-p2912-3.jpg",
       "/images/happy-p2912-4.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p3826",
@@ -889,7 +944,8 @@
     "material": "Fabric",
     "dimensions": "Sofa 71\" x 32.5\" D x 32.5\" H\nLoveseat 58\" x 32.5\" D x 32.5\" H",
     "description": "Item Name: Vanti\n\nColor: Green\n\nMaterial: Fabric\n\nDimensions:\nSofa 71\" x 32.5\" D x 32.5\" H\nLoveseat 58\" x 32.5\" D x 32.5\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 769
   },
   {
     "id": "p3181",
@@ -905,7 +961,8 @@
     "images": [
       "/images/happy-p3181-1.jpg",
       "/images/happy-p3181-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3663",
@@ -922,7 +979,8 @@
       "/images/happy-p3663-1.jpg",
       "/images/happy-p3663-2.jpg",
       "/images/happy-p3663-3.jpg"
-    ]
+    ],
+    "price": 359
   },
   {
     "id": "p3558",
@@ -938,7 +996,8 @@
     "images": [
       "/images/happy-p3558-1.jpg",
       "/images/happy-p3558-2.jpg"
-    ]
+    ],
+    "price": 969
   },
   {
     "id": "p3924",
@@ -954,7 +1013,8 @@
     "images": [
       "/images/happy-p3924-1.jpg",
       "/images/happy-p3924-2.jpg"
-    ]
+    ],
+    "price": 209
   },
   {
     "id": "p1431",
@@ -970,7 +1030,8 @@
     "images": [
       "/images/happy-p1431-1.jpg",
       "/images/happy-p1431-2.jpg"
-    ]
+    ],
+    "price": 599
   },
   {
     "id": "p3650",
@@ -982,7 +1043,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: 8100-Black",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 0
   },
   {
     "id": "p3317",
@@ -994,7 +1056,8 @@
     "material": "",
     "dimensions": "Queen Bed 69\" W x 84\" D x 68\" H\nKing Bed 85\" W x 84\" D x 68\" H\nDresser 64\" W x 18.13\" D x 40.75\" H\nMirror 45.5\" W x 3\" D x 37.75\" H\nNightstand 28.13\" W x 17.13\" D x 27.75\" H\nChest 38.25\" W x 18.13\" D x 51.75\" H\nQueen 5pc 712997\nKing 5pc 713497",
     "description": "Item Name: B777\n\nColor: Whitewash\n\nDimensions:\nQueen Bed 69\" W x 84\" D x 68\" H\nKing Bed 85\" W x 84\" D x 68\" H\nDresser 64\" W x 18.13\" D x 40.75\" H\nMirror 45.5\" W x 3\" D x 37.75\" H\nNightstand 28.13\" W x 17.13\" D x 27.75\" H\nChest 38.25\" W x 18.13\" D x 51.75\" H\nQueen 5pc 712997\nKing 5pc 713497",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 2209
   },
   {
     "id": "p2566",
@@ -1006,7 +1069,8 @@
     "material": "Ceramic/Porcelain Tabletop",
     "dimensions": "Table: 63Lx35W",
     "description": "Item Name: HAMILTON\n\nColor: Black\n\nMaterial: Ceramic/Porcelain Tabletop\n\nDimensions:\nTable: 63Lx35W",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 989
   },
   {
     "id": "p3476",
@@ -1023,7 +1087,8 @@
       "/images/happy-p3476-1.jpg",
       "/images/happy-p3476-2.jpg",
       "/images/happy-p3476-3.jpg"
-    ]
+    ],
+    "price": 289
   },
   {
     "id": "p741",
@@ -1039,7 +1104,8 @@
     "images": [
       "/images/happy-p741-1.png",
       "/images/happy-p741-2.png"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p3865",
@@ -1051,7 +1117,8 @@
     "material": "",
     "dimensions": "Sofa\u00a0\u00a0- 85\" x 35\"D x 35\"H\nLoveseat\u00a0- 62\" x 35\"D x 35\"H",
     "description": "Item Name: 2275-2pc\n\nColor: Charcoal\n\nDimensions:\nSofa\u00a0\u00a0- 85\" x 35\"D x 35\"H\nLoveseat\u00a0- 62\" x 35\"D x 35\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 1109
   },
   {
     "id": "p3031",
@@ -1063,7 +1130,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: D1120\n\nColor: Light Oak",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 679
   },
   {
     "id": "p2063",
@@ -1080,7 +1148,8 @@
       "/images/happy-p2063-1.jpg",
       "/images/happy-p2063-2.jpg",
       "/images/happy-p2063-3.jpg"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p2997",
@@ -1098,7 +1167,8 @@
       "/images/happy-p2997-2.png",
       "/images/happy-p2997-3.jpg",
       "/images/happy-p2997-4.png"
-    ]
+    ],
+    "price": 509
   },
   {
     "id": "p3244",
@@ -1114,7 +1184,8 @@
     "images": [
       "/images/happy-p3244-1.jpg",
       "/images/happy-p3244-2.jpg"
-    ]
+    ],
+    "price": 939
   },
   {
     "id": "p3746",
@@ -1130,7 +1201,8 @@
     "images": [
       "/images/happy-p3746-1.jpg",
       "/images/happy-p3746-2.jpg"
-    ]
+    ],
+    "price": 1109
   },
   {
     "id": "p3882",
@@ -1148,7 +1220,8 @@
       "/images/happy-p3882-2.jpg",
       "/images/happy-p3882-3.png",
       "/images/happy-p3882-4.jpg"
-    ]
+    ],
+    "price": 279
   },
   {
     "id": "p2481",
@@ -1164,7 +1237,8 @@
     "images": [
       "/images/happy-p2481-1.jpg",
       "/images/happy-p2481-2.jpg"
-    ]
+    ],
+    "price": 509
   },
   {
     "id": "p3975",
@@ -1176,7 +1250,8 @@
     "material": "Velvet",
     "dimensions": "",
     "description": "Item Name: Liam\n\nColor: Black\n\nMaterial: Velvet",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 769
   },
   {
     "id": "p2820",
@@ -1192,7 +1267,8 @@
     "images": [
       "/images/happy-p2820-1.png",
       "/images/happy-p2820-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3575",
@@ -1211,7 +1287,8 @@
       "/images/happy-p3575-3.jpg",
       "/images/happy-p3575-4.jpg",
       "/images/happy-p3575-5.jpg"
-    ]
+    ],
+    "price": 629
   },
   {
     "id": "p2994",
@@ -1229,7 +1306,8 @@
       "/images/happy-p2994-2.jpg",
       "/images/happy-p2994-3.jpg",
       "/images/happy-p2994-4.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p3341",
@@ -1248,7 +1326,8 @@
       "/images/happy-p3341-3.jpg",
       "/images/happy-p3341-4.jpg",
       "/images/happy-p3341-5.jpg"
-    ]
+    ],
+    "price": 219
   },
   {
     "id": "p386",
@@ -1260,7 +1339,8 @@
     "material": "Vinyl",
     "dimensions": "LAF Sofa 71\"Lx37\"Dx34\"H\nRAF Chaise 76\"Lx37\"Dx34\"H",
     "description": "Item Name: Moderno\n\nColor: Black\n\nMaterial: Vinyl\n\nDimensions:\nLAF Sofa 71\"Lx37\"Dx34\"H\nRAF Chaise 76\"Lx37\"Dx34\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 679
   },
   {
     "id": "p3048",
@@ -1277,7 +1357,8 @@
       "/images/happy-p3048-1.jpg",
       "/images/happy-p3048-2.jpg",
       "/images/happy-p3048-3.jpg"
-    ]
+    ],
+    "price": 1789
   },
   {
     "id": "p3698",
@@ -1294,7 +1375,8 @@
       "/images/happy-p3698-1.jpg",
       "/images/happy-p3698-2.jpg",
       "/images/happy-p3698-3.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p695",
@@ -1306,7 +1388,8 @@
     "material": "",
     "dimensions": "",
     "description": "",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p818",
@@ -1318,7 +1401,8 @@
     "material": "Velvet",
     "dimensions": "",
     "description": "Item Name: HH530GREY\n\nColor: Grey\n\nMaterial: Velvet",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 0
   },
   {
     "id": "p2803",
@@ -1334,7 +1418,8 @@
     "images": [
       "/images/happy-p2803-1.jpg",
       "/images/happy-p2803-2.jpg"
-    ]
+    ],
+    "price": 289
   },
   {
     "id": "p3901",
@@ -1350,7 +1435,8 @@
     "images": [
       "/images/happy-p3901-1.jpg",
       "/images/happy-p3901-2.jpg"
-    ]
+    ],
+    "price": 509
   },
   {
     "id": "p2482",
@@ -1362,7 +1448,8 @@
     "material": "Velvet",
     "dimensions": "",
     "description": "Item Name: Mary\n\nColor: Silver\n\nMaterial: Velvet",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 259
   },
   {
     "id": "p3818",
@@ -1381,7 +1468,8 @@
       "/images/happy-p3818-3.jpg",
       "/images/happy-p3818-4.jpg",
       "/images/happy-p3818-5.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p1348",
@@ -1398,7 +1486,8 @@
       "/images/happy-p1348-1.jpg",
       "/images/happy-p1348-2.jpg",
       "/images/happy-p1348-3.jpg"
-    ]
+    ],
+    "price": 259
   },
   {
     "id": "p3998",
@@ -1416,7 +1505,8 @@
       "/images/happy-p3998-2.jpg",
       "/images/happy-p3998-3.jpg",
       "/images/happy-p3998-4.jpg"
-    ]
+    ],
+    "price": 259
   },
   {
     "id": "p3126",
@@ -1433,7 +1523,8 @@
       "/images/happy-p3126-1.jpg",
       "/images/happy-p3126-2.jpg",
       "/images/happy-p3126-3.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p3561",
@@ -1451,7 +1542,8 @@
       "/images/happy-p3561-2.jpg",
       "/images/happy-p3561-3.jpg",
       "/images/happy-p3561-4.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p3775",
@@ -1468,7 +1560,8 @@
       "/images/happy-p3775-1.jpg",
       "/images/happy-p3775-2.jpg",
       "/images/happy-p3775-3.jpg"
-    ]
+    ],
+    "price": 189
   },
   {
     "id": "p2267",
@@ -1480,7 +1573,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: D1020",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 509
   },
   {
     "id": "p1685",
@@ -1496,7 +1590,8 @@
     "images": [
       "/images/happy-p1685-1.jpg",
       "/images/happy-p1685-2.png"
-    ]
+    ],
+    "price": 939
   },
   {
     "id": "p3625",
@@ -1513,7 +1608,8 @@
       "/images/happy-p3625-1.jpg",
       "/images/happy-p3625-2.jpg",
       "/images/happy-p3625-3.jpg"
-    ]
+    ],
+    "price": 189
   },
   {
     "id": "p450",
@@ -1529,7 +1625,8 @@
     "images": [
       "/images/happy-p450-1.jpg",
       "/images/happy-p450-2.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p3690",
@@ -1541,7 +1638,8 @@
     "material": "",
     "dimensions": "LAF Sofa- 72\"L x 35\"D x 36\"H\nRAF Chaise- 80\"L x 35\"D x 36\"H",
     "description": "Dimensions:\nLAF Sofa- 72\"L x 35\"D x 36\"H\nRAF Chaise- 80\"L x 35\"D x 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 679
   },
   {
     "id": "p3916",
@@ -1558,7 +1656,8 @@
       "/images/happy-p3916-1.jpg",
       "/images/happy-p3916-2.jpg",
       "/images/happy-p3916-3.jpg"
-    ]
+    ],
+    "price": 209
   },
   {
     "id": "p1310",
@@ -1574,7 +1673,8 @@
     "images": [
       "/images/happy-p1310-1.jpg",
       "/images/happy-p1310-2.jpg"
-    ]
+    ],
+    "price": 169
   },
   {
     "id": "p3358",
@@ -1590,7 +1690,8 @@
     "images": [
       "/images/happy-p3358-1.jpg",
       "/images/happy-p3358-2.jpg"
-    ]
+    ],
+    "price": 1449
   },
   {
     "id": "p3664",
@@ -1607,7 +1708,8 @@
       "/images/happy-p3664-1.jpg",
       "/images/happy-p3664-2.jpg",
       "/images/happy-p3664-3.jpg"
-    ]
+    ],
+    "price": 549
   },
   {
     "id": "p2807",
@@ -1625,7 +1727,8 @@
       "/images/happy-p2807-2.jpg",
       "/images/happy-p2807-3.jpg",
       "/images/happy-p2807-4.jpg"
-    ]
+    ],
+    "price": 449
   },
   {
     "id": "p567",
@@ -1637,7 +1740,8 @@
     "material": "Velvet",
     "dimensions": "Queen: 88''L X 67''W X 70''H\nKing: 88''L X 83''W X 70''H\nQueen-71997\nKing- 72297",
     "description": "Item Name: HH327\n\nColor: Blue\n\nMaterial: Velvet\n\nDimensions:\nQueen: 88''L X 67''W X 70''H\nKing: 88''L X 83''W X 70''H\nQueen-71997\nKing- 72297",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 339
   },
   {
     "id": "p2389",
@@ -1653,7 +1757,8 @@
     "images": [
       "/images/happy-p2389-1.jpg",
       "/images/happy-p2389-2.jpg"
-    ]
+    ],
+    "price": 1109
   },
   {
     "id": "p3964",
@@ -1670,7 +1775,8 @@
       "/images/happy-p3964-1.jpg",
       "/images/happy-p3964-2.jpg",
       "/images/happy-p3964-3.png"
-    ]
+    ],
+    "price": 389
   },
   {
     "id": "p2967",
@@ -1689,7 +1795,8 @@
       "/images/happy-p2967-3.jpg",
       "/images/happy-p2967-4.jpg",
       "/images/happy-p2967-5.jpg"
-    ]
+    ],
+    "price": 629
   },
   {
     "id": "p3590",
@@ -1706,7 +1813,8 @@
       "/images/happy-p3590-1.jpg",
       "/images/happy-p3590-2.jpg",
       "/images/happy-p3590-3.jpg"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p1111",
@@ -1723,7 +1831,8 @@
       "/images/happy-p1111-1.jpg",
       "/images/happy-p1111-2.jpg",
       "/images/happy-p1111-3.jpg"
-    ]
+    ],
+    "price": 169
   },
   {
     "id": "p2619",
@@ -1741,7 +1850,8 @@
       "/images/happy-p2619-2.jpg",
       "/images/happy-p2619-3.jpg",
       "/images/happy-p2619-4.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p612",
@@ -1753,7 +1863,8 @@
     "material": "",
     "dimensions": "Table Top 36\" x 36\"",
     "description": "Item Name: Tahoe\n\nColor: Grey\n\nDimensions:\nTable Top 36\" x 36\"",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 379
   },
   {
     "id": "p1529",
@@ -1769,7 +1880,8 @@
     "images": [
       "/images/happy-p1529-1.jpg",
       "/images/happy-p1529-2.jpg"
-    ]
+    ],
+    "price": 389
   },
   {
     "id": "p3406",
@@ -1787,7 +1899,8 @@
       "/images/happy-p3406-2.jpg",
       "/images/happy-p3406-3.jpg",
       "/images/happy-p3406-4.jpg"
-    ]
+    ],
+    "price": 1359
   },
   {
     "id": "p3888",
@@ -1799,7 +1912,8 @@
     "material": "",
     "dimensions": "Table Top - 47.5\" X 29.5\" X 30\"H",
     "description": "Item Name: ALAN20\n\nDimensions:\nTable Top - 47.5\" X 29.5\" X 30\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 559
   },
   {
     "id": "p3429",
@@ -1811,7 +1925,8 @@
     "material": "",
     "dimensions": "Sofa: 90\" W x 38\" D x 38\" H\nLoveseat: 66\" W x 38\" D x 38\" H",
     "description": "Item Name: 302-04\n\nColor: Suede\n\nDimensions:\nSofa: 90\" W x 38\" D x 38\" H\nLoveseat: 66\" W x 38\" D x 38\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 1189
   },
   {
     "id": "p1318",
@@ -1827,7 +1942,8 @@
     "images": [
       "/images/happy-p1318-1.jpg",
       "/images/happy-p1318-2.jpg"
-    ]
+    ],
+    "price": 289
   },
   {
     "id": "p2539",
@@ -1843,7 +1959,8 @@
     "images": [
       "/images/happy-p2539-1.png",
       "/images/happy-p2539-2.png"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3829",
@@ -1860,7 +1977,8 @@
       "/images/happy-p3829-1.jpg",
       "/images/happy-p3829-2.jpg",
       "/images/happy-p3829-3.jpg"
-    ]
+    ],
+    "price": 379
   },
   {
     "id": "p3321",
@@ -1877,7 +1995,8 @@
       "/images/happy-p3321-1.jpg",
       "/images/happy-p3321-2.jpg",
       "/images/happy-p3321-3.jpg"
-    ]
+    ],
+    "price": 839
   },
   {
     "id": "p2694",
@@ -1893,7 +2012,8 @@
     "images": [
       "/images/happy-p2694-1.png",
       "/images/happy-p2694-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2669",
@@ -1911,7 +2031,8 @@
       "/images/happy-p2669-2.jpg",
       "/images/happy-p2669-3.jpg",
       "/images/happy-p2669-4.jpg"
-    ]
+    ],
+    "price": 1699
   },
   {
     "id": "p1723",
@@ -1927,7 +2048,8 @@
     "images": [
       "/images/happy-p1723-1.jpg",
       "/images/happy-p1723-2.jpg"
-    ]
+    ],
+    "price": 599
   },
   {
     "id": "p3499",
@@ -1946,7 +2068,8 @@
       "/images/happy-p3499-3.jpg",
       "/images/happy-p3499-4.jpg",
       "/images/happy-p3499-5.jpg"
-    ]
+    ],
+    "price": 2039
   },
   {
     "id": "p3066",
@@ -1964,7 +2087,8 @@
       "/images/happy-p3066-2.jpg",
       "/images/happy-p3066-3.jpg",
       "/images/happy-p3066-4.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3374",
@@ -1980,7 +2104,8 @@
     "images": [
       "/images/happy-p3374-1.jpg",
       "/images/happy-p3374-2.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3695",
@@ -1992,7 +2117,8 @@
     "material": "",
     "dimensions": "LAF Sofa- 72\"L x 35\"D x 36\"H\nRAF Chaise- 80\"L x 35\"D x 36\"H",
     "description": "Dimensions:\nLAF Sofa- 72\"L x 35\"D x 36\"H\nRAF Chaise- 80\"L x 35\"D x 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p3243",
@@ -2004,7 +2130,8 @@
     "material": "",
     "dimensions": "Table Top - 60\" x 42\" x 36\"H",
     "description": "Item Name: Marton\n\nDimensions:\nTable Top - 60\" x 42\" x 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p2927",
@@ -2020,7 +2147,8 @@
     "images": [
       "/images/happy-p2927-1.png",
       "/images/happy-p2927-2.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p2996",
@@ -2038,7 +2166,8 @@
       "/images/happy-p2996-2.jpg",
       "/images/happy-p2996-3.jpg",
       "/images/happy-p2996-4.jpg"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p3788",
@@ -2056,7 +2185,8 @@
       "/images/happy-p3788-2.jpg",
       "/images/happy-p3788-3.jpg",
       "/images/happy-p3788-4.jpg"
-    ]
+    ],
+    "price": 549
   },
   {
     "id": "p3184",
@@ -2075,7 +2205,8 @@
       "/images/happy-p3184-3.jpg",
       "/images/happy-p3184-4.jpg",
       "/images/happy-p3184-5.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3895",
@@ -2087,7 +2218,8 @@
     "material": "Polyester",
     "dimensions": "39.5\u201d \u00d7 39.5\u201d \u00d7 17\"",
     "description": "Item Name: 840\n\nColor: Mako Twilight\n\nMaterial: Polyester\n\nDimensions:\n39.5\u201d \u00d7 39.5\u201d \u00d7 17\"",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 339
   },
   {
     "id": "p3075",
@@ -2104,7 +2236,8 @@
       "/images/happy-p3075-1.jpg",
       "/images/happy-p3075-2.jpg",
       "/images/happy-p3075-3.jpg"
-    ]
+    ],
+    "price": 89
   },
   {
     "id": "p3424",
@@ -2116,7 +2249,8 @@
     "material": "",
     "dimensions": "Sofa Closed 88\" W x 40\" D x 38\" H",
     "description": "Item Name: 2920339\n\nColor: Stone\n\nDimensions:\nSofa Closed 88\" W x 40\" D x 38\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 969
   },
   {
     "id": "p3923",
@@ -2134,7 +2268,8 @@
       "/images/happy-p3923-2.jpg",
       "/images/happy-p3923-3.jpg",
       "/images/happy-p3923-4.jpg"
-    ]
+    ],
+    "price": 2379
   },
   {
     "id": "p3751",
@@ -2150,7 +2285,8 @@
     "images": [
       "/images/happy-p3751-1.jpg",
       "/images/happy-p3751-2.jpg"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p2537",
@@ -2162,7 +2298,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: MOONLIGHT BLACK",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 939
   },
   {
     "id": "p4030",
@@ -2174,7 +2311,8 @@
     "material": "",
     "dimensions": "39\"L x 40\"D x 43\"H",
     "description": "Color: Chocolate\n\nDimensions:\n39\"L x 40\"D x 43\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 429
   },
   {
     "id": "p3408",
@@ -2192,7 +2330,8 @@
       "/images/happy-p3408-2.jpg",
       "/images/happy-p3408-3.jpg",
       "/images/happy-p3408-4.jpg"
-    ]
+    ],
+    "price": 1359
   },
   {
     "id": "p3778",
@@ -2209,7 +2348,8 @@
       "/images/happy-p3778-1.jpg",
       "/images/happy-p3778-2.jpg",
       "/images/happy-p3778-3.jpg"
-    ]
+    ],
+    "price": 579
   },
   {
     "id": "p3870",
@@ -2221,7 +2361,8 @@
     "material": "",
     "dimensions": "Table Top 45\" x 24\" x30\"H",
     "description": "Item Name: D700 White\n\nColor: White PU Chairs\n\nDimensions:\nTable Top 45\" x 24\" x30\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 309
   },
   {
     "id": "p2966",
@@ -2238,7 +2379,8 @@
       "/images/happy-p2966-1.jpg",
       "/images/happy-p2966-2.jpg",
       "/images/happy-p2966-3.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p1682",
@@ -2254,7 +2396,8 @@
     "images": [
       "/images/happy-p1682-1.png",
       "/images/happy-p1682-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2804",
@@ -2272,7 +2415,8 @@
       "/images/happy-p2804-2.jpg",
       "/images/happy-p2804-3.jpg",
       "/images/happy-p2804-4.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p1381",
@@ -2289,7 +2433,8 @@
       "/images/happy-p1381-1.jpg",
       "/images/happy-p1381-2.jpg",
       "/images/happy-p1381-3.jpg"
-    ]
+    ],
+    "price": 189
   },
   {
     "id": "p3195",
@@ -2305,7 +2450,8 @@
     "images": [
       "/images/happy-p3195-1.jpg",
       "/images/happy-p3195-2.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p3015",
@@ -2321,7 +2467,8 @@
     "images": [
       "/images/happy-p3015-1.jpg",
       "/images/happy-p3015-2.jpg"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p4043",
@@ -2337,7 +2484,8 @@
     "images": [
       "/images/happy-p4043-1.jpg",
       "/images/happy-p4043-2.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p3633",
@@ -2356,7 +2504,8 @@
       "/images/happy-p3633-3.jpg",
       "/images/happy-p3633-4.jpg",
       "/images/happy-p3633-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3498",
@@ -2372,7 +2521,8 @@
     "images": [
       "/images/happy-p3498-1.png",
       "/images/happy-p3498-2.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p3206",
@@ -2388,7 +2538,8 @@
     "images": [
       "/images/happy-p3206-1.jpg",
       "/images/happy-p3206-2.jpg"
-    ]
+    ],
+    "price": 479
   },
   {
     "id": "p1306",
@@ -2406,7 +2557,8 @@
       "/images/happy-p1306-2.jpg",
       "/images/happy-p1306-3.jpg",
       "/images/happy-p1306-4.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p3275",
@@ -2418,7 +2570,8 @@
     "material": "",
     "dimensions": "Sofa 92\" W x 40\" D x 40\" H\nLoveseat 68\" W x 40\" D x 40\" H",
     "description": "Item Name: 598-03\n\nColor: Taupe\n\nDimensions:\nSofa 92\" W x 40\" D x 40\" H\nLoveseat 68\" W x 40\" D x 40\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 1179
   },
   {
     "id": "p3642",
@@ -2437,7 +2590,8 @@
       "/images/happy-p3642-3.jpg",
       "/images/happy-p3642-4.jpg",
       "/images/happy-p3642-5.jpg"
-    ]
+    ],
+    "price": 1699
   },
   {
     "id": "p2844",
@@ -2454,7 +2608,8 @@
       "/images/happy-p2844-1.jpg",
       "/images/happy-p2844-2.jpg",
       "/images/happy-p2844-3.jpg"
-    ]
+    ],
+    "price": 129
   },
   {
     "id": "p3475",
@@ -2471,7 +2626,8 @@
       "/images/happy-p3475-1.jpg",
       "/images/happy-p3475-2.jpg",
       "/images/happy-p3475-3.jpg"
-    ]
+    ],
+    "price": 479
   },
   {
     "id": "p3884",
@@ -2488,7 +2644,8 @@
       "/images/happy-p3884-1.png",
       "/images/happy-p3884-2.jpg",
       "/images/happy-p3884-3.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p3490",
@@ -2506,7 +2663,8 @@
       "/images/happy-p3490-2.jpg",
       "/images/happy-p3490-3.jpg",
       "/images/happy-p3490-4.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p3983",
@@ -2523,7 +2681,8 @@
       "/images/happy-p3983-1.jpg",
       "/images/happy-p3983-2.jpg",
       "/images/happy-p3983-3.jpg"
-    ]
+    ],
+    "price": 1989
   },
   {
     "id": "p3970",
@@ -2540,7 +2699,8 @@
       "/images/happy-p3970-1.jpg",
       "/images/happy-p3970-2.jpg",
       "/images/happy-p3970-3.jpg"
-    ]
+    ],
+    "price": 329
   },
   {
     "id": "p1568",
@@ -2556,7 +2716,8 @@
     "images": [
       "/images/happy-p1568-1.jpg",
       "/images/happy-p1568-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3250",
@@ -2572,7 +2733,8 @@
     "images": [
       "/images/happy-p3250-1.jpg",
       "/images/happy-p3250-2.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p548",
@@ -2584,7 +2746,8 @@
     "material": "",
     "dimensions": "",
     "description": "Color: Gray",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 70
   },
   {
     "id": "p3268",
@@ -2596,7 +2759,8 @@
     "material": "",
     "dimensions": "Table Top - 60\" x 42\" x 36\"H",
     "description": "Item Name: Lola20\n\nDimensions:\nTable Top - 60\" x 42\" x 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 1189
   },
   {
     "id": "p3443",
@@ -2608,7 +2772,8 @@
     "material": "",
     "dimensions": "Sofa Closed 88\" W x 40\" D x 38\" H",
     "description": "Item Name: 2920439\n\nColor: Iron\n\nDimensions:\nSofa Closed 88\" W x 40\" D x 38\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 969
   },
   {
     "id": "p3782",
@@ -2624,7 +2789,8 @@
     "images": [
       "/images/happy-p3782-1.jpg",
       "/images/happy-p3782-2.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p2258",
@@ -2643,7 +2809,8 @@
       "/images/happy-p2258-3.jpg",
       "/images/happy-p2258-4.jpg",
       "/images/happy-p2258-5.jpg"
-    ]
+    ],
+    "price": 939
   },
   {
     "id": "p3415",
@@ -2660,7 +2827,8 @@
       "/images/happy-p3415-1.jpg",
       "/images/happy-p3415-2.jpg",
       "/images/happy-p3415-3.jpg"
-    ]
+    ],
+    "price": 389
   },
   {
     "id": "p3813",
@@ -2677,7 +2845,8 @@
       "/images/happy-p3813-1.jpg",
       "/images/happy-p3813-2.jpg",
       "/images/happy-p3813-3.jpg"
-    ]
+    ],
+    "price": 279
   },
   {
     "id": "p1422",
@@ -2694,7 +2863,8 @@
       "/images/happy-p1422-1.jpg",
       "/images/happy-p1422-2.jpg",
       "/images/happy-p1422-3.jpg"
-    ]
+    ],
+    "price": 939
   },
   {
     "id": "p2064",
@@ -2711,7 +2881,8 @@
       "/images/happy-p2064-1.jpg",
       "/images/happy-p2064-2.jpg",
       "/images/happy-p2064-3.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2964",
@@ -2730,7 +2901,8 @@
       "/images/happy-p2964-3.jpg",
       "/images/happy-p2964-4.jpg",
       "/images/happy-p2964-5.jpg"
-    ]
+    ],
+    "price": 819
   },
   {
     "id": "p936",
@@ -2742,7 +2914,8 @@
     "material": "Velvet, Gold Metal Legs",
     "dimensions": "LAF SOFA: 76x33x34H\nCHAISE: 80x33X34H",
     "description": "Item Name: Vogue\n\nColor: Red\n\nMaterial: Velvet, Gold Metal Legs\n\nDimensions:\nLAF SOFA: 76x33x34H\nCHAISE: 80x33X34H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 679
   },
   {
     "id": "p3622",
@@ -2759,7 +2932,8 @@
       "/images/happy-p3622-1.jpg",
       "/images/happy-p3622-2.jpg",
       "/images/happy-p3622-3.jpg"
-    ]
+    ],
+    "price": 209
   },
   {
     "id": "p4002",
@@ -2771,7 +2945,8 @@
     "material": "",
     "dimensions": "SOFA- 80\" L x 35\" D x 36\" H\nLOVESEAT- 58\" L x 35\" D x 36\" H",
     "description": "Item Name: 510-2PC-Charcoal\n\nDimensions:\nSOFA- 80\" L x 35\" D x 36\" H\nLOVESEAT- 58\" L x 35\" D x 36\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p4037",
@@ -2787,7 +2962,8 @@
     "images": [
       "/images/happy-p4037-1.jpg",
       "/images/happy-p4037-2.png"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3915",
@@ -2805,7 +2981,8 @@
       "/images/happy-p3915-2.jpg",
       "/images/happy-p3915-3.jpg",
       "/images/happy-p3915-4.jpg"
-    ]
+    ],
+    "price": 189
   },
   {
     "id": "p3777",
@@ -2822,7 +2999,8 @@
       "/images/happy-p3777-1.jpg",
       "/images/happy-p3777-2.jpg",
       "/images/happy-p3777-3.jpg"
-    ]
+    ],
+    "price": 969
   },
   {
     "id": "p3461",
@@ -2838,7 +3016,8 @@
     "images": [
       "/images/happy-p3461-1.jpg",
       "/images/happy-p3461-2.png"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p3534",
@@ -2857,7 +3036,8 @@
       "/images/happy-p3534-3.jpg",
       "/images/happy-p3534-4.jpg",
       "/images/happy-p3534-5.jpg"
-    ]
+    ],
+    "price": 2379
   },
   {
     "id": "p2017",
@@ -2873,7 +3053,8 @@
     "images": [
       "/images/happy-p2017-1.png",
       "/images/happy-p2017-2.png"
-    ]
+    ],
+    "price": 939
   },
   {
     "id": "p4047",
@@ -2890,7 +3071,8 @@
       "/images/happy-p4047-1.jpg",
       "/images/happy-p4047-2.jpg",
       "/images/happy-p4047-3.jpg"
-    ]
+    ],
+    "price": 599
   },
   {
     "id": "p3279",
@@ -2906,7 +3088,8 @@
     "images": [
       "/images/happy-p3279-1.jpg",
       "/images/happy-p3279-2.jpg"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p3973",
@@ -2923,7 +3106,8 @@
       "/images/happy-p3973-1.jpg",
       "/images/happy-p3973-2.jpg",
       "/images/happy-p3973-3.png"
-    ]
+    ],
+    "price": 1129
   },
   {
     "id": "p3003",
@@ -2940,7 +3124,8 @@
       "/images/happy-p3003-1.jpg",
       "/images/happy-p3003-2.jpg",
       "/images/happy-p3003-3.jpg"
-    ]
+    ],
+    "price": 819
   },
   {
     "id": "p3634",
@@ -2958,7 +3143,8 @@
       "/images/happy-p3634-2.jpg",
       "/images/happy-p3634-3.jpg",
       "/images/happy-p3634-4.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3098",
@@ -2970,7 +3156,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: HH3500\n\nColor: Dark Charcoal",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p4012",
@@ -2989,7 +3176,8 @@
       "/images/happy-p4012-3.jpg",
       "/images/happy-p4012-4.jpg",
       "/images/happy-p4012-5.jpg"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p4038",
@@ -3008,7 +3196,8 @@
       "/images/happy-p4038-3.jpg",
       "/images/happy-p4038-4.jpg",
       "/images/happy-p4038-5.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p1687",
@@ -3024,7 +3213,8 @@
     "images": [
       "/images/happy-p1687-1.png",
       "/images/happy-p1687-2.jpg"
-    ]
+    ],
+    "price": 939
   },
   {
     "id": "p3100",
@@ -3042,7 +3232,8 @@
       "/images/happy-p3100-2.jpg",
       "/images/happy-p3100-3.jpg",
       "/images/happy-p3100-4.png"
-    ]
+    ],
+    "price": 1139
   },
   {
     "id": "p2847",
@@ -3061,7 +3252,8 @@
       "/images/happy-p2847-3.jpg",
       "/images/happy-p2847-4.jpg",
       "/images/happy-p2847-5.jpg"
-    ]
+    ],
+    "price": 3059
   },
   {
     "id": "p3791",
@@ -3077,7 +3269,8 @@
     "images": [
       "/images/happy-p3791-1.jpg",
       "/images/happy-p3791-2.jpg"
-    ]
+    ],
+    "price": 989
   },
   {
     "id": "p4021",
@@ -3093,7 +3286,8 @@
     "images": [
       "/images/happy-p4021-1.png",
       "/images/happy-p4021-2.png"
-    ]
+    ],
+    "price": 259
   },
   {
     "id": "p2846",
@@ -3112,7 +3306,8 @@
       "/images/happy-p2846-3.jpg",
       "/images/happy-p2846-4.jpg",
       "/images/happy-p2846-5.jpg"
-    ]
+    ],
+    "price": 3059
   },
   {
     "id": "p2522",
@@ -3129,7 +3324,8 @@
       "/images/happy-p2522-1.jpg",
       "/images/happy-p2522-2.png",
       "/images/happy-p2522-3.jpg"
-    ]
+    ],
+    "price": 219
   },
   {
     "id": "p745",
@@ -3141,7 +3337,8 @@
     "material": "PU",
     "dimensions": "Overall Dimension:\u00a0109 x 80 x 34H\nLSF 3-seater: 76 x 33 x 34\nRSF chaise: 80 x 33 x 34",
     "description": "Item Name: Vintage White\n\nColor: White - Metal Legs\n\nMaterial: PU\n\nDimensions:\nOverall Dimension:\u00a0109 x 80 x 34H\nLSF 3-seater: 76 x 33 x 34\nRSF chaise: 80 x 33 x 34",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 729
   },
   {
     "id": "p2529",
@@ -3158,7 +3355,8 @@
       "/images/happy-p2529-1.jpg",
       "/images/happy-p2529-2.png",
       "/images/happy-p2529-3.jpg"
-    ]
+    ],
+    "price": 289
   },
   {
     "id": "p3462",
@@ -3175,7 +3373,8 @@
       "/images/happy-p3462-1.jpg",
       "/images/happy-p3462-2.png",
       "/images/happy-p3462-3.png"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3380",
@@ -3192,7 +3391,8 @@
       "/images/happy-p3380-1.jpg",
       "/images/happy-p3380-2.jpg",
       "/images/happy-p3380-3.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p3311",
@@ -3204,7 +3404,8 @@
     "material": "Boucle Fabric",
     "dimensions": "",
     "description": "Color: Sand\n\nMaterial: Boucle Fabric",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 819
   },
   {
     "id": "p3248",
@@ -3222,7 +3423,8 @@
       "/images/happy-p3248-2.jpg",
       "/images/happy-p3248-3.jpg",
       "/images/happy-p3248-4.jpg"
-    ]
+    ],
+    "price": 839
   },
   {
     "id": "p3344",
@@ -3240,7 +3442,8 @@
       "/images/happy-p3344-2.jpg",
       "/images/happy-p3344-3.jpg",
       "/images/happy-p3344-4.jpg"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p3426",
@@ -3257,7 +3460,8 @@
       "/images/happy-p3426-1.jpg",
       "/images/happy-p3426-2.jpg",
       "/images/happy-p3426-3.jpg"
-    ]
+    ],
+    "price": 549
   },
   {
     "id": "p3446",
@@ -3275,7 +3479,8 @@
       "/images/happy-p3446-2.jpg",
       "/images/happy-p3446-3.jpg",
       "/images/happy-p3446-4.jpg"
-    ]
+    ],
+    "price": 1699
   },
   {
     "id": "p3464",
@@ -3292,7 +3497,8 @@
       "/images/happy-p3464-1.jpg",
       "/images/happy-p3464-2.png",
       "/images/happy-p3464-3.png"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3381",
@@ -3309,7 +3515,8 @@
       "/images/happy-p3381-1.jpg",
       "/images/happy-p3381-2.jpg",
       "/images/happy-p3381-3.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p3524",
@@ -3321,7 +3528,8 @@
     "material": "METAL BED WITH WOOD PANEL HEADBOARD",
     "dimensions": "",
     "description": "Item Name: BM11\n\nColor: Texture Grey\n\nMaterial: METAL BED WITH WOOD PANEL HEADBOARD",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 0
   },
   {
     "id": "p3918",
@@ -3339,7 +3547,8 @@
       "/images/happy-p3918-2.jpg",
       "/images/happy-p3918-3.jpg",
       "/images/happy-p3918-4.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p3742",
@@ -3358,7 +3567,8 @@
       "/images/happy-p3742-3.jpg",
       "/images/happy-p3742-4.jpg",
       "/images/happy-p3742-5.jpg"
-    ]
+    ],
+    "price": 1699
   },
   {
     "id": "p3497",
@@ -3370,7 +3580,8 @@
     "material": "PU/ Microfiber",
     "dimensions": "LAF Sofa- 72\"L x 35\"D x 36\"H\nRAF Chaise- 80\"L x 35\"D x 36\"H",
     "description": "Item Name: 110 Latte\n\nMaterial: PU/ Microfiber\n\nDimensions:\nLAF Sofa- 72\"L x 35\"D x 36\"H\nRAF Chaise- 80\"L x 35\"D x 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 679
   },
   {
     "id": "p2991",
@@ -3388,7 +3599,8 @@
       "/images/happy-p2991-2.jpg",
       "/images/happy-p2991-3.jpg",
       "/images/happy-p2991-4.jpg"
-    ]
+    ],
+    "price": 819
   },
   {
     "id": "p3849",
@@ -3400,7 +3612,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: 8100-Gray",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 0
   },
   {
     "id": "p3930",
@@ -3416,7 +3629,8 @@
     "images": [
       "/images/happy-p3930-1.jpg",
       "/images/happy-p3930-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3527",
@@ -3428,7 +3642,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: BM31",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 0
   },
   {
     "id": "p3352",
@@ -3445,7 +3660,8 @@
       "/images/happy-p3352-1.jpg",
       "/images/happy-p3352-2.jpg",
       "/images/happy-p3352-3.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p2845",
@@ -3461,7 +3677,8 @@
     "images": [
       "/images/happy-p2845-1.jpg",
       "/images/happy-p2845-2.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p3583",
@@ -3480,7 +3697,8 @@
       "/images/happy-p3583-3.jpg",
       "/images/happy-p3583-4.jpg",
       "/images/happy-p3583-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3988",
@@ -3497,7 +3715,8 @@
       "/images/happy-p3988-1.jpg",
       "/images/happy-p3988-2.jpg",
       "/images/happy-p3988-3.jpg"
-    ]
+    ],
+    "price": 479
   },
   {
     "id": "p3774",
@@ -3514,7 +3733,8 @@
       "/images/happy-p3774-1.jpg",
       "/images/happy-p3774-2.jpg",
       "/images/happy-p3774-3.jpg"
-    ]
+    ],
+    "price": 189
   },
   {
     "id": "p3515",
@@ -3530,7 +3750,8 @@
     "images": [
       "/images/happy-p3515-1.jpg",
       "/images/happy-p3515-2.jpg"
-    ]
+    ],
+    "price": 1019
   },
   {
     "id": "p3405",
@@ -3548,7 +3769,8 @@
       "/images/happy-p3405-2.jpg",
       "/images/happy-p3405-3.jpg",
       "/images/happy-p3405-4.jpg"
-    ]
+    ],
+    "price": 1359
   },
   {
     "id": "p3855",
@@ -3567,7 +3789,8 @@
       "/images/happy-p3855-3.jpg",
       "/images/happy-p3855-4.jpg",
       "/images/happy-p3855-5.jpg"
-    ]
+    ],
+    "price": 2039
   },
   {
     "id": "p3471",
@@ -3583,7 +3806,8 @@
     "images": [
       "/images/happy-p3471-1.jpg",
       "/images/happy-p3471-2.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p3738",
@@ -3600,7 +3824,8 @@
       "/images/happy-p3738-1.jpg",
       "/images/happy-p3738-2.jpg",
       "/images/happy-p3738-3.jpg"
-    ]
+    ],
+    "price": 289
   },
   {
     "id": "p1838",
@@ -3612,7 +3837,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: Board",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 50
   },
   {
     "id": "p2476",
@@ -3628,7 +3854,8 @@
     "images": [
       "/images/happy-p2476-1.jpg",
       "/images/happy-p2476-2.jpg"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p2696",
@@ -3640,7 +3867,8 @@
     "material": "",
     "dimensions": "SOFA- 80\" L x 35\" D x 36\" H\nLOVESEAT- 58\" L x 35\" D x 36\" H",
     "description": "Item Name: 410-2PC-GRAY\n\nDimensions:\nSOFA- 80\" L x 35\" D x 36\" H\nLOVESEAT- 58\" L x 35\" D x 36\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p3420",
@@ -3656,7 +3884,8 @@
     "images": [
       "/images/happy-p3420-1.jpg",
       "/images/happy-p3420-2.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p4031",
@@ -3668,7 +3897,8 @@
     "material": "",
     "dimensions": "39\"L x 40\"D x 43\"H",
     "description": "Color: Slate\n\nDimensions:\n39\"L x 40\"D x 43\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 429
   },
   {
     "id": "p3174",
@@ -3684,7 +3914,8 @@
     "images": [
       "/images/happy-p3174-1.jpg",
       "/images/happy-p3174-2.jpg"
-    ]
+    ],
+    "price": 479
   },
   {
     "id": "p3588",
@@ -3700,7 +3931,8 @@
     "images": [
       "/images/happy-p3588-1.png",
       "/images/happy-p3588-2.png"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3194",
@@ -3716,7 +3948,8 @@
     "images": [
       "/images/happy-p3194-1.jpg",
       "/images/happy-p3194-2.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p1684",
@@ -3732,7 +3965,8 @@
     "images": [
       "/images/happy-p1684-1.png",
       "/images/happy-p1684-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3567",
@@ -3751,7 +3985,8 @@
       "/images/happy-p3567-3.jpg",
       "/images/happy-p3567-4.jpg",
       "/images/happy-p3567-5.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p2203",
@@ -3769,7 +4004,8 @@
       "/images/happy-p2203-2.jpg",
       "/images/happy-p2203-3.jpg",
       "/images/happy-p2203-4.jpg"
-    ]
+    ],
+    "price": 2039
   },
   {
     "id": "p3776",
@@ -3786,7 +4022,8 @@
       "/images/happy-p3776-1.jpg",
       "/images/happy-p3776-2.jpg",
       "/images/happy-p3776-3.jpg"
-    ]
+    ],
+    "price": 189
   },
   {
     "id": "p3518",
@@ -3798,7 +4035,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: B3000",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 339
   },
   {
     "id": "p3512",
@@ -3816,7 +4054,8 @@
       "/images/happy-p3512-2.jpg",
       "/images/happy-p3512-3.jpg",
       "/images/happy-p3512-4.jpg"
-    ]
+    ],
+    "price": 129
   },
   {
     "id": "p2222",
@@ -3834,7 +4073,8 @@
       "/images/happy-p2222-2.jpg",
       "/images/happy-p2222-3.jpg",
       "/images/happy-p2222-4.jpg"
-    ]
+    ],
+    "price": 2039
   },
   {
     "id": "p3785",
@@ -3852,7 +4092,8 @@
       "/images/happy-p3785-2.jpg",
       "/images/happy-p3785-3.jpg",
       "/images/happy-p3785-4.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3747",
@@ -3868,7 +4109,8 @@
     "images": [
       "/images/happy-p3747-1.jpg",
       "/images/happy-p3747-2.jpg"
-    ]
+    ],
+    "price": 2039
   },
   {
     "id": "p2071",
@@ -3885,7 +4127,8 @@
       "/images/happy-p2071-1.jpg",
       "/images/happy-p2071-2.jpg",
       "/images/happy-p2071-3.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3999",
@@ -3897,7 +4140,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: Stars\n\nColor: Charcoal",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 219
   },
   {
     "id": "p3241",
@@ -3909,7 +4153,8 @@
     "material": "",
     "dimensions": "Table Top - 60\" x 42\" x 31\"H",
     "description": "Item Name: Lola10\n\nDimensions:\nTable Top - 60\" x 42\" x 31\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 1109
   },
   {
     "id": "p3217",
@@ -3926,7 +4171,8 @@
       "/images/happy-p3217-1.png",
       "/images/happy-p3217-2.png",
       "/images/happy-p3217-3.png"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3114",
@@ -3942,7 +4188,8 @@
     "images": [
       "/images/happy-p3114-1.jpg",
       "/images/happy-p3114-2.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p3445",
@@ -3960,7 +4207,8 @@
       "/images/happy-p3445-2.jpg",
       "/images/happy-p3445-3.jpg",
       "/images/happy-p3445-4.jpg"
-    ]
+    ],
+    "price": 1699
   },
   {
     "id": "p3086",
@@ -3972,7 +4220,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: B7000",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 339
   },
   {
     "id": "p2815",
@@ -3989,7 +4238,8 @@
       "/images/happy-p2815-1.jpg",
       "/images/happy-p2815-2.jpg",
       "/images/happy-p2815-3.jpg"
-    ]
+    ],
+    "price": 1069
   },
   {
     "id": "p3840",
@@ -4006,7 +4256,8 @@
       "/images/happy-p3840-1.jpg",
       "/images/happy-p3840-2.jpg",
       "/images/happy-p3840-3.jpg"
-    ]
+    ],
+    "price": 359
   },
   {
     "id": "p3007",
@@ -4024,7 +4275,8 @@
       "/images/happy-p3007-2.jpg",
       "/images/happy-p3007-3.jpg",
       "/images/happy-p3007-4.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p3183",
@@ -4041,7 +4293,8 @@
       "/images/happy-p3183-1.jpg",
       "/images/happy-p3183-2.jpg",
       "/images/happy-p3183-3.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p4022",
@@ -4059,7 +4312,8 @@
       "/images/happy-p4022-2.jpg",
       "/images/happy-p4022-3.jpg",
       "/images/happy-p4022-4.jpg"
-    ]
+    ],
+    "price": 899
   },
   {
     "id": "p3313",
@@ -4071,7 +4325,8 @@
     "material": "Boucle Fabric",
     "dimensions": "",
     "description": "Color: Gray\n\nMaterial: Boucle Fabric",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 819
   },
   {
     "id": "p3732",
@@ -4087,7 +4342,8 @@
     "images": [
       "/images/happy-p3732-1.jpg",
       "/images/happy-p3732-2.jpg"
-    ]
+    ],
+    "price": 1379
   },
   {
     "id": "p3974",
@@ -4105,7 +4361,8 @@
       "/images/happy-p3974-2.jpg",
       "/images/happy-p3974-3.jpg",
       "/images/happy-p3974-4.jpg"
-    ]
+    ],
+    "price": 259
   },
   {
     "id": "p3701",
@@ -4124,7 +4381,8 @@
       "/images/happy-p3701-3.jpg",
       "/images/happy-p3701-4.png",
       "/images/happy-p3701-5.jpg"
-    ]
+    ],
+    "price": 1699
   },
   {
     "id": "p3886",
@@ -4140,7 +4398,8 @@
     "images": [
       "/images/happy-p3886-1.jpg",
       "/images/happy-p3886-2.jpg"
-    ]
+    ],
+    "price": 1359
   },
   {
     "id": "p3708",
@@ -4156,7 +4415,8 @@
     "images": [
       "/images/happy-p3708-1.jpg",
       "/images/happy-p3708-2.jpg"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p2400",
@@ -4168,7 +4428,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: B6020\n\nColor: Black",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 259
   },
   {
     "id": "p1123",
@@ -4184,7 +4445,8 @@
     "images": [
       "/images/happy-p1123-1.jpg",
       "/images/happy-p1123-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3581",
@@ -4203,7 +4465,8 @@
       "/images/happy-p3581-3.jpg",
       "/images/happy-p3581-4.jpg",
       "/images/happy-p3581-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p2468",
@@ -4219,7 +4482,8 @@
     "images": [
       "/images/happy-p2468-1.png",
       "/images/happy-p2468-2.png"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p3883",
@@ -4236,7 +4500,8 @@
       "/images/happy-p3883-1.jpg",
       "/images/happy-p3883-2.jpg",
       "/images/happy-p3883-3.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p3719",
@@ -4252,7 +4517,8 @@
     "images": [
       "/images/happy-p3719-1.jpg",
       "/images/happy-p3719-2.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3491",
@@ -4271,7 +4537,8 @@
       "/images/happy-p3491-3.jpg",
       "/images/happy-p3491-4.jpg",
       "/images/happy-p3491-5.jpg"
-    ]
+    ],
+    "price": 1409
   },
   {
     "id": "p2516",
@@ -4283,7 +4550,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: HH3610",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p3967",
@@ -4299,7 +4567,8 @@
     "images": [
       "/images/happy-p3967-1.jpg",
       "/images/happy-p3967-2.jpg"
-    ]
+    ],
+    "price": 939
   },
   {
     "id": "p3806",
@@ -4315,7 +4584,8 @@
     "images": [
       "/images/happy-p3806-1.jpg",
       "/images/happy-p3806-2.jpg"
-    ]
+    ],
+    "price": 289
   },
   {
     "id": "p3161",
@@ -4332,7 +4602,8 @@
       "/images/happy-p3161-1.jpg",
       "/images/happy-p3161-2.jpg",
       "/images/happy-p3161-3.jpg"
-    ]
+    ],
+    "price": 599
   },
   {
     "id": "p3819",
@@ -4351,7 +4622,8 @@
       "/images/happy-p3819-3.jpg",
       "/images/happy-p3819-4.jpg",
       "/images/happy-p3819-5.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3132",
@@ -4369,7 +4641,8 @@
       "/images/happy-p3132-2.jpg",
       "/images/happy-p3132-3.jpg",
       "/images/happy-p3132-4.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3755",
@@ -4386,7 +4659,8 @@
       "/images/happy-p3755-1.jpg",
       "/images/happy-p3755-2.jpg",
       "/images/happy-p3755-3.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p2339",
@@ -4403,7 +4677,8 @@
       "/images/happy-p2339-1.jpg",
       "/images/happy-p2339-2.jpg",
       "/images/happy-p2339-3.jpg"
-    ]
+    ],
+    "price": 279
   },
   {
     "id": "p3812",
@@ -4420,7 +4695,8 @@
       "/images/happy-p3812-1.jpg",
       "/images/happy-p3812-2.jpg",
       "/images/happy-p3812-3.jpg"
-    ]
+    ],
+    "price": 279
   },
   {
     "id": "p2607",
@@ -4438,7 +4714,8 @@
       "/images/happy-p2607-2.jpg",
       "/images/happy-p2607-3.jpg",
       "/images/happy-p2607-4.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p1384",
@@ -4455,7 +4732,8 @@
       "/images/happy-p1384-1.jpg",
       "/images/happy-p1384-2.jpg",
       "/images/happy-p1384-3.jpg"
-    ]
+    ],
+    "price": 509
   },
   {
     "id": "p2491",
@@ -4471,7 +4749,8 @@
     "images": [
       "/images/happy-p2491-1.jpg",
       "/images/happy-p2491-2.jpg"
-    ]
+    ],
+    "price": 89
   },
   {
     "id": "p3398",
@@ -4489,7 +4768,8 @@
       "/images/happy-p3398-2.jpg",
       "/images/happy-p3398-3.png",
       "/images/happy-p3398-4.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p3905",
@@ -4505,7 +4785,8 @@
     "images": [
       "/images/happy-p3905-1.jpg",
       "/images/happy-p3905-2.jpg"
-    ]
+    ],
+    "price": 749
   },
   {
     "id": "p2690",
@@ -4523,7 +4804,8 @@
       "/images/happy-p2690-2.jpg",
       "/images/happy-p2690-3.jpg",
       "/images/happy-p2690-4.jpg"
-    ]
+    ],
+    "price": 289
   },
   {
     "id": "p2435",
@@ -4535,7 +4817,8 @@
     "material": "",
     "dimensions": "31W x 71H\nFull Length Mirror,",
     "description": "Item Name: A730\n\nColor: Mirror\n\nDimensions:\n31W x 71H\nFull Length Mirror,",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 339
   },
   {
     "id": "p3770",
@@ -4552,7 +4835,8 @@
       "/images/happy-p3770-1.jpg",
       "/images/happy-p3770-2.jpg",
       "/images/happy-p3770-3.jpg"
-    ]
+    ],
+    "price": 729
   },
   {
     "id": "p3863",
@@ -4568,7 +4852,8 @@
     "images": [
       "/images/happy-p3863-1.jpg",
       "/images/happy-p3863-2.jpg"
-    ]
+    ],
+    "price": 259
   },
   {
     "id": "p3523",
@@ -4580,7 +4865,8 @@
     "material": "METAL BED WITH WOOD PANEL HEADBOARD",
     "dimensions": "",
     "description": "Item Name: BM10\n\nColor: Texture Gray\n\nMaterial: METAL BED WITH WOOD PANEL HEADBOARD",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 139
   },
   {
     "id": "p3687",
@@ -4598,7 +4884,8 @@
       "/images/happy-p3687-2.jpg",
       "/images/happy-p3687-3.jpg",
       "/images/happy-p3687-4.jpg"
-    ]
+    ],
+    "price": 2129
   },
   {
     "id": "p3768",
@@ -4617,7 +4904,8 @@
       "/images/happy-p3768-3.jpg",
       "/images/happy-p3768-4.jpg",
       "/images/happy-p3768-5.jpg"
-    ]
+    ],
+    "price": 2539
   },
   {
     "id": "p2993",
@@ -4635,7 +4923,8 @@
       "/images/happy-p2993-2.jpg",
       "/images/happy-p2993-3.jpg",
       "/images/happy-p2993-4.jpg"
-    ]
+    ],
+    "price": 819
   },
   {
     "id": "p3078",
@@ -4653,7 +4942,8 @@
       "/images/happy-p3078-2.jpg",
       "/images/happy-p3078-3.jpg",
       "/images/happy-p3078-4.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3892",
@@ -4670,7 +4960,8 @@
       "/images/happy-p3892-1.jpg",
       "/images/happy-p3892-2.jpg",
       "/images/happy-p3892-3.jpg"
-    ]
+    ],
+    "price": 379
   },
   {
     "id": "p3540",
@@ -4689,7 +4980,8 @@
       "/images/happy-p3540-3.jpg",
       "/images/happy-p3540-4.jpg",
       "/images/happy-p3540-5.jpg"
-    ]
+    ],
+    "price": 1409
   },
   {
     "id": "p3287",
@@ -4708,7 +5000,8 @@
       "/images/happy-p3287-3.jpg",
       "/images/happy-p3287-4.jpg",
       "/images/happy-p3287-5.jpg"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p2887",
@@ -4727,7 +5020,8 @@
       "/images/happy-p2887-3.jpg",
       "/images/happy-p2887-4.jpg",
       "/images/happy-p2887-5.jpg"
-    ]
+    ],
+    "price": 919
   },
   {
     "id": "p2272",
@@ -4744,7 +5038,8 @@
       "/images/happy-p2272-1.jpg",
       "/images/happy-p2272-2.jpg",
       "/images/happy-p2272-3.jpg"
-    ]
+    ],
+    "price": 279
   },
   {
     "id": "p3850",
@@ -4762,7 +5057,8 @@
       "/images/happy-p3850-2.jpg",
       "/images/happy-p3850-3.jpg",
       "/images/happy-p3850-4.jpg"
-    ]
+    ],
+    "price": 3059
   },
   {
     "id": "p3063",
@@ -4780,7 +5076,8 @@
       "/images/happy-p3063-2.jpg",
       "/images/happy-p3063-3.jpg",
       "/images/happy-p3063-4.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p2576",
@@ -4792,7 +5089,8 @@
     "material": "Industrial Wood, Faux Marble Top Table, VELVET Chairs",
     "dimensions": "42\"L x 42\"W X 36\"H",
     "description": "Item Name: Dior Onyx Black\n\nColor: Black Velvet Chairs\n\nMaterial: Industrial Wood, Faux Marble Top Table, VELVET Chairs\n\nDimensions:\n42\"L x 42\"W X 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 459
   },
   {
     "id": "p3484",
@@ -4810,7 +5108,8 @@
       "/images/happy-p3484-2.jpg",
       "/images/happy-p3484-3.jpg",
       "/images/happy-p3484-4.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p3796",
@@ -4828,7 +5127,8 @@
       "/images/happy-p3796-2.jpg",
       "/images/happy-p3796-3.jpg",
       "/images/happy-p3796-4.jpg"
-    ]
+    ],
+    "price": 1359
   },
   {
     "id": "p3879",
@@ -4844,7 +5144,8 @@
     "images": [
       "/images/happy-p3879-1.jpg",
       "/images/happy-p3879-2.jpg"
-    ]
+    ],
+    "price": 2039
   },
   {
     "id": "p3533",
@@ -4863,7 +5164,8 @@
       "/images/happy-p3533-3.jpg",
       "/images/happy-p3533-4.jpg",
       "/images/happy-p3533-5.jpg"
-    ]
+    ],
+    "price": 2379
   },
   {
     "id": "p3297",
@@ -4879,7 +5181,8 @@
     "images": [
       "/images/happy-p3297-1.jpg",
       "/images/happy-p3297-2.jpg"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p3665",
@@ -4896,7 +5199,8 @@
       "/images/happy-p3665-1.jpg",
       "/images/happy-p3665-2.jpg",
       "/images/happy-p3665-3.jpg"
-    ]
+    ],
+    "price": 649
   },
   {
     "id": "p539",
@@ -4908,7 +5212,8 @@
     "material": "PU",
     "dimensions": "Overall Dimension:\u00a0109 x 80 x 34H\nLSF 3-seater: 76 x 33 x 34\nRSF chaise: 80 x 33 x 34",
     "description": "Item Name: Vintage Back\n\nColor: Black\n\nMaterial: PU\n\nDimensions:\nOverall Dimension:\u00a0109 x 80 x 34H\nLSF 3-seater: 76 x 33 x 34\nRSF chaise: 80 x 33 x 34",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 729
   },
   {
     "id": "p3211",
@@ -4924,7 +5229,8 @@
     "images": [
       "/images/happy-p3211-1.jpg",
       "/images/happy-p3211-2.jpg"
-    ]
+    ],
+    "price": 479
   },
   {
     "id": "p1432",
@@ -4940,7 +5246,8 @@
     "images": [
       "/images/happy-p1432-1.jpg",
       "/images/happy-p1432-2.jpg"
-    ]
+    ],
+    "price": 649
   },
   {
     "id": "p3709",
@@ -4956,7 +5263,8 @@
     "images": [
       "/images/happy-p3709-1.jpg",
       "/images/happy-p3709-2.jpg"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p3784",
@@ -4973,7 +5281,8 @@
       "/images/happy-p3784-1.jpg",
       "/images/happy-p3784-2.jpg",
       "/images/happy-p3784-3.jpg"
-    ]
+    ],
+    "price": 899
   },
   {
     "id": "p3857",
@@ -4990,7 +5299,8 @@
       "/images/happy-p3857-1.jpg",
       "/images/happy-p3857-2.jpg",
       "/images/happy-p3857-3.jpg"
-    ]
+    ],
+    "price": 649
   },
   {
     "id": "p3210",
@@ -5002,7 +5312,8 @@
     "material": "",
     "dimensions": "LAF Sofa- 72\"L x 35\"D x 36\"H\nRAF Chaise- 80\"L x 35\"D x 36\"H",
     "description": "Dimensions:\nLAF Sofa- 72\"L x 35\"D x 36\"H\nRAF Chaise- 80\"L x 35\"D x 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p650",
@@ -5018,7 +5329,8 @@
     "images": [
       "/images/happy-p650-1.jpg",
       "/images/happy-p650-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3372",
@@ -5030,7 +5342,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: M5X1",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 599
   },
   {
     "id": "p3820",
@@ -5046,7 +5359,8 @@
     "images": [
       "/images/happy-p3820-1.jpg",
       "/images/happy-p3820-2.jpg"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p805",
@@ -5062,7 +5376,8 @@
     "images": [
       "/images/happy-p805-1.jpg",
       "/images/happy-p805-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2257",
@@ -5081,7 +5396,8 @@
       "/images/happy-p2257-3.png",
       "/images/happy-p2257-4.jpg",
       "/images/happy-p2257-5.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3099",
@@ -5093,7 +5409,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: HH3520",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p3390",
@@ -5109,7 +5426,8 @@
     "images": [
       "/images/happy-p3390-1.jpg",
       "/images/happy-p3390-2.jpg"
-    ]
+    ],
+    "price": 649
   },
   {
     "id": "p1810",
@@ -5126,7 +5444,8 @@
       "/images/happy-p1810-1.jpg",
       "/images/happy-p1810-2.jpg",
       "/images/happy-p1810-3.jpg"
-    ]
+    ],
+    "price": 989
   },
   {
     "id": "p3680",
@@ -5142,7 +5461,8 @@
     "images": [
       "/images/happy-p3680-1.jpg",
       "/images/happy-p3680-2.jpg"
-    ]
+    ],
+    "price": 649
   },
   {
     "id": "p3304",
@@ -5154,7 +5474,8 @@
     "material": "",
     "dimensions": "Headboard Height - 54\"",
     "description": "Item Name: AVA\n\nColor: Gray\n\nDimensions:\nHeadboard Height - 54\"",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 339
   },
   {
     "id": "p3702",
@@ -5172,7 +5493,8 @@
       "/images/happy-p3702-2.jpg",
       "/images/happy-p3702-3.jpg",
       "/images/happy-p3702-4.jpg"
-    ]
+    ],
+    "price": 2129
   },
   {
     "id": "p2638",
@@ -5191,7 +5513,8 @@
       "/images/happy-p2638-3.jpg",
       "/images/happy-p2638-4.jpg",
       "/images/happy-p2638-5.jpg"
-    ]
+    ],
+    "price": 5099
   },
   {
     "id": "p3917",
@@ -5209,7 +5532,8 @@
       "/images/happy-p3917-2.jpg",
       "/images/happy-p3917-3.jpg",
       "/images/happy-p3917-4.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p3906",
@@ -5221,7 +5545,8 @@
     "material": "",
     "dimensions": "",
     "description": "",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 519
   },
   {
     "id": "p2651",
@@ -5237,7 +5562,8 @@
     "images": [
       "/images/happy-p2651-1.jpg",
       "/images/happy-p2651-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3104",
@@ -5255,7 +5581,8 @@
       "/images/happy-p3104-2.jpg",
       "/images/happy-p3104-3.jpg",
       "/images/happy-p3104-4.jpg"
-    ]
+    ],
+    "price": 649
   },
   {
     "id": "p3878",
@@ -5271,7 +5598,8 @@
     "images": [
       "/images/happy-p3878-1.jpg",
       "/images/happy-p3878-2.jpg"
-    ]
+    ],
+    "price": 2039
   },
   {
     "id": "p3753",
@@ -5288,7 +5616,8 @@
       "/images/happy-p3753-1.jpg",
       "/images/happy-p3753-2.jpg",
       "/images/happy-p3753-3.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p3842",
@@ -5307,7 +5636,8 @@
       "/images/happy-p3842-3.jpg",
       "/images/happy-p3842-4.jpg",
       "/images/happy-p3842-5.jpg"
-    ]
+    ],
+    "price": 619
   },
   {
     "id": "p3804",
@@ -5319,7 +5649,8 @@
     "material": "",
     "dimensions": "Sofa: 87x37x38H\nLoveseat: 64x37x38H",
     "description": "Item Name: 198 Nutmeg\n\nColor: Brown\n\nDimensions:\nSofa: 87x37x38H\nLoveseat: 64x37x38H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 1189
   },
   {
     "id": "p2829",
@@ -5335,7 +5666,8 @@
     "images": [
       "/images/happy-p2829-1.jpg",
       "/images/happy-p2829-2.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p2637",
@@ -5351,7 +5683,8 @@
     "images": [
       "/images/happy-p2637-1.jpg",
       "/images/happy-p2637-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2524",
@@ -5368,7 +5701,8 @@
       "/images/happy-p2524-1.jpg",
       "/images/happy-p2524-2.jpg",
       "/images/happy-p2524-3.png"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p3965",
@@ -5384,7 +5718,8 @@
     "images": [
       "/images/happy-p3965-1.jpg",
       "/images/happy-p3965-2.jpg"
-    ]
+    ],
+    "price": 389
   },
   {
     "id": "p3612",
@@ -5402,7 +5737,8 @@
       "/images/happy-p3612-2.jpg",
       "/images/happy-p3612-3.jpg",
       "/images/happy-p3612-4.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3821",
@@ -5420,7 +5756,8 @@
       "/images/happy-p3821-2.jpg",
       "/images/happy-p3821-3.jpg",
       "/images/happy-p3821-4.jpg"
-    ]
+    ],
+    "price": 1449
   },
   {
     "id": "p3945",
@@ -5439,7 +5776,8 @@
       "/images/happy-p3945-3.jpg",
       "/images/happy-p3945-4.jpg",
       "/images/happy-p3945-5.jpg"
-    ]
+    ],
+    "price": 3059
   },
   {
     "id": "p2050",
@@ -5455,7 +5793,8 @@
     "images": [
       "/images/happy-p2050-1.jpg",
       "/images/happy-p2050-2.jpg"
-    ]
+    ],
+    "price": 499
   },
   {
     "id": "p3404",
@@ -5473,7 +5812,8 @@
       "/images/happy-p3404-2.jpg",
       "/images/happy-p3404-3.jpg",
       "/images/happy-p3404-4.jpg"
-    ]
+    ],
+    "price": 1359
   },
   {
     "id": "p3911",
@@ -5490,7 +5830,8 @@
       "/images/happy-p3911-1.jpg",
       "/images/happy-p3911-2.jpg",
       "/images/happy-p3911-3.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3585",
@@ -5506,7 +5847,8 @@
     "images": [
       "/images/happy-p3585-1.jpg",
       "/images/happy-p3585-2.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p3620",
@@ -5524,7 +5866,8 @@
       "/images/happy-p3620-2.jpg",
       "/images/happy-p3620-3.jpg",
       "/images/happy-p3620-4.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p2671",
@@ -5536,7 +5879,8 @@
     "material": "Polyester",
     "dimensions": "Overall 84\" x 107\" x 35\" H",
     "description": "Item Name: Logan\n\nColor: Beige\n\nMaterial: Polyester\n\nDimensions:\nOverall 84\" x 107\" x 35\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 819
   },
   {
     "id": "p3335",
@@ -5548,7 +5892,8 @@
     "material": "",
     "dimensions": "48\" x 48\"",
     "description": "Dimensions:\n48\" x 48\"",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 219
   },
   {
     "id": "p3676",
@@ -5564,7 +5909,8 @@
     "images": [
       "/images/happy-p3676-1.jpg",
       "/images/happy-p3676-2.jpg"
-    ]
+    ],
+    "price": 169
   },
   {
     "id": "p3361",
@@ -5580,7 +5926,8 @@
     "images": [
       "/images/happy-p3361-1.png",
       "/images/happy-p3361-2.jpg"
-    ]
+    ],
+    "price": 219
   },
   {
     "id": "p2568",
@@ -5592,7 +5939,8 @@
     "material": "Ceramic/Porcelain Tabletop",
     "dimensions": "Table: 63Lx35W",
     "description": "Item Name: HAMILTON WHITE\n\nColor: Silver\n\nMaterial: Ceramic/Porcelain Tabletop\n\nDimensions:\nTable: 63Lx35W",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 989
   },
   {
     "id": "p3457",
@@ -5610,7 +5958,8 @@
       "/images/happy-p3457-2.jpg",
       "/images/happy-p3457-3.jpg",
       "/images/happy-p3457-4.jpg"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p3343",
@@ -5628,7 +5977,8 @@
       "/images/happy-p3343-2.jpg",
       "/images/happy-p3343-3.jpg",
       "/images/happy-p3343-4.jpg"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p2356",
@@ -5646,7 +5996,8 @@
       "/images/happy-p2356-2.jpg",
       "/images/happy-p2356-3.jpg",
       "/images/happy-p2356-4.jpg"
-    ]
+    ],
+    "price": 2039
   },
   {
     "id": "p3881",
@@ -5663,7 +6014,8 @@
       "/images/happy-p3881-1.jpg",
       "/images/happy-p3881-2.jpg",
       "/images/happy-p3881-3.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3005",
@@ -5680,7 +6032,8 @@
       "/images/happy-p3005-1.jpg",
       "/images/happy-p3005-2.jpg",
       "/images/happy-p3005-3.jpg"
-    ]
+    ],
+    "price": 49
   },
   {
     "id": "p3059",
@@ -5696,7 +6049,8 @@
     "images": [
       "/images/happy-p3059-1.jpg",
       "/images/happy-p3059-2.jpg"
-    ]
+    ],
+    "price": 559
   },
   {
     "id": "p1722",
@@ -5712,7 +6066,8 @@
     "images": [
       "/images/happy-p1722-1.jpg",
       "/images/happy-p1722-2.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p3716",
@@ -5731,7 +6086,8 @@
       "/images/happy-p3716-3.jpg",
       "/images/happy-p3716-4.jpg",
       "/images/happy-p3716-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3488",
@@ -5749,7 +6105,8 @@
       "/images/happy-p3488-2.jpg",
       "/images/happy-p3488-3.jpg",
       "/images/happy-p3488-4.jpg"
-    ]
+    ],
+    "price": 479
   },
   {
     "id": "p3621",
@@ -5766,7 +6123,8 @@
       "/images/happy-p3621-1.jpg",
       "/images/happy-p3621-2.jpg",
       "/images/happy-p3621-3.jpg"
-    ]
+    ],
+    "price": 169
   },
   {
     "id": "p3949",
@@ -5783,7 +6141,8 @@
       "/images/happy-p3949-1.jpg",
       "/images/happy-p3949-2.jpg",
       "/images/happy-p3949-3.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2691",
@@ -5800,7 +6159,8 @@
       "/images/happy-p2691-1.jpg",
       "/images/happy-p2691-2.jpg",
       "/images/happy-p2691-3.png"
-    ]
+    ],
+    "price": 649
   },
   {
     "id": "p3629",
@@ -5816,7 +6176,8 @@
     "images": [
       "/images/happy-p3629-1.jpg",
       "/images/happy-p3629-2.jpg"
-    ]
+    ],
+    "price": 169
   },
   {
     "id": "p3745",
@@ -5834,7 +6195,8 @@
       "/images/happy-p3745-2.jpg",
       "/images/happy-p3745-3.jpg",
       "/images/happy-p3745-4.jpg"
-    ]
+    ],
+    "price": 2889
   },
   {
     "id": "p3093",
@@ -5853,7 +6215,8 @@
       "/images/happy-p3093-3.jpg",
       "/images/happy-p3093-4.jpg",
       "/images/happy-p3093-5.jpg"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p3219",
@@ -5871,7 +6234,8 @@
       "/images/happy-p3219-2.jpg",
       "/images/happy-p3219-3.jpg",
       "/images/happy-p3219-4.png"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p687",
@@ -5883,7 +6247,8 @@
     "material": "Velvet",
     "dimensions": "",
     "description": "Item Name: Paris\n\nColor: Black\n\nMaterial: Velvet",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 819
   },
   {
     "id": "p2235",
@@ -5902,7 +6267,8 @@
       "/images/happy-p2235-3.jpg",
       "/images/happy-p2235-4.png",
       "/images/happy-p2235-5.jpg"
-    ]
+    ],
+    "price": 2039
   },
   {
     "id": "p3125",
@@ -5918,7 +6284,8 @@
     "images": [
       "/images/happy-p3125-1.jpg",
       "/images/happy-p3125-2.jpg"
-    ]
+    ],
+    "price": 379
   },
   {
     "id": "p3440",
@@ -5935,7 +6302,8 @@
       "/images/happy-p3440-1.jpg",
       "/images/happy-p3440-2.jpg",
       "/images/happy-p3440-3.jpg"
-    ]
+    ],
+    "price": 459
   },
   {
     "id": "p3373",
@@ -5947,7 +6315,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: M204",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 329
   },
   {
     "id": "p3169",
@@ -5959,7 +6328,8 @@
     "material": "Faux Marble Top Table, Black Cord Fabric Chairs",
     "dimensions": "42\"L x 42\"W X 36\"H",
     "description": "Item Name: Dior13\n\nMaterial: Faux Marble Top Table, Black Cord Fabric Chairs\n\nDimensions:\n42\"L x 42\"W X 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 459
   },
   {
     "id": "p3532",
@@ -5975,7 +6345,8 @@
     "images": [
       "/images/happy-p3532-1.jpg",
       "/images/happy-p3532-2.jpg"
-    ]
+    ],
+    "price": 569
   },
   {
     "id": "p280",
@@ -5991,7 +6362,8 @@
     "images": [
       "/images/happy-p280-1.png",
       "/images/happy-p280-2.png"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3357",
@@ -6007,7 +6379,8 @@
     "images": [
       "/images/happy-p3357-1.jpg",
       "/images/happy-p3357-2.jpg"
-    ]
+    ],
+    "price": 1449
   },
   {
     "id": "p2673",
@@ -6024,7 +6397,8 @@
       "/images/happy-p2673-1.jpg",
       "/images/happy-p2673-2.jpg",
       "/images/happy-p2673-3.jpg"
-    ]
+    ],
+    "price": 1449
   },
   {
     "id": "p3520",
@@ -6041,7 +6415,8 @@
       "/images/happy-p3520-1.jpg",
       "/images/happy-p3520-2.jpg",
       "/images/happy-p3520-3.jpg"
-    ]
+    ],
+    "price": 989
   },
   {
     "id": "p2968",
@@ -6059,7 +6434,8 @@
       "/images/happy-p2968-2.jpg",
       "/images/happy-p2968-3.jpg",
       "/images/happy-p2968-4.jpg"
-    ]
+    ],
+    "price": 629
   },
   {
     "id": "p3414",
@@ -6075,7 +6451,8 @@
     "images": [
       "/images/happy-p3414-1.jpg",
       "/images/happy-p3414-2.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p3908",
@@ -6092,7 +6469,8 @@
       "/images/happy-p3908-1.jpg",
       "/images/happy-p3908-2.jpg",
       "/images/happy-p3908-3.jpg"
-    ]
+    ],
+    "price": 529
   },
   {
     "id": "p3875",
@@ -6108,7 +6486,8 @@
     "images": [
       "/images/happy-p3875-1.jpg",
       "/images/happy-p3875-2.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p3573",
@@ -6127,7 +6506,8 @@
       "/images/happy-p3573-3.jpg",
       "/images/happy-p3573-4.jpg",
       "/images/happy-p3573-5.jpg"
-    ]
+    ],
+    "price": 629
   },
   {
     "id": "p4005",
@@ -6145,7 +6525,8 @@
       "/images/happy-p4005-2.png",
       "/images/happy-p4005-3.jpg",
       "/images/happy-p4005-4.png"
-    ]
+    ],
+    "price": 259
   },
   {
     "id": "p3054",
@@ -6163,7 +6544,8 @@
       "/images/happy-p3054-2.jpg",
       "/images/happy-p3054-3.jpg",
       "/images/happy-p3054-4.jpg"
-    ]
+    ],
+    "price": 1359
   },
   {
     "id": "p3628",
@@ -6179,7 +6561,8 @@
     "images": [
       "/images/happy-p3628-1.jpg",
       "/images/happy-p3628-2.jpg"
-    ]
+    ],
+    "price": 139
   },
   {
     "id": "p2486",
@@ -6191,7 +6574,8 @@
     "material": "",
     "dimensions": "102\" x 74\" x 37\"H (OVERALL SECTIONAL)",
     "description": "Dimensions:\n102\" x 74\" x 37\"H (OVERALL SECTIONAL)",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 599
   },
   {
     "id": "p3553",
@@ -6203,7 +6587,8 @@
     "material": "Leather Gel",
     "dimensions": "LAF SOFA - 79\" x 42\" D x 41\" H\nWEDGE - 60\" x 42\" D x 41\" H\nRAF LOVESEAT - 65\" x 42\" D x 41\" H",
     "description": "Item Name: Barcelona\n\nColor: Sand\n\nMaterial: Leather Gel\n\nDimensions:\nLAF SOFA - 79\" x 42\" D x 41\" H\nWEDGE - 60\" x 42\" D x 41\" H\nRAF LOVESEAT - 65\" x 42\" D x 41\" H\n\n\n- POWER HEADREST X2\n- POWER FOOTREST X2\n- BLUETOOTH SPEAKER\n- LED LIGHTS BELOW THE FOOREST\n- DROP DOWN TABLE W/ CUPHOLDERS & CHARGING PADS\n- USB CHARGING PORTS\n- STORAGE COMPARTMENT IN BOTH ARMS",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 2379
   },
   {
     "id": "p3186",
@@ -6220,7 +6605,8 @@
       "/images/happy-p3186-1.jpg",
       "/images/happy-p3186-2.jpg",
       "/images/happy-p3186-3.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3223",
@@ -6232,7 +6618,8 @@
     "material": "",
     "dimensions": "SOFA- 80\" L x 35\" D x 36\" H\nLOVESEAT- 58\" L x 35\" D x 36\" H",
     "description": "Item Name: 510-2PC-Navy\n\nDimensions:\nSOFA- 80\" L x 35\" D x 36\" H\nLOVESEAT- 58\" L x 35\" D x 36\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p3787",
@@ -6251,7 +6638,8 @@
       "/images/happy-p3787-3.jpg",
       "/images/happy-p3787-4.jpg",
       "/images/happy-p3787-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3959",
@@ -6268,7 +6656,8 @@
       "/images/happy-p3959-1.jpg",
       "/images/happy-p3959-2.png",
       "/images/happy-p3959-3.png"
-    ]
+    ],
+    "price": 1109
   },
   {
     "id": "p3656",
@@ -6284,7 +6673,8 @@
     "images": [
       "/images/happy-p3656-1.jpg",
       "/images/happy-p3656-2.jpg"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p2263",
@@ -6303,7 +6693,8 @@
       "/images/happy-p2263-3.jpg",
       "/images/happy-p2263-4.jpg",
       "/images/happy-p2263-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p2836",
@@ -6322,7 +6713,8 @@
       "/images/happy-p2836-3.jpg",
       "/images/happy-p2836-4.jpg",
       "/images/happy-p2836-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3925",
@@ -6338,7 +6730,8 @@
     "images": [
       "/images/happy-p3925-1.png",
       "/images/happy-p3925-2.jpg"
-    ]
+    ],
+    "price": 549
   },
   {
     "id": "p2321",
@@ -6354,7 +6747,8 @@
     "images": [
       "/images/happy-p2321-1.jpg",
       "/images/happy-p2321-2.jpg"
-    ]
+    ],
+    "price": 389
   },
   {
     "id": "p3789",
@@ -6370,7 +6764,8 @@
     "images": [
       "/images/happy-p3789-1.jpg",
       "/images/happy-p3789-2.jpg"
-    ]
+    ],
+    "price": 989
   },
   {
     "id": "p2705",
@@ -6387,7 +6782,8 @@
       "/images/happy-p2705-1.jpg",
       "/images/happy-p2705-2.jpg",
       "/images/happy-p2705-3.jpg"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p2528",
@@ -6404,7 +6800,8 @@
       "/images/happy-p2528-1.png",
       "/images/happy-p2528-2.jpg",
       "/images/happy-p2528-3.jpg"
-    ]
+    ],
+    "price": 289
   },
   {
     "id": "p302",
@@ -6416,7 +6813,8 @@
     "material": "",
     "dimensions": "Table Top 36\" x 36\"",
     "description": "Item Name: Tahoe\n\nColor: Dark Espresso\n\nDimensions:\nTable Top 36\" x 36\"",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 379
   },
   {
     "id": "p2420",
@@ -6433,7 +6831,8 @@
       "/images/happy-p2420-1.jpg",
       "/images/happy-p2420-2.png",
       "/images/happy-p2420-3.jpg"
-    ]
+    ],
+    "price": 479
   },
   {
     "id": "p1112",
@@ -6450,7 +6849,8 @@
       "/images/happy-p1112-1.jpg",
       "/images/happy-p1112-2.jpg",
       "/images/happy-p1112-3.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p3827",
@@ -6462,7 +6862,8 @@
     "material": "Fabric",
     "dimensions": "Sofa 71\" x 32.5\" D x 32.5\" H\nLoveseat 58\" x 32.5\" D x 32.5\" H",
     "description": "Item Name: Vanti\n\nColor: Dark Grey\n\nMaterial: Fabric\n\nDimensions:\nSofa 71\" x 32.5\" D x 32.5\" H\nLoveseat 58\" x 32.5\" D x 32.5\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 769
   },
   {
     "id": "p3619",
@@ -6478,7 +6879,8 @@
     "images": [
       "/images/happy-p3619-1.jpg",
       "/images/happy-p3619-2.jpg"
-    ]
+    ],
+    "price": 409
   },
   {
     "id": "p3040",
@@ -6496,7 +6898,8 @@
       "/images/happy-p3040-2.jpg",
       "/images/happy-p3040-3.jpg",
       "/images/happy-p3040-4.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p3073",
@@ -6512,7 +6915,8 @@
     "images": [
       "/images/happy-p3073-1.jpg",
       "/images/happy-p3073-2.jpg"
-    ]
+    ],
+    "price": 559
   },
   {
     "id": "p3024",
@@ -6529,7 +6933,8 @@
       "/images/happy-p3024-1.jpg",
       "/images/happy-p3024-2.jpg",
       "/images/happy-p3024-3.jpg"
-    ]
+    ],
+    "price": 1019
   },
   {
     "id": "p3525",
@@ -6541,7 +6946,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: BM40\n\nColor: Black",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 139
   },
   {
     "id": "p3781",
@@ -6560,7 +6966,8 @@
       "/images/happy-p3781-3.jpg",
       "/images/happy-p3781-4.jpg",
       "/images/happy-p3781-5.jpg"
-    ]
+    ],
+    "price": 649
   },
   {
     "id": "p3560",
@@ -6579,7 +6986,8 @@
       "/images/happy-p3560-3.jpg",
       "/images/happy-p3560-4.jpg",
       "/images/happy-p3560-5.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p4013",
@@ -6597,7 +7005,8 @@
       "/images/happy-p4013-2.jpg",
       "/images/happy-p4013-3.jpg",
       "/images/happy-p4013-4.jpg"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p3914",
@@ -6614,7 +7023,8 @@
       "/images/happy-p3914-1.jpg",
       "/images/happy-p3914-2.jpg",
       "/images/happy-p3914-3.jpg"
-    ]
+    ],
+    "price": 209
   },
   {
     "id": "p3627",
@@ -6630,7 +7040,8 @@
     "images": [
       "/images/happy-p3627-1.jpg",
       "/images/happy-p3627-2.jpg"
-    ]
+    ],
+    "price": 169
   },
   {
     "id": "p2431",
@@ -6646,7 +7057,8 @@
     "images": [
       "/images/happy-p2431-1.jpg",
       "/images/happy-p2431-2.png"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p3469",
@@ -6662,7 +7074,8 @@
     "images": [
       "/images/happy-p3469-1.jpg",
       "/images/happy-p3469-2.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p2593",
@@ -6678,7 +7091,8 @@
     "images": [
       "/images/happy-p2593-1.jpg",
       "/images/happy-p2593-2.jpg"
-    ]
+    ],
+    "price": 189
   },
   {
     "id": "p2026",
@@ -6695,7 +7109,8 @@
       "/images/happy-p2026-1.jpg",
       "/images/happy-p2026-2.jpg",
       "/images/happy-p2026-3.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p3844",
@@ -6707,7 +7122,8 @@
     "material": "Leather Gel",
     "dimensions": "Sofa: 81\" x 37\" x 39\"H\nLove: 69\" x 37\" x 39\"H\nRecliner: 35\" x 37\" x 39\"H",
     "description": "Item Name: AIDEN\n\nColor: Brown\n\nMaterial: Leather Gel\n\nDimensions:\nSofa: 81\" x 37\" x 39\"H\nLove: 69\" x 37\" x 39\"H\nRecliner: 35\" x 37\" x 39\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 1529
   },
   {
     "id": "p3563",
@@ -6726,7 +7142,8 @@
       "/images/happy-p3563-3.jpg",
       "/images/happy-p3563-4.jpg",
       "/images/happy-p3563-5.jpg"
-    ]
+    ],
+    "price": 2379
   },
   {
     "id": "p2878",
@@ -6744,7 +7161,8 @@
       "/images/happy-p2878-2.jpg",
       "/images/happy-p2878-3.jpg",
       "/images/happy-p2878-4.jpg"
-    ]
+    ],
+    "price": 1019
   },
   {
     "id": "p3441",
@@ -6761,7 +7179,8 @@
       "/images/happy-p3441-1.jpg",
       "/images/happy-p3441-2.jpg",
       "/images/happy-p3441-3.jpg"
-    ]
+    ],
+    "price": 459
   },
   {
     "id": "p3242",
@@ -6777,7 +7196,8 @@
     "images": [
       "/images/happy-p3242-1.jpg",
       "/images/happy-p3242-2.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p3582",
@@ -6796,7 +7216,8 @@
       "/images/happy-p3582-3.jpg",
       "/images/happy-p3582-4.jpg",
       "/images/happy-p3582-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3904",
@@ -6812,7 +7233,8 @@
     "images": [
       "/images/happy-p3904-1.jpg",
       "/images/happy-p3904-2.jpg"
-    ]
+    ],
+    "price": 749
   },
   {
     "id": "p3846",
@@ -6828,7 +7250,8 @@
     "images": [
       "/images/happy-p3846-1.jpg",
       "/images/happy-p3846-2.jpg"
-    ]
+    ],
+    "price": 259
   },
   {
     "id": "p3990",
@@ -6846,7 +7269,8 @@
       "/images/happy-p3990-2.jpg",
       "/images/happy-p3990-3.jpg",
       "/images/happy-p3990-4.png"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p2849",
@@ -6865,7 +7289,8 @@
       "/images/happy-p2849-3.png",
       "/images/happy-p2849-4.jpg",
       "/images/happy-p2849-5.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2517",
@@ -6881,7 +7306,8 @@
     "images": [
       "/images/happy-p2517-1.jpg",
       "/images/happy-p2517-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2104",
@@ -6898,7 +7324,8 @@
       "/images/happy-p2104-1.jpg",
       "/images/happy-p2104-2.jpg",
       "/images/happy-p2104-3.jpg"
-    ]
+    ],
+    "price": 959
   },
   {
     "id": "p3312",
@@ -6910,7 +7337,8 @@
     "material": "Boucle Fabric",
     "dimensions": "",
     "description": "Color: Black\n\nMaterial: Boucle Fabric",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 819
   },
   {
     "id": "p3113",
@@ -6926,7 +7354,8 @@
     "images": [
       "/images/happy-p3113-1.jpg",
       "/images/happy-p3113-2.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p2652",
@@ -6942,7 +7371,8 @@
     "images": [
       "/images/happy-p2652-1.jpg",
       "/images/happy-p2652-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3966",
@@ -6958,7 +7388,8 @@
     "images": [
       "/images/happy-p3966-1.jpg",
       "/images/happy-p3966-2.jpg"
-    ]
+    ],
+    "price": 1179
   },
   {
     "id": "p2830",
@@ -6974,7 +7405,8 @@
     "images": [
       "/images/happy-p2830-1.jpg",
       "/images/happy-p2830-2.jpg"
-    ]
+    ],
+    "price": 1009
   },
   {
     "id": "p3346",
@@ -6992,7 +7424,8 @@
       "/images/happy-p3346-2.jpg",
       "/images/happy-p3346-3.jpg",
       "/images/happy-p3346-4.jpg"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p3482",
@@ -7008,7 +7441,8 @@
     "images": [
       "/images/happy-p3482-1.png",
       "/images/happy-p3482-2.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p1581",
@@ -7020,7 +7454,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: HH3600",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p2527",
@@ -7037,7 +7472,8 @@
       "/images/happy-p2527-1.jpg",
       "/images/happy-p2527-2.png",
       "/images/happy-p2527-3.jpg"
-    ]
+    ],
+    "price": 559
   },
   {
     "id": "p3928",
@@ -7053,7 +7489,8 @@
     "images": [
       "/images/happy-p3928-1.jpg",
       "/images/happy-p3928-2.jpg"
-    ]
+    ],
+    "price": 1699
   },
   {
     "id": "p4024",
@@ -7072,7 +7509,8 @@
       "/images/happy-p4024-3.jpg",
       "/images/happy-p4024-4.jpg",
       "/images/happy-p4024-5.jpg"
-    ]
+    ],
+    "price": 919
   },
   {
     "id": "p2707",
@@ -7090,7 +7528,8 @@
       "/images/happy-p2707-2.jpg",
       "/images/happy-p2707-3.jpg",
       "/images/happy-p2707-4.png"
-    ]
+    ],
+    "price": 89
   },
   {
     "id": "p3958",
@@ -7107,7 +7546,8 @@
       "/images/happy-p3958-1.png",
       "/images/happy-p3958-2.png",
       "/images/happy-p3958-3.jpg"
-    ]
+    ],
+    "price": 1109
   },
   {
     "id": "p2653",
@@ -7123,7 +7563,8 @@
     "images": [
       "/images/happy-p2653-1.jpg",
       "/images/happy-p2653-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3807",
@@ -7140,7 +7581,8 @@
       "/images/happy-p3807-1.png",
       "/images/happy-p3807-2.jpg",
       "/images/happy-p3807-3.jpg"
-    ]
+    ],
+    "price": 289
   },
   {
     "id": "p2890",
@@ -7158,7 +7600,8 @@
       "/images/happy-p2890-2.jpg",
       "/images/happy-p2890-3.jpg",
       "/images/happy-p2890-4.jpg"
-    ]
+    ],
+    "price": 69
   },
   {
     "id": "p3196",
@@ -7174,7 +7617,8 @@
     "images": [
       "/images/happy-p3196-1.jpg",
       "/images/happy-p3196-2.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p3692",
@@ -7191,7 +7635,8 @@
       "/images/happy-p3692-1.jpg",
       "/images/happy-p3692-2.jpg",
       "/images/happy-p3692-3.jpg"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p3726",
@@ -7209,7 +7654,8 @@
       "/images/happy-p3726-2.jpg",
       "/images/happy-p3726-3.jpg",
       "/images/happy-p3726-4.jpg"
-    ]
+    ],
+    "price": 259
   },
   {
     "id": "p966",
@@ -7221,7 +7667,8 @@
     "material": "PU",
     "dimensions": "",
     "description": "Item Name: HH910\n\nColor: White\n\nMaterial: PU",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 189
   },
   {
     "id": "p3595",
@@ -7240,7 +7687,8 @@
       "/images/happy-p3595-3.jpg",
       "/images/happy-p3595-4.jpg",
       "/images/happy-p3595-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3252",
@@ -7258,7 +7706,8 @@
       "/images/happy-p3252-2.jpg",
       "/images/happy-p3252-3.jpg",
       "/images/happy-p3252-4.jpg"
-    ]
+    ],
+    "price": 719
   },
   {
     "id": "p3168",
@@ -7270,7 +7719,8 @@
     "material": "Industrial Wood, Faux Marble Top Table, Linen Chairs",
     "dimensions": "42\"L x 42\"W X 36\"H",
     "description": "Item Name: Dior12\n\nMaterial: Industrial Wood, Faux Marble Top Table, Linen Chairs\n\nDimensions:\n42\"L x 42\"W X 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 459
   },
   {
     "id": "p3921",
@@ -7289,7 +7739,8 @@
       "/images/happy-p3921-3.jpg",
       "/images/happy-p3921-4.jpg",
       "/images/happy-p3921-5.jpg"
-    ]
+    ],
+    "price": 139
   },
   {
     "id": "p384",
@@ -7301,7 +7752,8 @@
     "material": "Vinyl",
     "dimensions": "LAF Sofa 71\"Lx37\"Dx34\"H\nRAF Chaise 76\"Lx37\"Dx34\"H",
     "description": "Item Name: Moderno\n\nColor: White\n\nMaterial: Vinyl\n\nDimensions:\nLAF Sofa 71\"Lx37\"Dx34\"H\nRAF Chaise 76\"Lx37\"Dx34\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 679
   },
   {
     "id": "p3229",
@@ -7319,7 +7771,8 @@
       "/images/happy-p3229-2.jpg",
       "/images/happy-p3229-3.jpg",
       "/images/happy-p3229-4.jpg"
-    ]
+    ],
+    "price": 289
   },
   {
     "id": "p3023",
@@ -7336,7 +7789,8 @@
       "/images/happy-p3023-1.jpg",
       "/images/happy-p3023-2.jpg",
       "/images/happy-p3023-3.jpg"
-    ]
+    ],
+    "price": 1019
   },
   {
     "id": "p3752",
@@ -7355,7 +7809,8 @@
       "/images/happy-p3752-3.jpg",
       "/images/happy-p3752-4.jpg",
       "/images/happy-p3752-5.jpg"
-    ]
+    ],
+    "price": 509
   },
   {
     "id": "p3786",
@@ -7374,7 +7829,8 @@
       "/images/happy-p3786-3.jpg",
       "/images/happy-p3786-4.jpg",
       "/images/happy-p3786-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3922",
@@ -7392,7 +7848,8 @@
       "/images/happy-p3922-2.jpg",
       "/images/happy-p3922-3.jpg",
       "/images/happy-p3922-4.jpg"
-    ]
+    ],
+    "price": 379
   },
   {
     "id": "p2752",
@@ -7409,7 +7866,8 @@
       "/images/happy-p2752-1.jpg",
       "/images/happy-p2752-2.jpg",
       "/images/happy-p2752-3.jpg"
-    ]
+    ],
+    "price": 1449
   },
   {
     "id": "p2268",
@@ -7421,7 +7879,8 @@
     "material": "",
     "dimensions": "TABLE: 42\"X42\"X36\"\nCHAIR: 17 3/4\" X 17 1/2\" X 40 3/4\"",
     "description": "Item Name: D2010\n\nColor: Gray\n\nDimensions:\nTABLE: 42\"X42\"X36\"\nCHAIR: 17 3/4\" X 17 1/2\" X 40 3/4\"",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 429
   },
   {
     "id": "p3899",
@@ -7437,7 +7896,8 @@
     "images": [
       "/images/happy-p3899-1.jpg",
       "/images/happy-p3899-2.jpg"
-    ]
+    ],
+    "price": 509
   },
   {
     "id": "p1985",
@@ -7454,7 +7914,8 @@
       "/images/happy-p1985-1.jpg",
       "/images/happy-p1985-2.jpg",
       "/images/happy-p1985-3.jpg"
-    ]
+    ],
+    "price": 459
   },
   {
     "id": "p2164",
@@ -7472,7 +7933,8 @@
       "/images/happy-p2164-2.jpg",
       "/images/happy-p2164-3.jpg",
       "/images/happy-p2164-4.jpg"
-    ]
+    ],
+    "price": 529
   },
   {
     "id": "p3856",
@@ -7488,7 +7950,8 @@
     "images": [
       "/images/happy-p3856-1.jpg",
       "/images/happy-p3856-2.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p2479",
@@ -7504,7 +7967,8 @@
     "images": [
       "/images/happy-p2479-1.jpg",
       "/images/happy-p2479-2.jpg"
-    ]
+    ],
+    "price": 509
   },
   {
     "id": "p3794",
@@ -7522,7 +7986,8 @@
       "/images/happy-p3794-2.jpg",
       "/images/happy-p3794-3.jpg",
       "/images/happy-p3794-4.jpg"
-    ]
+    ],
+    "price": 1529
   },
   {
     "id": "p3877",
@@ -7538,7 +8003,8 @@
     "images": [
       "/images/happy-p3877-1.jpg",
       "/images/happy-p3877-2.jpg"
-    ]
+    ],
+    "price": 2039
   },
   {
     "id": "p3501",
@@ -7556,7 +8022,8 @@
       "/images/happy-p3501-2.jpg",
       "/images/happy-p3501-3.jpg",
       "/images/happy-p3501-4.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3926",
@@ -7568,7 +8035,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: T662-3\n\nColor: Light Brown/White",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 169
   },
   {
     "id": "p3655",
@@ -7584,7 +8052,8 @@
     "images": [
       "/images/happy-p3655-1.jpg",
       "/images/happy-p3655-2.jpg"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p4006",
@@ -7600,7 +8069,8 @@
     "images": [
       "/images/happy-p4006-1.jpg",
       "/images/happy-p4006-2.png"
-    ]
+    ],
+    "price": 259
   },
   {
     "id": "p3790",
@@ -7617,7 +8087,8 @@
       "/images/happy-p3790-1.jpg",
       "/images/happy-p3790-2.jpg",
       "/images/happy-p3790-3.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2418",
@@ -7634,7 +8105,8 @@
       "/images/happy-p2418-1.png",
       "/images/happy-p2418-2.png",
       "/images/happy-p2418-3.jpg"
-    ]
+    ],
+    "price": 479
   },
   {
     "id": "p2521",
@@ -7651,7 +8123,8 @@
       "/images/happy-p2521-1.png",
       "/images/happy-p2521-2.jpg",
       "/images/happy-p2521-3.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p3439",
@@ -7667,7 +8140,8 @@
     "images": [
       "/images/happy-p3439-1.jpg",
       "/images/happy-p3439-2.jpg"
-    ]
+    ],
+    "price": 459
   },
   {
     "id": "p3049",
@@ -7684,7 +8158,8 @@
       "/images/happy-p3049-1.jpg",
       "/images/happy-p3049-2.jpg",
       "/images/happy-p3049-3.jpg"
-    ]
+    ],
+    "price": 1789
   },
   {
     "id": "p1575",
@@ -7702,7 +8177,8 @@
       "/images/happy-p1575-2.jpg",
       "/images/happy-p1575-3.jpg",
       "/images/happy-p1575-4.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p3064",
@@ -7720,7 +8196,8 @@
       "/images/happy-p3064-2.jpg",
       "/images/happy-p3064-3.jpg",
       "/images/happy-p3064-4.jpg"
-    ]
+    ],
+    "price": 769
   },
   {
     "id": "p3261",
@@ -7738,7 +8215,8 @@
       "/images/happy-p3261-2.jpg",
       "/images/happy-p3261-3.jpg",
       "/images/happy-p3261-4.jpg"
-    ]
+    ],
+    "price": 1359
   },
   {
     "id": "p3587",
@@ -7756,7 +8234,8 @@
       "/images/happy-p3587-2.jpg",
       "/images/happy-p3587-3.jpg",
       "/images/happy-p3587-4.jpg"
-    ]
+    ],
+    "price": 3059
   },
   {
     "id": "p4025",
@@ -7768,7 +8247,8 @@
     "material": "",
     "dimensions": "Sofa 84\"L x 36\"D x 38\"H\nChair 49\"L x 36\"D x 38\"H\nOttoman 38\"L x 27\"D x 18\"H",
     "description": "Item Name: 3250 Pine\n\nColor: Pine\n\nDimensions:\nSofa 84\"L x 36\"D x 38\"H\nChair 49\"L x 36\"D x 38\"H\nOttoman 38\"L x 27\"D x 18\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 219
   },
   {
     "id": "p3754",
@@ -7784,7 +8264,8 @@
     "images": [
       "/images/happy-p3754-1.jpg",
       "/images/happy-p3754-2.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p3564",
@@ -7803,7 +8284,8 @@
       "/images/happy-p3564-3.jpg",
       "/images/happy-p3564-4.jpg",
       "/images/happy-p3564-5.jpg"
-    ]
+    ],
+    "price": 2379
   },
   {
     "id": "p3939",
@@ -7815,7 +8297,8 @@
     "material": "Leather Gel",
     "dimensions": "117.5\" x 117.5\" x 39\" H",
     "description": "Item Name: Holiday Black\n\nMaterial: Leather Gel\n\nDimensions:\n117.5\" x 117.5\" x 39\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 2889
   },
   {
     "id": "p3578",
@@ -7832,7 +8315,8 @@
       "/images/happy-p3578-1.jpg",
       "/images/happy-p3578-2.jpg",
       "/images/happy-p3578-3.jpg"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p3972",
@@ -7849,7 +8333,8 @@
       "/images/happy-p3972-1.jpg",
       "/images/happy-p3972-2.jpg",
       "/images/happy-p3972-3.jpg"
-    ]
+    ],
+    "price": 559
   },
   {
     "id": "p1006",
@@ -7861,7 +8346,8 @@
     "material": "Velvet",
     "dimensions": "Queen: 88''L X 67''W X 70''H\nKing: 88''L X 83''W X 70''H\nQueen: 71997\nKing: 72297",
     "description": "Item Name: HH221\n\nColor: Green\n\nMaterial: Velvet\n\nDimensions:\nQueen: 88''L X 67''W X 70''H\nKing: 88''L X 83''W X 70''H\nQueen: 71997\nKing: 72297",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 339
   },
   {
     "id": "p2922",
@@ -7880,7 +8366,8 @@
       "/images/happy-p2922-3.jpg",
       "/images/happy-p2922-4.jpg",
       "/images/happy-p2922-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3159",
@@ -7896,7 +8383,8 @@
     "images": [
       "/images/happy-p3159-1.jpg",
       "/images/happy-p3159-2.jpg"
-    ]
+    ],
+    "price": 1449
   },
   {
     "id": "p3824",
@@ -7908,7 +8396,8 @@
     "material": "Fabric",
     "dimensions": "Sofa 71\" x 32.5\" D x 32.5\" H\nLoveseat 58\" x 32.5\" D x 32.5\" H",
     "description": "Item Name: Vanti\n\nColor: Blue\n\nMaterial: Fabric\n\nDimensions:\nSofa 71\" x 32.5\" D x 32.5\" H\nLoveseat 58\" x 32.5\" D x 32.5\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 769
   },
   {
     "id": "p2419",
@@ -7925,7 +8414,8 @@
       "/images/happy-p2419-1.jpg",
       "/images/happy-p2419-2.jpg",
       "/images/happy-p2419-3.png"
-    ]
+    ],
+    "price": 479
   },
   {
     "id": "p1417",
@@ -7937,7 +8427,8 @@
     "material": "Industrial Wood, Faux Marble Top Table, Velvet Upholstered Chairs",
     "dimensions": "42\"L x 42\"W X 36\"H",
     "description": "Item Name: Dior Black\n\nColor: Black Velvet Chairs\n\nMaterial: Industrial Wood, Faux Marble Top Table, Velvet Upholstered Chairs\n\nDimensions:\n42\"L x 42\"W X 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 459
   },
   {
     "id": "p3371",
@@ -7953,7 +8444,8 @@
     "images": [
       "/images/happy-p3371-1.jpg",
       "/images/happy-p3371-2.jpg"
-    ]
+    ],
+    "price": 379
   },
   {
     "id": "p3565",
@@ -7965,7 +8457,8 @@
     "material": "Cords",
     "dimensions": "Overall 84\" x 107\" x 35\" H",
     "description": "Item Name: Logan2 Charcoal\n\nColor: Charcoal\n\nMaterial: Cords\n\nDimensions:\nOverall 84\" x 107\" x 35\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 819
   },
   {
     "id": "p3283",
@@ -7977,7 +8470,8 @@
     "material": "",
     "dimensions": "Table Top - 60\" x 42\" x 30\"H\nTable Top w/ Leaf Extension - 78\" x 42\" x 30\"H",
     "description": "Item Name: D2700\n\nDimensions:\nTable Top - 60\" x 42\" x 30\"H\nTable Top w/ Leaf Extension - 78\" x 42\" x 30\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 679
   },
   {
     "id": "p3530",
@@ -7989,7 +8483,8 @@
     "material": "",
     "dimensions": "102\" x 74\" x 37\"H (OVERALL SECTIONAL)",
     "description": "Dimensions:\n102\" x 74\" x 37\"H (OVERALL SECTIONAL)",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 629
   },
   {
     "id": "p2483",
@@ -8001,7 +8496,8 @@
     "material": "Velvet",
     "dimensions": "",
     "description": "Item Name: Mary\n\nColor: Blue\n\nMaterial: Velvet",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 259
   },
   {
     "id": "p3280",
@@ -8017,7 +8513,8 @@
     "images": [
       "/images/happy-p3280-1.jpg",
       "/images/happy-p3280-2.jpg"
-    ]
+    ],
+    "price": 569
   },
   {
     "id": "p3689",
@@ -8036,7 +8533,8 @@
       "/images/happy-p3689-3.jpg",
       "/images/happy-p3689-4.jpg",
       "/images/happy-p3689-5.jpg"
-    ]
+    ],
+    "price": 1789
   },
   {
     "id": "p1419",
@@ -8048,7 +8546,8 @@
     "material": "Industrial Wood, Faux Marble Top Table, Velvet Upholstered Chairs",
     "dimensions": "42\"L x 42\"W X 36\"H",
     "description": "Item Name: Dior Grey\n\nColor: Grey Velvet Chairs\n\nMaterial: Industrial Wood, Faux Marble Top Table, Velvet Upholstered Chairs\n\nDimensions:\n42\"L x 42\"W X 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 459
   },
   {
     "id": "p790",
@@ -8060,7 +8559,8 @@
     "material": "",
     "dimensions": "",
     "description": "",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 70
   },
   {
     "id": "p1179",
@@ -8077,7 +8577,8 @@
       "/images/happy-p1179-1.jpg",
       "/images/happy-p1179-2.jpg",
       "/images/happy-p1179-3.jpg"
-    ]
+    ],
+    "price": 729
   },
   {
     "id": "p1429",
@@ -8093,7 +8594,8 @@
     "images": [
       "/images/happy-p1429-1.jpg",
       "/images/happy-p1429-2.jpg"
-    ]
+    ],
+    "price": 649
   },
   {
     "id": "p3209",
@@ -8105,7 +8607,8 @@
     "material": "",
     "dimensions": "SOFA- 80\" L x 35\" D x 36\" H\nLOVESEAT- 58\" L x 35\" D x 36\" H",
     "description": "Item Name: 510-Gray-2PC\n\nDimensions:\nSOFA- 80\" L x 35\" D x 36\" H\nLOVESEAT- 58\" L x 35\" D x 36\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 849
   },
   {
     "id": "p2264",
@@ -8122,7 +8625,8 @@
       "/images/happy-p2264-1.jpg",
       "/images/happy-p2264-2.jpg",
       "/images/happy-p2264-3.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3797",
@@ -8138,7 +8642,8 @@
     "images": [
       "/images/happy-p3797-1.jpg",
       "/images/happy-p3797-2.jpg"
-    ]
+    ],
+    "price": 379
   },
   {
     "id": "p3954",
@@ -8156,7 +8661,8 @@
       "/images/happy-p3954-2.jpg",
       "/images/happy-p3954-3.jpg",
       "/images/happy-p3954-4.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p1801",
@@ -8172,7 +8678,8 @@
     "images": [
       "/images/happy-p1801-1.jpg",
       "/images/happy-p1801-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2059",
@@ -8188,7 +8695,8 @@
     "images": [
       "/images/happy-p2059-1.jpg",
       "/images/happy-p2059-2.jpg"
-    ]
+    ],
+    "price": 259
   },
   {
     "id": "p1012",
@@ -8204,7 +8712,8 @@
     "images": [
       "/images/happy-p1012-1.png",
       "/images/happy-p1012-2.png"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p3623",
@@ -8221,7 +8730,8 @@
       "/images/happy-p3623-1.jpg",
       "/images/happy-p3623-2.jpg",
       "/images/happy-p3623-3.jpg"
-    ]
+    ],
+    "price": 189
   },
   {
     "id": "p3115",
@@ -8239,7 +8749,8 @@
       "/images/happy-p3115-2.jpg",
       "/images/happy-p3115-3.jpg",
       "/images/happy-p3115-4.jpg"
-    ]
+    ],
+    "price": 3059
   },
   {
     "id": "p3617",
@@ -8256,7 +8767,8 @@
       "/images/happy-p3617-1.jpg",
       "/images/happy-p3617-2.jpg",
       "/images/happy-p3617-3.jpg"
-    ]
+    ],
+    "price": 119
   },
   {
     "id": "p3036",
@@ -8272,7 +8784,8 @@
     "images": [
       "/images/happy-p3036-1.jpg",
       "/images/happy-p3036-2.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p1567",
@@ -8289,7 +8802,8 @@
       "/images/happy-p1567-1.jpg",
       "/images/happy-p1567-2.jpg",
       "/images/happy-p1567-3.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3889",
@@ -8301,7 +8815,8 @@
     "material": "",
     "dimensions": "Table Top - 47.5\" X 29.5\" X 30\"H",
     "description": "Item Name: ALAN30\n\nDimensions:\nTable Top - 47.5\" X 29.5\" X 30\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 559
   },
   {
     "id": "p3910",
@@ -8318,7 +8833,8 @@
       "/images/happy-p3910-1.jpg",
       "/images/happy-p3910-2.jpg",
       "/images/happy-p3910-3.jpg"
-    ]
+    ],
+    "price": 289
   },
   {
     "id": "p3887",
@@ -8330,7 +8846,8 @@
     "material": "",
     "dimensions": "Table Top - 47.5\" X 29.5\" X 30\"H",
     "description": "Item Name: ALAN10\n\nDimensions:\nTable Top - 47.5\" X 29.5\" X 30\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 559
   },
   {
     "id": "p3729",
@@ -8348,7 +8865,8 @@
       "/images/happy-p3729-2.jpg",
       "/images/happy-p3729-3.jpg",
       "/images/happy-p3729-4.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3094",
@@ -8364,7 +8882,8 @@
     "images": [
       "/images/happy-p3094-1.jpg",
       "/images/happy-p3094-2.png"
-    ]
+    ],
+    "price": 509
   },
   {
     "id": "p3969",
@@ -8383,7 +8902,8 @@
       "/images/happy-p3969-3.jpg",
       "/images/happy-p3969-4.jpg",
       "/images/happy-p3969-5.jpg"
-    ]
+    ],
+    "price": 449
   },
   {
     "id": "p3920",
@@ -8401,7 +8921,8 @@
       "/images/happy-p3920-2.jpg",
       "/images/happy-p3920-3.jpg",
       "/images/happy-p3920-4.jpg"
-    ]
+    ],
+    "price": 169
   },
   {
     "id": "p3042",
@@ -8417,7 +8938,8 @@
     "images": [
       "/images/happy-p3042-1.jpg",
       "/images/happy-p3042-2.jpg"
-    ]
+    ],
+    "price": 989
   },
   {
     "id": "p630",
@@ -8429,7 +8951,8 @@
     "material": "",
     "dimensions": "36\" x 36\" Counter Height Table and 4 Chairs Set",
     "description": "Item Name: Tahoe\n\nColor: Antique White\n\nDimensions:\n36\" x 36\" Counter Height Table and 4 Chairs Set",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 379
   },
   {
     "id": "p1816",
@@ -8445,7 +8968,8 @@
     "images": [
       "/images/happy-p1816-1.jpg",
       "/images/happy-p1816-2.jpg"
-    ]
+    ],
+    "price": 989
   },
   {
     "id": "p3909",
@@ -8461,7 +8985,8 @@
     "images": [
       "/images/happy-p3909-1.jpg",
       "/images/happy-p3909-2.jpg"
-    ]
+    ],
+    "price": 939
   },
   {
     "id": "p3675",
@@ -8479,7 +9004,8 @@
       "/images/happy-p3675-2.jpg",
       "/images/happy-p3675-3.jpg",
       "/images/happy-p3675-4.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3721",
@@ -8497,7 +9023,8 @@
       "/images/happy-p3721-2.jpg",
       "/images/happy-p3721-3.jpg",
       "/images/happy-p3721-4.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3919",
@@ -8515,7 +9042,8 @@
       "/images/happy-p3919-2.jpg",
       "/images/happy-p3919-3.jpg",
       "/images/happy-p3919-4.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p3913",
@@ -8532,7 +9060,8 @@
       "/images/happy-p3913-1.jpg",
       "/images/happy-p3913-2.jpg",
       "/images/happy-p3913-3.jpg"
-    ]
+    ],
+    "price": 339
   },
   {
     "id": "p3947",
@@ -8551,7 +9080,8 @@
       "/images/happy-p3947-3.jpg",
       "/images/happy-p3947-4.jpg",
       "/images/happy-p3947-5.jpg"
-    ]
+    ],
+    "price": 679
   },
   {
     "id": "p2480",
@@ -8567,7 +9097,8 @@
     "images": [
       "/images/happy-p2480-1.jpg",
       "/images/happy-p2480-2.jpg"
-    ]
+    ],
+    "price": 509
   },
   {
     "id": "p3944",
@@ -8579,7 +9110,8 @@
     "material": "Leather Gel",
     "dimensions": "Sofa: 85.5\" x 39.5\" x 41\"H\nLoveseat: 75.5\" x 39.5\" x 41\"H\nRecliner: 40\" x 39.5\" x 41\"H",
     "description": "Item Name: Elevation\n\nColor: Brown\n\nMaterial: Leather Gel\n\nDimensions:\nSofa: 85.5\" x 39.5\" x 41\"H\nLoveseat: 75.5\" x 39.5\" x 41\"H\nRecliner: 40\" x 39.5\" x 41\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 1699
   },
   {
     "id": "p3951",
@@ -8598,7 +9130,8 @@
       "/images/happy-p3951-3.jpg",
       "/images/happy-p3951-4.jpg",
       "/images/happy-p3951-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3649",
@@ -8610,7 +9143,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: 8100-White",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 0
   },
   {
     "id": "p3392",
@@ -8627,7 +9161,8 @@
       "/images/happy-p3392-1.jpg",
       "/images/happy-p3392-2.jpg",
       "/images/happy-p3392-3.jpg"
-    ]
+    ],
+    "price": 629
   },
   {
     "id": "p1217",
@@ -8645,7 +9180,8 @@
       "/images/happy-p1217-2.png",
       "/images/happy-p1217-3.jpg",
       "/images/happy-p1217-4.jpg"
-    ]
+    ],
+    "price": 499
   },
   {
     "id": "p3166",
@@ -8657,7 +9193,8 @@
     "material": "Industrial Wood, Faux Marble Top Table, Linen Chairs",
     "dimensions": "42\"L x 42\"W X 36\"H",
     "description": "Item Name: Dior10\n\nMaterial: Industrial Wood, Faux Marble Top Table, Linen Chairs\n\nDimensions:\n42\"L x 42\"W X 36\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 459
   },
   {
     "id": "p2837",
@@ -8669,7 +9206,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: Bamboo",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 209
   },
   {
     "id": "p2917",
@@ -8686,7 +9224,8 @@
       "/images/happy-p2917-1.jpg",
       "/images/happy-p2917-2.jpg",
       "/images/happy-p2917-3.jpg"
-    ]
+    ],
+    "price": 819
   },
   {
     "id": "p3537",
@@ -8705,7 +9244,8 @@
       "/images/happy-p3537-3.jpg",
       "/images/happy-p3537-4.jpg",
       "/images/happy-p3537-5.jpg"
-    ]
+    ],
+    "price": 2039
   },
   {
     "id": "p3699",
@@ -8723,7 +9263,8 @@
       "/images/happy-p3699-2.jpg",
       "/images/happy-p3699-3.jpg",
       "/images/happy-p3699-4.jpg"
-    ]
+    ],
+    "price": 3739
   },
   {
     "id": "p3626",
@@ -8739,7 +9280,8 @@
     "images": [
       "/images/happy-p3626-1.jpg",
       "/images/happy-p3626-2.jpg"
-    ]
+    ],
+    "price": 139
   },
   {
     "id": "p1812",
@@ -8755,7 +9297,8 @@
     "images": [
       "/images/happy-p1812-1.jpg",
       "/images/happy-p1812-2.jpg"
-    ]
+    ],
+    "price": 239
   },
   {
     "id": "p3403",
@@ -8767,7 +9310,8 @@
     "material": "",
     "dimensions": "",
     "description": "Item Name: BEVERLY",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 1869
   },
   {
     "id": "p2710",
@@ -8784,7 +9328,8 @@
       "/images/happy-p2710-1.jpg",
       "/images/happy-p2710-2.jpg",
       "/images/happy-p2710-3.jpg"
-    ]
+    ],
+    "price": 799
   },
   {
     "id": "p3127",
@@ -8796,7 +9341,8 @@
     "material": "",
     "dimensions": "74\" L x 18.13\" D x 36.13\" H",
     "description": "Item Name: W743-68\n\nColor: Chipped White\n\nDimensions:\n74\" L x 18.13\" D x 36.13\" H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 899
   },
   {
     "id": "p3354",
@@ -8813,7 +9359,8 @@
       "/images/happy-p3354-1.jpg",
       "/images/happy-p3354-2.jpg",
       "/images/happy-p3354-3.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p3516",
@@ -8825,7 +9372,8 @@
     "material": "",
     "dimensions": "Table - 79\" x 40\" x 30\"H",
     "description": "Item Name: D360\n\nColor: Espresso\n\nDimensions:\nTable - 79\" x 40\" x 30\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 939
   },
   {
     "id": "p3950",
@@ -8844,7 +9392,8 @@
       "/images/happy-p3950-3.jpg",
       "/images/happy-p3950-4.jpg",
       "/images/happy-p3950-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p649",
@@ -8860,7 +9409,8 @@
     "images": [
       "/images/happy-p649-1.jpg",
       "/images/happy-p649-2.jpg"
-    ]
+    ],
+    "price": 0
   },
   {
     "id": "p2591",
@@ -8878,7 +9428,8 @@
       "/images/happy-p2591-2.jpg",
       "/images/happy-p2591-3.jpg",
       "/images/happy-p2591-4.jpg"
-    ]
+    ],
+    "price": 1869
   },
   {
     "id": "p3722",
@@ -8896,7 +9447,8 @@
       "/images/happy-p3722-2.jpg",
       "/images/happy-p3722-3.jpg",
       "/images/happy-p3722-4.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3903",
@@ -8912,7 +9464,8 @@
     "images": [
       "/images/happy-p3903-1.jpg",
       "/images/happy-p3903-2.png"
-    ]
+    ],
+    "price": 579
   },
   {
     "id": "p3700",
@@ -8930,7 +9483,8 @@
       "/images/happy-p3700-2.jpg",
       "/images/happy-p3700-3.jpg",
       "/images/happy-p3700-4.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p2888",
@@ -8949,7 +9503,8 @@
       "/images/happy-p2888-3.png",
       "/images/happy-p2888-4.jpg",
       "/images/happy-p2888-5.jpg"
-    ]
+    ],
+    "price": 429
   },
   {
     "id": "p3456",
@@ -8968,7 +9523,8 @@
       "/images/happy-p3456-3.jpg",
       "/images/happy-p3456-4.jpg",
       "/images/happy-p3456-5.jpg"
-    ]
+    ],
+    "price": 2209
   },
   {
     "id": "p3109",
@@ -8985,7 +9541,8 @@
       "/images/happy-p3109-1.jpg",
       "/images/happy-p3109-2.jpg",
       "/images/happy-p3109-3.jpg"
-    ]
+    ],
+    "price": 1019
   },
   {
     "id": "p3326",
@@ -8997,7 +9554,8 @@
     "material": "Leather gel",
     "dimensions": "Sofa 86\"W x 39.5\" D x 42\"H\nLoveseat 75\"W x 39.5\"D x 42\"H\nChair 37\" W x 39.5\" D x 42\"H",
     "description": "Item Name: DUBAI\n\nColor: Brown\n\nMaterial: Leather gel\n\nDimensions:\nSofa 86\"W x 39.5\" D x 42\"H\nLoveseat 75\"W x 39.5\"D x 42\"H\nChair 37\" W x 39.5\" D x 42\"H",
-    "vendor": "Happy Homes"
+    "vendor": "Happy Homes",
+    "price": 3059
   },
   {
     "id": "p3714",
@@ -9013,7 +9571,8 @@
     "images": [
       "/images/happy-p3714-1.jpg",
       "/images/happy-p3714-2.png"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p1385",
@@ -9030,7 +9589,8 @@
       "/images/happy-p1385-1.jpg",
       "/images/happy-p1385-2.jpg",
       "/images/happy-p1385-3.jpg"
-    ]
+    ],
+    "price": 509
   },
   {
     "id": "p3180",
@@ -9046,7 +9606,8 @@
     "images": [
       "/images/happy-p3180-1.jpg",
       "/images/happy-p3180-2.jpg"
-    ]
+    ],
+    "price": 849
   },
   {
     "id": "p3043",
@@ -9063,7 +9624,8 @@
       "/images/happy-p3043-1.jpg",
       "/images/happy-p3043-2.jpg",
       "/images/happy-p3043-3.jpg"
-    ]
+    ],
+    "price": 1189
   },
   {
     "id": "p3893",
@@ -9080,7 +9642,8 @@
       "/images/happy-p3893-1.jpg",
       "/images/happy-p3893-2.png",
       "/images/happy-p3893-3.jpg"
-    ]
+    ],
+    "price": 229
   },
   {
     "id": "p3455",
@@ -9098,6 +9661,7 @@
       "/images/happy-p3455-2.jpg",
       "/images/happy-p3455-3.jpg",
       "/images/happy-p3455-4.jpg"
-    ]
+    ],
+    "price": 1529
   }
 ]
