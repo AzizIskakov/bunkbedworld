@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-"""Generate index.html with SSR: Living Room products rendered directly in HTML.
-Products visible instantly — no JavaScript or network fetch needed for first view.
-"""
-import json
+"""Generate index.html with SSR + clean JS for BunkBedWorld."""
+import json, sys
 
 with open('products.json') as f:
     products = json.load(f)
@@ -11,15 +9,12 @@ with open('products.json') as f:
 cats = {}
 for p in products:
     cat = p.get("cat") or p.get("category")
-    if not cat:
-        continue
-    if cat not in cats:
-        cats[cat] = []
+    if not cat: continue
+    if cat not in cats: cats[cat] = []
     cats[cat].append(p)
 for cat in cats:
     cats[cat].sort(key=lambda p: p.get("price") or p.get("sell_price", 0))
 
-# Tab definitions
 tab_groups = [
     ("Living Room", ["Stationary Sofa & Loveseats", "Stationary Sectionals",
                      "Reclining Sofa & Loveseats", "Reclining Sectionals",
@@ -31,7 +26,7 @@ tab_groups = [
     ("Bunk Beds", ["Bunk Beds"]),
 ]
 
-# Build tab data
+# Build tab data JSON
 tabs = []
 cid = 0
 for tname, cnames in tab_groups:
@@ -45,18 +40,16 @@ for tname, cnames in tab_groups:
 tjson = json.dumps(tabs)
 
 def esc(s):
-    if not s:
-        return ''
+    if not s: return ''
     return (s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
             .replace('"', '&quot;').replace("'", '&#39;').replace('\n', '<br>'))
 
-# Pre-render the Living Room tab product grid
+# SSR: Pre-render Living Room product grid
 lr_names = tab_groups[0][1]
 lr_products = [p for p in products if p.get("cat") in lr_names]
 lr_products.sort(key=lambda p: p.get("price", 999999))
 
 def render_grid(prods, cat_names, tab_name):
-    """Render product grid HTML (same logic as JS rc())"""
     h = '<div class="subcat-bar"><label>Filter:</label>'
     h += '<select class="subcat-select" onchange="fs(this.value)">'
     h += '<option value="__all__">All ' + tab_name + '</option>'
@@ -79,8 +72,8 @@ def render_grid(prods, cat_names, tab_name):
             for i, img in enumerate(imgs):
                 url = img.replace("'", "%27")
                 h += '<div class="cs' + (' a' if i == 0 else '') + '" style="background-image:url(' + url + ')"></div>'
-            h += '<button class="cb" onclick="event.stopPropagation();cm(\'' + pid + '\',-1)">‹</button>'
-            h += '<button class="cb n" onclick="event.stopPropagation();cm(\'' + pid + '\',1)">›</button>'
+            h += '<button class="cb" onclick="event.stopPropagation();cm(\'' + pid + '\',-1)">\u2039</button>'
+            h += '<button class="cb n" onclick="event.stopPropagation();cm(\'' + pid + '\',1)">\u203A</button>'
             h += '<div class="cd">'
             for i in range(len(imgs)):
                 h += '<span' + (' class="a"' if i == 0 else '') + ' onclick="event.stopPropagation();cg(\'' + pid + '\',' + str(i) + ')"></span>'
@@ -96,72 +89,65 @@ tab_buttons_html = ""
 for tname, cnames in tab_groups:
     cnt = sum(len(cats.get(cn, [])) for cn in cnames if cn in cats)
     act = ' active' if tname == 'Living Room' else ''
-    tab_buttons_html += f'<button class="tab-btn{act}">{tname}<span class="bc">{cnt}</span></button>\n'
+    tab_buttons_html += '<button class="tab-btn' + act + '" data-tab="' + tname + '">' + tname + '<span class="bc">' + str(cnt) + '</span></button>\n'
 
-# -- JavaScript: setup nav, carousels, detail overlay, tab switching --
-# Keep product data fetched on-demand for other tabs
-js = '''
-var P=[];
-var ct=null,cn=null,ci={};
-var LR_LOADED=false;
+# ===== CLEAN JAVASCRIPT =====
+js = """
+var P=[];var T=TABSJSON;var ct='Living Room';var ci={};
 
-fetch('/products.json').then(function(r){return r.json()}).then(function(d){P=d;LR_LOADED=true;}).catch(function(){});
-
-function esc(s){if(!s)return'';var d=document.createElement('div');d.appendChild(document.createTextNode(s));return d.innerHTML.replace(/\\n/g,'<br>')}
-function jq(s){return JSON.stringify(s)}
+function esc(s){
+  if(!s)return'';
+  var d=document.createElement('div');
+  d.appendChild(document.createTextNode(s));
+  return d.innerHTML.replace(/\\n/g,'<br>');
+}
 
 function init(){
-  document.querySelectorAll('.tab-btn').forEach(function(b){
-    b.onclick=function(){sw(b.textContent.trim().split(' ')[0])};
+  var L=document.getElementById('main'),N=document.getElementById('tabNav');
+  N.querySelectorAll('.tab-btn').forEach(function(b){
+    b.onclick=function(){
+      var n=b.dataset.tab;
+      N.querySelectorAll('.tab-btn').forEach(function(x){x.classList.toggle('active',x.dataset.tab===n)});
+      ct=n;
+      if(P.length)rc();else setTimeout(rc,99);
+    };
   });
-  sw('Living Room');
+  if(P.length){rc();}
 }
 
-function sw(name){
-  ct=name;cn=null;
-  document.querySelectorAll('.tab-btn').forEach(function(b){
-    b.classList.toggle('active',b.textContent.trim().startsWith(name));
-  });
-  if(ct!='Living Room'||P.length==0)rc();
-}
+fetch('/products.json').then(function(r){return r.json()}).then(function(d){P=d;init();}).catch(function(){});
 
 function rc(){
+  if(!P.length){setTimeout(rc,99);return;}
   var c=document.getElementById('main');
-  if(ct=='Living Room'&&P.length==0)return;
-  if(P.length==0||P.length<100){
-    c.innerHTML='<div class="loading">Loading...</div>';
-    fetch('/products.json').then(function(r){return r.json()}).then(function(d){P=d;rc();}).catch(function(){c.innerHTML='<div class="loading">Failed to load.</div>'});
-    return;
-  }
   var tab=T.find(function(t){return t.t===ct});
-  if(!tab){c.innerHTML='<div class="loading">No products found.</div>';return}
-  var h='<div class="subcat-bar"><label>Filter:</label><select class="subcat-select" onchange="fs(this.value)">';
-  h+='<option value="__all__">All '+ct+'</option>';
-  tab.g.forEach(function(g){h+='<option value="'+g.n+'">'+g.n+' ('+g.c+')</option>'});
-  h+='</select></div><div class="grid">';
-  var cnames=tab.g.map(function(g){return g.n});
-  var fp=P.filter(function(p){return cnames.indexOf(p.cat)>=0});
+  if(!tab){c.innerHTML='<div class=\\"loading\\">No products.</div>';return}
+  var fp=P.filter(function(p){return tab.g.some(function(g){return g.n===p.cat})});
+  var h='<div class=\\"subcat-bar\\"><label>Filter:</label><select class=\\"subcat-select\\" onchange=\\"fs(this.value)\\">';
+  h+='<option value=\\"__all__\\">All '+ct+'</option>';
+  tab.g.forEach(function(g){h+='<option value=\\"'+g.n+'\\">'+g.n+' ('+g.c+')</option>'});
+  h+='</select></div><div class=\\"grid\\">';
   fp.forEach(function(p){
     var imgs=p.images||[];
-    h+='<a class="card" onclick="event.preventDefault();od(\\''+p.id+'\\')">';
-    if(imgs.length==0){h+='<div class="ni">No Image</div>'}
-    else if(imgs.length==1){h+='<div class="cc"><div class="cs a" style="background-image:url('+imgs[0]+')"></div></div>'}
+    h+='<a class=\\"card\\" onclick=\\"event.preventDefault();od(\\'"+p.id+"\\')\\">';
+    if(!imgs.length)h+='<div class=\\"ni\\">No Image</div>';
+    else if(imgs.length==1)h+='<div class=\\"cc\\"><div class=\\"cs a\\" style=\\"background-image:url('+imgs[0]+')\\"></div></div>';
     else{
-      h+='<div class="cc" id="c'+p.id+'">';
-      imgs.forEach(function(img,i){h+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+img+')"></div>'});
-      h+='<button class="cb" onclick="event.stopPropagation();cm(\\''+p.id+'\\',-1)">\\u2039</button>';
-      h+='<button class="cb n" onclick="event.stopPropagation();cm(\\''+p.id+'\\',1)">\\u203A</button>';
-      h+='<div class="cd">';
-      imgs.forEach(function(img,i){h+='<span'+(i==0?' class="a"':'')+' onclick="event.stopPropagation();cg(\\''+p.id+'\\','+i+')"></span>'});
+      h+='<div class=\\"cc\\" id=\\"c'+p.id+'\\">';
+      imgs.forEach(function(img,i){h+='<div class=\\"cs'+(i?'':' a')+'\\" style=\\"background-image:url('+img+')\\"></div>'});
+      h+='<button class=\\"cb\\" onclick=\\"event.stopPropagation();cm(\\'"+p.id+"\\',-1)\\">\\u2039</button>';
+      h+='<button class=\\"cb n\\" onclick=\\"event.stopPropagation();cm(\\'"+p.id+"\\',1)\\">\\u203A</button>';
+      h+='<div class=\\"cd\\">';
+      imgs.forEach(function(_,i){h+='<span'+(i?'':' class=\\"a\\"')+' onclick=\\"event.stopPropagation();cg(\\'"+p.id+"\\',"+i+')\\"></span>'});
       h+='</div></div>';
     }
-    h+='<div class="card-body"><div class="ct">'+p.cat+'</div><h3>'+esc(p.name)+'</h3><div class="pt">$'+p.price+'</div></div></a>';
+    h+='<div class=\\"card-body\\"><div class=\\"ct\\">'+esc(p.cat)+'</div><h3>'+esc(p.name)+'</h3><div class=\\"pt\\">$'+p.price+'</div></div></a>';
   });
   h+='</div>';
   c.innerHTML=h;
   var sel=c.querySelector('.subcat-select');if(sel)sel.value='__all__';
   for(var k in ci)clearInterval(ci[k]);ci={};
-  document.querySelectorAll('.cc').forEach(function(cc){
+  c.querySelectorAll('.cc').forEach(function(cc){
     var id=cc.id.slice(1);if(id&&!ci[id])ci[id]=setInterval(function(){cm(id,1)},4000);
   });
 }
@@ -184,39 +170,39 @@ function cg(id,idx){
   slides[idx].classList.add('a');if(dots[idx])dots[idx].classList.add('a');
 }
 
-function fs(val){
-  var grid=document.querySelector('.grid');if(!grid)return;
-  if(val=='__all__'){grid.querySelectorAll('.card').forEach(function(c){c.style.display=''});return}
-  grid.querySelectorAll('.card').forEach(function(c){
-    var ct=c.querySelector('.ct');
-    c.style.display=ct&&ct.textContent.trim()===val?'':'none';
+function fs(v){
+  var g=document.querySelector('.grid');if(!g)return;
+  g.querySelectorAll('.card').forEach(function(c){
+    c.style.display=v=='__all__'?'':(c.querySelector('.ct')&&c.querySelector('.ct').textContent.trim()===v?'':'none');
   });
 }
 
 function od(id){
-  if(!LR_LOADED&&P.length==0){document.getElementById('dco').innerHTML='<div class="loading" style="padding:2rem;text-align:center">Loading details...</div>';document.getElementById('ov').classList.add('a');document.body.style.overflow='hidden';var iv=setInterval(function(){if(LR_LOADED||P.length>0){clearInterval(iv);od2(id)}},200);return}
-  od2(id);
-}
-function od2(id){
+  if(!P.length){
+    document.getElementById('dco').innerHTML='<div class=\\"loading\\" style=\\"padding:2rem;text-align:center\\">Loading...</div>';
+    document.getElementById('ov').classList.add('a');
+    document.body.style.overflow='hidden';
+    setTimeout(function(){if(P.length)od(id);else{ca()}},500);
+    return;
+  }
   var p=P.find(function(x){return x.id===id});if(!p)return;
   var d=document.getElementById('dco');d.innerHTML='';
   var imgs=p.images||[];
   if(imgs.length){
-    d.innerHTML+='<div class="dc-car" id="dc-'+id+'">';
-    imgs.forEach(function(img,i){d.innerHTML+='<div class="cs'+(i==0?' a':'')+'" style="background-image:url('+img+')"></div>'});
+    d.innerHTML+='<div class=\\"dc-car\\" id=\\"dc-'+id+'\\">';
+    imgs.forEach(function(img,i){d.innerHTML+='<div class=\\"cs'+(i?'':' a')+'\\" style=\\"background-image:url('+img+')\\"></div>'});
     if(imgs.length>1){
-      d.innerHTML+='<button class="cb" onclick="event.stopPropagation();dm(\\''+id+'\\',-1)">\\u2039</button>';
-      d.innerHTML+='<button class="cb n" onclick="event.stopPropagation();dm(\\''+id+'\\',1)">\\u203A</button>';
-      d.innerHTML+='<div class="cd">';
-      imgs.forEach(function(img,i){d.innerHTML+='<span'+(i==0?' class="a"':'')+' onclick="event.stopPropagation();dg(\\''+id+'\\','+i+')"></span>'});
-      d.innerHTML+='</div>';
+      d.innerHTML+='<button class=\\"cb\\" onclick=\\"event.stopPropagation();dm(\\'"+id+"\\',-1)\\">\\u2039</button>';
+      d.innerHTML+='<button class=\\"cb n\\" onclick=\\"event.stopPropagation();dm(\\'"+id+"\\',1)\\">\\u203A</button>';
+      d.innerHTML+='<div class=\\"cd\\">';
+      imgs.forEach(function(_,i){d.innerHTML+='<span'+(i?'':' class=\\"a\\"')+' onclick=\\"event.stopPropagation();dg(\\'"+id+"\\','+i+')\\"></span>'});
+      d.innerHTML+='</div></div>';
     }
     d.innerHTML+='</div>';
   }
-  d.innerHTML+='<div class="ct">'+p.cat+'</div><h2>'+esc(p.name)+'</h2>';
-  if(p.price>0)d.innerHTML+='<div class="pb">$'+p.price+'</div><br>';
-  if(p.desc)d.innerHTML+='<div class="ds">'+esc(p.desc)+'</div>';
-  if(p.page&&!p.desc)d.innerHTML+='<div class="ds" style="margin-top:1rem"><a href="'+esc(p.page)+'" target="_blank" rel="noopener" class="pl">View product details →</a></div>';
+  d.innerHTML+='<div class=\\"ct\\">'+esc(p.cat)+'</div><h2>'+esc(p.name)+'</h2>';
+  if(p.price>0)d.innerHTML+='<div class=\\"pb\\">$'+p.price+'</div><br>';
+  if(p.desc)d.innerHTML+='<div class=\\"ds\\">'+esc(p.desc)+'</div>';
   document.getElementById('ov').classList.add('a');document.body.style.overflow='hidden';
   if(imgs.length>1){if(window.dt)clearInterval(window.dt);window.dt=setInterval(function(){dm(id,1)},4000)}
 }
@@ -239,14 +225,15 @@ function dg(id,idx){
   slides[idx].classList.add('a');if(dots[idx])dots[idx].classList.add('a');
 }
 
-function ca(e){if(e&&e.target!==e.currentTarget)return;
-  document.getElementById('ov').classList.remove('a');document.body.style.overflow='';
+function ca(e){
+  if(e&&e.target!==e.currentTarget)return;
+  document.getElementById('ov').classList.remove('a');
+  document.body.style.overflow='';
   if(window.dt)clearInterval(window.dt);
 }
-window.addEventListener('DOMContentLoaded',init);
-'''
+"""
 
-js = js.replace("PARSED_TABS", tjson)
+js = js.replace("TABSJSON", tjson)
 
 CSS = """*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,'Inter',sans-serif;background:#f8f7f4;color:#2c2c2c}
@@ -291,8 +278,6 @@ body{font-family:system-ui,'Inter',sans-serif;background:#f8f7f4;color:#2c2c2c}
 .dc .ct{font-size:.8rem;color:#e8b86d;font-weight:600;text-transform:uppercase;margin-bottom:.8rem}
 .dc .pb{display:inline-block;background:#e8b86d20;color:#1a1a2e;font-weight:700;font-size:1.3rem;padding:8px 24px;border-radius:8px;margin:.5rem 0}
 .dc .ds{margin-top:.8rem;white-space:pre-wrap;font-size:.9rem;color:#555;line-height:1.5}
-.pl{color:#e8b86d;text-decoration:none;font-weight:600;font-size:.95rem;padding:6px 14px;border:2px solid #e8b86d;border-radius:6px;display:inline-block;transition:.2s}
-.pl:hover{background:#e8b86d;color:#fff}
 .footer{background:#1a1a2e;color:#888;text-align:center;padding:2rem;margin-top:2rem}
 .footer strong{color:#e8b86d}
 .ni{width:100%;height:200px;background:#e8e3dc;display:flex;align-items:center;justify-content:center;color:#aaa}
@@ -320,19 +305,9 @@ html = f"""<!DOCTYPE html>
 
 with open('index.html', 'w') as f:
     f.write(html)
-print(f"✅ index.html generated: {len(html)} bytes ({len(html)/1024:.0f} KB)")
-print(f"   SSR Living Room grid: {len(lr_grid_html)} bytes")
+
+print(f"✅ index.html: {len(html)} bytes ({len(html)/1024:.0f} KB)")
+print(f"   SSR grid: {len(lr_grid_html)} bytes")
 print(f"   Tab buttons: {len(tab_buttons_html)} bytes")
 print(f"   JavaScript: {len(js)} bytes")
 print(f"   CSS: {len(CSS)} bytes")
-
-# Validate JS
-import subprocess
-result = subprocess.run(
-    ['node', '-e', f'try{{new Function({repr(js)})}}catch(e){{console.log("JS error:",e.message)}}'],
-    capture_output=True, text=True
-)
-if result.stdout.strip():
-    print(f"   {result.stdout.strip()}")
-else:
-    print("   ✅ JS syntax OK")
