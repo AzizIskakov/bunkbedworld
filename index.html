@@ -11,11 +11,12 @@
 .di{padding:.7rem 1.2rem;font-size:.85rem;color:#555;cursor:pointer;border-bottom:1px solid #f0eee8;display:flex;align-items:center;justify-content:space-between}
 .di:last-child{border-bottom:none}.di:hover{background:#e8b86d20}
 .di .c{font-size:.7rem;background:#f0eee8;padding:1px 7px}
-.hero{text-align:center;padding:2rem 1.5rem}
-.hero img{max-width:100%;max-height:60vh;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.1)}
-.hero .hn{font-size:1.2rem;font-weight:700;color:#1a1a2e;margin-top:1rem}
-.hero .hp{font-size:1.4rem;font-weight:700;color:#e8b86d}
-.hero .hm{color:#888;font-size:.85rem;margin-top:.3rem}
+.hero{position:relative;overflow:hidden}
+.hero img{width:100%;height:auto;max-height:65vh;object-fit:cover;display:block}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(26,26,46,.35);text-align:center;padding:2rem}
+.hero-overlay h2{font-size:2.5rem;font-weight:800;color:#fff;margin:0;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.hero-overlay p{font-size:1.1rem;color:#e8b86d;margin:.5rem 0 0;text-shadow:0 1px 4px rgba(0,0,0,.3)}
+.hero-overlay .hm{font-size:.9rem;color:#f8f7f4;margin-top:1.5rem;opacity:.8}
 .ctr{max-width:1200px;margin:0 auto;padding:2rem 1.5rem;display:none}
 .ctr.a{display:block}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
@@ -29,20 +30,22 @@
 .cb .cd{font-size:.78rem;color:#888;line-height:1.4;margin:0 0 6px;flex:1}
 .cb .pr{font-size:1.1rem;font-weight:700;color:#1a1a2e}
 .ftr{background:#1a1a2e;color:#888;text-align:center;padding:2rem;font-size:.85rem}
-@media(max-width:600px){.hdr{padding:.8rem 1rem}.tb{padding:.7rem .8rem;font-size:.85rem}.grid{grid-template-columns:1fr;gap:1rem}.drop{min-width:160px}}</style></head><body>
+@media(max-width:600px){.hdr{padding:.8rem 1rem}.tb{padding:.7rem .8rem;font-size:.85rem}.grid{grid-template-columns:1fr;gap:1rem}.drop{min-width:160px}.hero-overlay h2{font-size:1.5rem}.hero-overlay p{font-size:.9rem}}</style></head><body>
 <div class="hdr"><h1>BunkBed<span>World</span></h1><p>Furniture for every room</p></div>
 <nav class="nav"><div class="tb active" data-tab="Living Room"><span class="tb-text">Living Room</span><span class="c">385</span><span class="ar">&#9662;</span><div class="drop"><div class="di" data-cat="Stationary Sofa &amp; Loveseats">Stationary Sofa & Loveseats<span class="c">51</span></div><div class="di" data-cat="Stationary Sectionals">Stationary Sectionals<span class="c">57</span></div><div class="di" data-cat="Reclining Sofa &amp; Loveseats">Reclining Sofa & Loveseats<span class="c">67</span></div><div class="di" data-cat="Reclining Sectionals">Reclining Sectionals<span class="c">26</span></div><div class="di" data-cat="Recliners &amp; Lift Chairs">Recliners & Lift Chairs<span class="c">37</span></div><div class="di" data-cat="Occasional Tables">Occasional Tables<span class="c">49</span></div><div class="di" data-cat="TV Stands">TV Stands<span class="c">22</span></div><div class="di" data-cat="Sleepers &amp; Futons">Sleepers & Futons<span class="c">21</span></div><div class="di" data-cat="Accessories">Accessories<span class="c">46</span></div><div class="di" data-cat="Office &amp; Bookcase">Office & Bookcase<span class="c">9</span></div></div></div><div class="tb" data-tab="Bedroom"><span class="tb-text">Bedroom</span><span class="c">84</span><span class="ar">&#9662;</span><div class="drop"><div class="di" data-cat="Beds">Beds<span class="c">28</span></div><div class="di" data-cat="Bedrooms">Bedrooms<span class="c">27</span></div><div class="di" data-cat="Daybeds">Daybeds<span class="c">3</span></div><div class="di" data-cat="Mattresses">Mattresses<span class="c">19</span></div><div class="di" data-cat="Vanities &amp; Mirrors">Vanities & Mirrors<span class="c">7</span></div></div></div><div class="tb" data-tab="Dining Room"><span class="tb-text">Dining Room</span><span class="c">74</span><span class="ar">&#9662;</span><div class="drop"><div class="di" data-cat="Dining Rooms">Dining Rooms<span class="c">62</span></div><div class="di" data-cat="Barstools">Barstools<span class="c">12</span></div></div></div></nav>
 <div class="hero" id="hero">
-  <img src="/images/happy-p2638-1.jpg" alt="Featured Product">
-  <div class="hn">U271-06 Power 2PC or 3PC Reclining Set (Genuine Leather + Air Massage)</div>
-  <div class="hp">$5099</div>
-  <div class="hm">Select a menu category above to browse products</div>
+  <img src="/images/hero-banner.jpg" alt="BunkBedWorld - Affordable Furniture & Mattresses">
+  <div class="hero-overlay">
+    <h2>Affordable Furniture &amp; Mattresses</h2>
+    <p>Quality pieces for every room in your home</p>
+    <div class="hm">Select a category above to browse our collection</div>
+  </div>
 </div>
 <div class="ctr" id="m"></div>
 <div class="ftr"><p><strong>BunkBedWorld</strong> — Chicago</p></div>
 <script>var T=[{"t":"Living Room","total":385,"g":[{"n":"Stationary Sofa & Loveseats","c":51},{"n":"Stationary Sectionals","c":57},{"n":"Reclining Sofa & Loveseats","c":67},{"n":"Reclining Sectionals","c":26},{"n":"Recliners & Lift Chairs","c":37},{"n":"Occasional Tables","c":49},{"n":"TV Stands","c":22},{"n":"Sleepers & Futons","c":21},{"n":"Accessories","c":46},{"n":"Office & Bookcase","c":9}]},{"t":"Bedroom","total":84,"g":[{"n":"Beds","c":28},{"n":"Bedrooms","c":27},{"n":"Daybeds","c":3},{"n":"Mattresses","c":19},{"n":"Vanities & Mirrors","c":7}]},{"t":"Dining Room","total":74,"g":[{"n":"Dining Rooms","c":62},{"n":"Barstools","c":12}]}];var P=[];
 function clr(){var ads=document.querySelectorAll('.tb .drop');for(var j=0;j<ads.length;j++)ads[j].classList.remove('a');}
-function showProducts(cat){var c=document.getElementById('m');var h='';var fp=P.filter(function(p){return p.cat===cat});for(var i=0;i<fp.length;i++){var p=fp[i];h+='<div class=\"card\" id=\"c'+p.id+'\" onclick=\"go(\''+p.id+'\')\">';h+='<div class=\"ci\" style=\"background-image:url('+p.img+')\"</div>';h+='<div class=\"cb\"><div class=\"ct\">'+p.cat+'</div><h3>'+p.name+'</h3>';if(p.desc)h+='<p class=\"cd\">'+p.desc+'</p>';h+='<span class=\"pr\">$'+p.price+'</span></div></div>';}c.innerHTML='<div class=\"grid\">'+h+'</div>';document.getElementById('hero').classList.remove('a');document.getElementById('m').classList.add('a');}
+function showProducts(cat){var c=document.getElementById('m');var h='';var fp=P.filter(function(p){return p.cat===cat});for(var i=0;i<fp.length;i++){var p=fp[i];h+='<div class=\"card\" id=\"c'+p.id+'\" onclick=\"go(\''+p.id+'\')\">';h+='<div class=\"ci\" style=\"background-image:url('+p.img+')\"</div>';h+='<div class=\"cb\"><div class=\"ct\">'+p.cat+'</div><h3>'+p.name+'</h3>';if(p.desc)h+='<p class=\"cd\">'+p.desc+'</p>';h+='<span class=\"pr\">$'+p.price+'</span></div></div>';}c.innerHTML='<div class=\"grid\">'+h+'</div>';document.getElementById('hero').classList.add('h');document.getElementById('m').classList.add('a');}
 function go(i){location.hash='#'+i;}
 function checkHash(){if(!P.length||!location.hash)return;var id=location.hash.slice(1);if(!id)return;var p=P.find(function(x){return x.id===id});if(!p)return;showProducts(p.cat);setTimeout(function(){var el=document.getElementById('c'+id);if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('sel');setTimeout(function(){el.classList.remove('sel');},2000);}},100);}
 fetch('/data.json').then(function(r){return r.json()}).then(function(d){P=d;init();checkHash();}).catch(function(e){console.log('fetch',e);});
