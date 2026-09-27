@@ -331,8 +331,6 @@ class HappyHomesScrapingEngine:
         sold_out_patterns = [
             r'sold\s*out',
             r'out\s*of\s*stock',
-            r'unavailable',
-            r'discontinued',
         ]
         
         html_lower = html.lower()
