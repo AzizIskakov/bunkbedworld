@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Build BunkBedWorld v2 — clean design, dropdown menus."""
-import json
+"""Build BunkBedWorld v2 — image carousels, descriptions, robust event handling."""
+import json, re, subprocess
 
 with open('products.json.bak') as f:
     raw = json.load(f)
@@ -29,16 +29,33 @@ for tname, cnames in TAB_DEFS:
     if items:
         tabs_json.append({"t": tname, "g": items})
 
-# Convert to simplified format
+def esc(s):
+    if not s: return ''
+    return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            .replace('"', "&quot;").replace("'", "&#39;").replace("\n", "<br>"))
+
+# Build products with multiple images
 products = []
 for p in raw:
+    img = p["image"]
+    # Generate image indices from URL pattern _i{N}_
+    imgs = [img]
+    m = re.search(r'_i(\d+)_', img)
+    if m:
+        max_idx = int(m.group(1))
+        if max_idx > 1:
+            imgs = []
+            for idx in range(1, max_idx + 1):
+                new_url = img.replace(f'_i{m.group(1)}_', f'_i{idx}_')
+                imgs.append(new_url)
+    
     products.append({
         "id": p["id"],
         "n": p["name"],
-        "img": p["image"],
+        "imgs": imgs,
         "cat": p["category"],
         "p": p["sell_price"],
-        "d": p.get("description", ""),
+        "d": p.get("description", "").strip(),
     })
 
 # Sort by price within category
@@ -52,16 +69,11 @@ products_flat = []
 for cat in sorted(cats.keys()):
     products_flat.extend(cats[cat])
 
-def esc(s):
-    if not s: return ''
-    return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-            .replace('"', "&quot;").replace("'", "&#39;").replace("\n", "<br>"))
-
 def render_cards(prods):
     h = ""
     for p in prods:
-        h += '<div class="card" onclick="od(\'' + p["id"] + '\')">'
-        h += '<div class="ci" style="background-image:url(' + p["img"] + ')"></div>'
+        h += '<div class="card" data-id="' + p["id"] + '">'
+        h += '<div class="ci" style="background-image:url(' + p["imgs"][0] + ')"></div>'
         h += '<div class="cb"><div class="ct">' + esc(p["cat"]) + '</div>'
         h += '<h3>' + esc(p["n"]) + '</h3>'
         h += '<span class="pr">$' + str(p["p"]) + '</span></div></div>'
@@ -97,11 +109,11 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f8f7f4;color:#2c
 .hdr h1 span{color:#e8b86d}
 .hdr p{font-size:.8rem;color:#999;margin-top:2px}
 .nav{display:flex;background:#fff;border-bottom:2px solid #e0ddd8;position:sticky;top:0;z-index:10;overflow-x:auto}
-.tb{position:relative;flex:1 0 auto;padding:.9rem 1.2rem;font-weight:600;font-size:.9rem;color:#777;background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:.2s}
+.tb{position:relative;flex:1 0 auto;padding:.9rem 1.2rem;font-weight:600;font-size:.9rem;color:#777;background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:.2s;display:flex;align-items:center;justify-content:center}
 .tb:hover{color:#1a1a2e;background:#f8f7f4}
 .tb.active{color:#1a1a2e;border-bottom-color:#e8b86d}
 .tb .c{display:inline-block;background:#e8b86d20;color:#1a1a2e;font-size:.7rem;padding:1px 7px;border-radius:10px;margin-left:5px;vertical-align:middle}
-.tb .ar{margin-left:5px;font-size:.7rem;vertical-align:middle;transition:transform .2s}
+.tb .ar{margin-left:5px;font-size:.7rem;vertical-align:middle;transition:transform .2s;display:inline-block}
 .tb.active .ar{transform:rotate(180deg)}
 .drop{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #e0ddd8;border-radius:0 0 10px 10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:200px;z-index:50;overflow:hidden}
 .drop.a{display:block}
@@ -123,11 +135,14 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f8f7f4;color:#2c
 .ov{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:100;justify-content:center;align-items:center;padding:2rem}
 .ov.a{display:flex}
 .dc{background:#fff;border-radius:16px;max-width:800px;width:100%;max-height:90vh;overflow-y:auto;padding:2rem;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-.dx{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.dx{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:5}
 .dx:hover{background:#f0f0f0}
-.dci{width:100%;height:300px;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#e8e3dc;border-radius:12px;margin-bottom:1.5rem}
-.dc .ct{font-size:.8rem;color:#e8b86d;font-weight:600;text-transform:uppercase;margin-bottom:.5rem}
-.dc h2{font-size:1.4rem;color:#1a1a2e;margin-bottom:.5rem}
+.dci{width:100%;height:300px;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#e8e3dc;border-radius:12px;margin-bottom:1.5rem;position:relative}
+.car{display:flex;gap:6px;justify-content:center;margin-bottom:1rem}
+.car span{width:10px;height:10px;border-radius:50%;background:#ddd;cursor:pointer}
+.car span.a{background:#e8b86d}
+.dc .ct{font-size:.8rem;color:#e8b86d;font-weight:600;text-transform:uppercase;margin-bottom:.5rem;padding:0 60px 0 0}
+.dc h2{font-size:1.4rem;color:#1a1a2e;margin-bottom:.5rem;padding:0 60px 0 0}
 .dc .pb{display:inline-block;background:#e8b86d20;color:#1a1a2e;font-weight:700;font-size:1.3rem;padding:8px 24px;border-radius:8px;margin:.5rem 0}
 .dc .ds{margin-top:1rem;white-space:pre-wrap;font-size:.9rem;color:#555;line-height:1.5}
 .ftr{background:#1a1a2e;color:#888;text-align:center;padding:2rem;margin-top:2rem;font-size:.85rem}
@@ -136,10 +151,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f8f7f4;color:#2c
 @media(max-width:600px){.hdr{padding:.8rem 1rem}.tb{padding:.7rem .8rem;font-size:.85rem}.grid{grid-template-columns:1fr}.ov{padding:1rem}.dc{padding:1.5rem}.dci{height:220px}.drop{min-width:160px}}
 """
 
-# Build JS as function with json.dumps for clean escaping
+# JavaScript — clean, no inline onclick on cards (event delegation)
 TABS_JSON_STR = json.dumps(tabs_json)
-
-JS_CORE = """
+JS = """var T=""" + TABS_JSON_STR + """;
 var P=[],ct='Living Room',sc='all';
 
 function esc(s){
@@ -150,48 +164,59 @@ function esc(s){
 }
 
 function init(){
-  // Tab button toggles dropdown
-  document.querySelectorAll('.tb').forEach(function(b){
+  // Tab buttons — toggle dropdown
+  var tabs=document.querySelectorAll('.tb');
+  for(var i=0;i<tabs.length;i++){(function(b){
     b.onclick=function(e){
       e.stopPropagation();
       var n=b.dataset.tab;
-      // Close other dropdowns
-      document.querySelectorAll('.tb').forEach(function(x){
-        var dd=x.querySelector('.drop');
-        if(x.dataset.tab!==n && dd) dd.classList.remove('a');
-      });
-      // Toggle this dropdown
+      // Close others
+      for(var j=0;j<tabs.length;j++){
+        if(tabs[j]!==b){var od=tabs[j].querySelector('.drop');if(od)od.classList.remove('a');}
+        tabs[j].classList.toggle('active',tabs[j].dataset.tab===n);
+      }
       var dd=b.querySelector('.drop');
-      if(dd) dd.classList.toggle('a');
-      // Update active tab
-      document.querySelectorAll('.tb').forEach(function(x){
-        x.classList.toggle('active',x.dataset.tab===n);
-      });
+      if(dd)dd.classList.toggle('a');
       ct=n;
     };
-    // Subcategory click
-    b.querySelectorAll('.di').forEach(function(d){
+    // Subcategory clicks
+    var dis=b.querySelectorAll('.di');
+    for(var k=0;k<dis.length;k++){(function(d){
       d.onclick=function(e){
         e.stopPropagation();
         sc=d.dataset.cat;
-        // Close dropdown
         var dd=b.querySelector('.drop');
-        if(dd) dd.classList.remove('a');
-        // Update active subcat
-        b.querySelectorAll('.di').forEach(function(x){x.classList.remove('active')});
+        if(dd)dd.classList.remove('a');
+        for(var m=0;m<dis.length;m++)dis[m].classList.remove('active');
         d.classList.add('active');
-        if(P.length) rc();
+        if(P.length)rc();
       };
-    });
-  });
+    })(dis[k]);}
+  })(tabs[i]);}
+  
   // Close dropdowns on outside click
   document.addEventListener('click',function(){
-    document.querySelectorAll('.tb .drop').forEach(function(d){d.classList.remove('a')});
+    var ads=document.querySelectorAll('.tb .drop');
+    for(var j=0;j<ads.length;j++)ads[j].classList.remove('a');
   });
-  if(P.length) rc();
+  
+  if(P.length)rc();
 }
 
-fetch('/data.json').then(function(r){return r.json()}).then(function(d){P=d;init();}).catch(function(){});
+// Card click delegation — set immediately, not inside init
+(function(){
+  var m=document.getElementById('m');
+  if(m) m.onclick=function(e){
+    var el=e.target.closest('.card');
+    if(el && el.dataset.id){
+      e.preventDefault();
+      od(el.dataset.id);
+      return false;
+    }
+  };
+})();
+
+fetch('/data.json').then(function(r){return r.json()}).then(function(d){P=d;init();}).catch(function(e){console.log('fetch err',e);init();});
 
 function rc(){
   if(!P.length){setTimeout(rc,99);return;}
@@ -199,46 +224,67 @@ function rc(){
   var tab=T.find(function(t){return t.t===ct});
   if(!tab){c.innerHTML='<div class="ld">No products.</div>';return;}
   var fp;
-  if(sc==='all') fp=P.filter(function(p){return tab.g.some(function(g){return g.n===p.cat})});
+  if(sc==='all')fp=P.filter(function(p){return tab.g.some(function(g){return g.n===p.cat})});
   else fp=P.filter(function(p){return p.cat===sc});
   var h='';
-  fp.forEach(function(p){
-    h+='<div class="card" onclick="od(\\''+p.id+'\\')">';
-    h+='<div class="ci" style="background-image:url('+p.img+')"></div>';
+  for(var i=0;i<fp.length;i++){
+    var p=fp[i];
+    h+='<div class="card" data-id="'+p.id+'">';
+    h+='<div class="ci" style="background-image:url('+p.imgs[0]+')"></div>';
     h+='<div class="cb"><div class="ct">'+esc(p.cat)+'</div><h3>'+esc(p.n)+'</h3><span class="pr">$'+p.p+'</span></div></div>';
-  });
+  }
   c.innerHTML=h||'<div class="ld">No products in this category.</div>';
 }
 
 function od(id){
+  var dco=document.getElementById('dco');
   if(!P.length){
-    document.getElementById('dco').innerHTML='<div class="ld">Loading...</div>';
+    dco.innerHTML='<div class="ld">Loading...</div>';
     document.getElementById('ov').classList.add('a');
     document.body.style.overflow='hidden';
-    setTimeout(function(){if(P.length)od(id);else ca()},500);
+    setTimeout(function(){if(P.length)od(id);else ca();},500);
     return;
   }
   var p=P.find(function(x){return x.id===id});
-  if(!p) return;
-  var d=document.getElementById('dco');
-  d.innerHTML='<div class="dci" style="background-image:url('+p.img+')"></div>';
-  d.innerHTML+='<div class="ct">'+esc(p.cat)+'</div><h2>'+esc(p.n)+'</h2>';
-  if(p.p>0) d.innerHTML+='<div class="pb">$'+p.p+'</div><br>';
-  if(p.d) d.innerHTML+='<div class="ds">'+esc(p.d)+'</div>';
+  if(!p){dco.innerHTML='<div class="ld">Product not found.</div>';return;}
+  
+  var h='<div class="dci" id="dci" style="background-image:url('+p.imgs[0]+')"></div>';
+  if(p.imgs.length>1){
+    h+='<div class="car" id="car">';
+    for(var i=0;i<p.imgs.length;i++)h+='<span'+(i===0?' class="a"':'')+' data-n="'+i+'"></span>';
+    h+='</div>';
+  }
+  h+='<div class="ct">'+esc(p.cat)+'</div><h2>'+esc(p.n)+'</h2>';
+  if(p.p>0)h+='<div class="pb">$'+p.p+'</div><br>';
+  if(p.d)h+='<div class="ds">'+esc(p.d)+'</div>';
+  dco.innerHTML=h;
+  
+  // Carousel click
+  var car=document.getElementById('car');
+  if(car){
+    car.onclick=function(e){
+      var sp=e.target.closest('span');
+      if(sp && sp.dataset.n){
+        var n=parseInt(sp.dataset.n);
+        document.getElementById('dci').style.backgroundImage='url('+p.imgs[n]+')';
+        var sps=car.querySelectorAll('span');
+        for(var i=0;i<sps.length;i++)sps[i].classList.toggle('a',i===n);
+      }
+    };
+  }
+  
   document.getElementById('ov').classList.add('a');
   document.body.style.overflow='hidden';
 }
 
 function ca(e){
-  if(e && e.target!==e.currentTarget) return;
+  if(e && e.target!==e.currentTarget)return;
   document.getElementById('ov').classList.remove('a');
   document.body.style.overflow='';
 }
 """
 
-JS = "var T=" + TABS_JSON_STR + ";" + JS_CORE
-
-# Write data.json
+# Write data.json with imgs array
 data_json = json.dumps(products_flat, indent=2)
 with open('data.json', 'w') as f:
     f.write(data_json)
@@ -267,15 +313,21 @@ with open('index.html', 'w') as f:
 
 print("Built: index.html (" + str(len(HTML) // 1024) + " KB), data.json (" + str(len(data_json) // 1024) + " KB, " + str(len(products_flat)) + " products)")
 
-# Validate JS
-import subprocess
-result = subprocess.run(['node', '-e', 'try{eval(' + repr(JS) + ')}catch(e){console.log(e.message)}'],
-                       capture_output=True, text=True)
-if result.stdout.strip():
-    print("JS: " + result.stdout.strip())
-else:
+# Validate
+result = subprocess.run(['node', '--check', '-'], input=JS.encode(), capture_output=True, timeout=5)
+if result.returncode == 0:
     print("JS: valid")
-print("SSR: " + str(len(SSR_HTML)) + " bytes (" + str(len(SSR_PRODS)) + " cards)")
+else:
+    print("JS: " + result.stderr.decode())
+
+# Stats
+total_imgs = sum(len(p["imgs"]) for p in products_flat)
+multi_imgs = sum(1 for p in products_flat if len(p["imgs"]) > 1)
+has_desc = sum(1 for p in products_flat if p["d"])
+print("Stats: " + str(total_imgs) + " total images across " + str(len(products_flat)) + " products")
+print("       " + str(multi_imgs) + " products with 2+ images (" + str(len(products_flat)) + " with single)")
+print("       " + str(has_desc) + " products with descriptions")
+
 for tname, cnames in TAB_DEFS:
     tot = sum(1 for p in raw if p["category"] in cnames)
     print("  " + tname + ": " + str(tot) + " products")
