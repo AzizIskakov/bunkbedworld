@@ -313,18 +313,20 @@ class HappyHomesScrapingEngine:
         return retail_codes
     
     def calculate_price_from_retail_code(self, retail_code):
-        """Calculate sell price from Happy Homes retail code (7****7 format)"""
-        if not retail_code or len(retail_code) != 5:
+        """Calculate sell price from Happy Homes retail code.
+        
+        Strip first and last digit to get vendor cost, multiply by 1.7 and ceil.
+        Works for any length code (4-digit like 7697 or 5-digit like 74497).
+        """
+        import math
+        if not retail_code or len(retail_code) < 4:
             return None
-        
-        if retail_code.startswith('7') and retail_code.endswith('7'):
-            # Extract middle 3 digits as vendor cost
-            vendor_cost = int(retail_code[1:4])
-            # Multiply by 1.7 and round
-            sell_price = round(vendor_cost * 1.7)
-            return sell_price
-        
-        return None
+        code = str(retail_code).strip()
+        if not (code.startswith('7') and code.endswith('7')):
+            return None
+        vendor_cost = int(code[1:-1])
+        sell_price = math.ceil(vendor_cost * 1.7)
+        return sell_price
     
     def check_sold_out_status(self, html):
         """Check if product is sold out"""
